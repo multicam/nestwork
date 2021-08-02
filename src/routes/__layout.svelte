@@ -1,11 +1,15 @@
 <script>
 	import '../app.css';
+    import Logo from '../components/logo.svelte'
 </script>
+
+<header>
+    <Logo/>
+</header>
 
 <main class="app">
 	<slot />
 </main>
-
 
 <style>
 
