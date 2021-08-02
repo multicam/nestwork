@@ -1,28 +1,13 @@
 <script>
 	import '../app.css';
-    import Logo from '../components/logo.svelte'
+    import Header from '../components/header.svelte'
+    import Footer from '../components/footer.svelte'
 </script>
 
-<header>
-    <Logo/>
-</header>
+<Header />
 
 <main class="app">
 	<slot />
 </main>
 
-<style>
-
-    * {
-        box-sizing: border-box;
-    }
-
-	main.app {
-		display: flex;
-        flex-direction: column;
-		width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-	}
-
-</style>
+<Footer/>

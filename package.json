@@ -16,6 +16,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@fontsource/bodoni-moda": "^4.5.0",
     "@fontsource/fira-mono": "^4.2.2",
     "@fontsource/fira-sans": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
