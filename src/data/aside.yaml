@@ -1,0 +1,12 @@
+brand:
+  name: NestLove
+menu:
+  -
+    title: About
+    url: '#'
+  -
+    title: Services
+    url: '#'
+  -
+    title: Contact
+    url: '#'

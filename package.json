@@ -1,0 +1,22 @@
+{
+  "name": "nestwork",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "update": "yarn upgrade-interactive && yarn"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-vercel": "^1.0.0-next.24",
+    "@sveltejs/kit": "^1.0.0-next.140",
+    "puppeteer": "^10.1.0",
+    "svelte": "^3.34.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@fontsource/fira-mono": "^4.2.2",
+    "@lukeed/uuid": "^2.0.0",
+    "cookie": "^0.4.1"
+  }
+}
