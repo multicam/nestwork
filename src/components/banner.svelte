@@ -119,11 +119,8 @@
         left: 0;
         bottom: 0;
         position: absolute;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         box-sizing: border-box;
-        background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.2) 48.44%, rgba(0,0,0,0.5) 100%);
         background-image: linear-gradient(180deg, rgba(0,0,0,0.5) 0, rgba(0,0,0,0.2) 48.44%, rgba(0,0,0,0.5) 100%)
     }
 
@@ -135,10 +132,8 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 0, rgba(0,0,0,0.3) 48.44%, rgba(0,0,0,0) 100%);
             background-image: linear-gradient(180deg, rgba(0,0,0,0) 0, rgba(0,0,0,0.3) 48.44%, rgba(0,0,0,0) 100%);
             z-index: -1;
-            -webkit-transition: opacity 200ms ease-out;
             transition: opacity 200ms ease-out;
             opacity: 0;
             will-change: opacity
@@ -157,15 +152,9 @@
 
     @media (min-width: 1200px) {
         .top-banner__content-wrapper {
-            display:-webkit-box;
-            display: -ms-flexbox;
             display: flex;
             margin: 0 auto;
-            -webkit-box-align: end;
-            -ms-flex-align: end;
             align-items: flex-end;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
             justify-content: space-between;
             max-width: 1920px
         }
@@ -180,8 +169,6 @@
 
     @media (min-width: 1200px) {
         .top-banner__content-left {
-            -webkit-box-flex:1;
-            -ms-flex: 1;
             flex: 1;
             max-width: 50%
         }
@@ -263,7 +250,6 @@
         z-index: -1;
         position: absolute;
         text-decoration: none;
-        -webkit-transition: opacity var(--transition-duration) ease;
         transition: opacity var(--transition-duration) ease;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -306,7 +292,6 @@
         height: 100%;
         position: absolute;
         background-color: #efefef;
-        -webkit-transition: opacity var(--transition-duration) ease;
         transition: opacity var(--transition-duration) ease;
         opacity: 0;
         background-size: cover
@@ -332,20 +317,13 @@
     }
 
     .top-banner__slider-slide._active+.top-banner__slider-slide {
-        -webkit-animation: translate-1000-0 4s;
         animation: translate-1000-0 4s;
         display: block
     }
 
     .top-banner__slider-dots {
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
         flex: 1;
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
         align-items: center;
         margin-bottom: 16px
     }
@@ -357,19 +335,13 @@
     }
 
     .top-banner__slider-dots-list {
-        display: -ms-grid;
         display: grid;
-        -webkit-box-flex: 1;
-        -ms-flex: 1;
         flex: 1;
         grid-column-gap: 10px;
-        -ms-grid-columns: minmax(0, 1fr) [auto-fit];
         grid-template-columns: repeat(auto-fit, minmax(0, 1fr))
     }
 
     .top-banner__slider-dots-arrows {
-        display: -webkit-box;
-        display: -ms-flexbox;
         display: flex;
         margin-left: 10px;
         margin-right: -10px
@@ -390,14 +362,10 @@
         color: #fff;
         outline: none;
         cursor: pointer;
-        -webkit-transition: -webkit-transform 300ms ease;
-        transition: -webkit-transform 300ms ease;
         transition: transform 300ms ease;
-        transition: transform 300ms ease, -webkit-transform 300ms ease
     }
 
     .top-banner__slider-dots-arrows button:hover {
-        -webkit-transform: scale(1.2);
         transform: scale(1.2)
     }
 
@@ -406,7 +374,6 @@
         height: 2px;
         position: relative;
         background-color: rgba(255,255,255,0.5);
-        -webkit-transition: background-color var(--transition-duration) ease;
         transition: background-color var(--transition-duration) ease
     }
 
@@ -427,35 +394,20 @@
 
     .top-banner__slider-dot._current::before {
         width: 100%;
-        -webkit-transition: width 5s linear;
         transition: width 5s linear
     }
 
     .top-banner__slider-dots._no-transitions .top-banner__slider-dot._active::before {
-        -webkit-transition: none;
         transition: none
     }
 
-    @-webkit-keyframes translate-1000-0 {
-        0% {
-            -webkit-transform: translateX(-1000%);
-            transform: translateX(-1000%)
-        }
-
-        100% {
-            -webkit-transform: translateX(0);
-            transform: translateX(0)
-        }
-    }
 
     @keyframes translate-1000-0 {
         0% {
-            -webkit-transform: translateX(-1000%);
             transform: translateX(-1000%)
         }
 
         100% {
-            -webkit-transform: translateX(0);
             transform: translateX(0)
         }
     }
