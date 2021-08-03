@@ -19,7 +19,9 @@
     --font-serif:
         'Bodoni Moda',
         serif;
-	--font-mono: 'Fira Mono', monospace;
+	--font-mono:
+        'Fira Mono',
+        monospace;
 	--pure-white: #ffffff;
 	--primary-color: #b9c6d2;
 	--secondary-color: #d0dde9;

@@ -5,7 +5,6 @@
 <div class="listing-page__container js-listing-page" data-listing-price="2300000000">
     <div class="listing-page__left-side">
 
-
         <ListingGallery/>
 
     </div>
@@ -1325,44 +1324,6 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     .listing-page__full-width-section+.listing-page__full-width-section {
         border-top: 1px solid #E0E0E0
     }
-
-    .listing-page__contact-buttons {
-        display: flex;
-        padding: 10px 20px;
-        justify-content: space-between;
-        width: 100%;
-        box-shadow: 0px 0px 5px rgba(0,0,0,0.1)
-    }
-
-    .listing-page__contact-buttons .button,
-    .listing-page__contact-buttons form {
-        width: calc(50% - 10px);
-        height: 48px;
-        overflow: hidden
-    }
-
-    .listing-page__contact-buttons .button .je3-spinner,
-    .listing-page__contact-buttons form .je3-spinner {
-        display: none
-    }
-
-    .listing-page__contact-buttons .button .button,.listing-page__contact-buttons form .button {
-        width: 100%;
-        height: 100%
-    }
-
-    .listing-page__contact-buttons .button .button._waiting,.listing-page__contact-buttons form .button._waiting {
-        display: none
-    }
-
-    .listing-page__contact-buttons .button .button._waiting+.je3-spinner,.listing-page__contact-buttons form .button._waiting+.je3-spinner {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        border: 1px solid #E0E0E0;
-        box-sizing: border-box
-    }
-
 
 
 

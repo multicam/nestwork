@@ -8,6 +8,7 @@
 </svelte:head>
 
 <Banner />
+
 <section>
 body starts here.
 </section>
