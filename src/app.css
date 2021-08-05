@@ -68,7 +68,6 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
-
 :root {
     --bg-color: #151515;
     --bg-color-bottmobar: #fff;
@@ -644,7 +643,7 @@ input:disabled+.checkbox-alt__label {
     display: none;
     position: absolute;
     top: calc(100% - 1px);
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
     background: #FFFFFF;
     border: 1px solid #E0E0E0;
     box-sizing: border-box
@@ -652,7 +651,7 @@ input:disabled+.checkbox-alt__label {
 
 @media (max-width: 767px) {
     .search-field__suggestions {
-        box-shadow:0px 5px 5px -5px rgba(0,0,0,0.1);
+        box-shadow:0 5px 5px -5px rgba(0,0,0,0.1);
         width: 100vw;
         z-index: 1;
         border-top-color: #151515
@@ -1085,7 +1084,7 @@ input:disabled+.checkbox-alt__label {
     border-radius: 4px;
     overflow-x: hidden;
     border-color: #d3d3d3;
-    box-shadow: 0px 0px 20px rgba(0,0,0,0.1)
+    box-shadow: 0 0 20px rgba(0,0,0,0.1)
 }
 
 .contact-form__form-row .iti__country {
@@ -1217,7 +1216,7 @@ input:disabled+.checkbox-alt__label {
     left: 50%;
     transform: translateX(-50%);
     background: white;
-    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px 3px rgba(0,0,0,0.1);
     display: flex;
     height: 44px;
     min-width: 140px;
@@ -1261,7 +1260,7 @@ input:disabled+.checkbox-alt__label {
     z-index: 100;
     top: 20px;
     right: 20px;
-    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)
+    box-shadow: 0 0 15px 3px rgba(0,0,0,0.1)
 }
 
 @media (min-width: 1200px) {
@@ -1275,7 +1274,7 @@ input:disabled+.checkbox-alt__label {
     z-index: 100;
     top: 85px;
     right: 20px;
-    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)
+    box-shadow: 0 0 15px 3px rgba(0,0,0,0.1)
 }
 
 @media (min-width: 1200px) {
@@ -1291,7 +1290,7 @@ input:disabled+.checkbox-alt__label {
     right: 20px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.1)
+    box-shadow: 0 0 15px 3px rgba(0,0,0,0.1)
 }
 
 .map__zoom .button+.button {
