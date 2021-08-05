@@ -14,7 +14,9 @@ export async function get({ params }) {
   return {
     body: {
       slug: slug,
-      raw: getFile(`${slug}.json`)
+      // raw: getFile(`${slug}.json`)
+      // raw: getFile(`test-something.json`)
+      raw: readdirSync('.')
     }
   }
 }
