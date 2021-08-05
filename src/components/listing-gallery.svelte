@@ -2,11 +2,11 @@
     <div class="listing-gallery__current-image">
         <div class="listing-gallery__current-image-scroll ">
 
-            <div class="listing-gallery__current-image-item _active" style="background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAADAAUDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAj/xAAeEAABBAIDAQAAAAAAAAAAAAABAAIDBBEhBRITMf/EABUBAQEAAAAAAAAAAAAAAAAAAAQH/8QAGBEAAgMAAAAAAAAAAAAAAAAAAAECA1H/2gAMAwEAAhEDEQA/AJgffk5/jabLPm5tWLpGI42xYHzfUDJwBs5OkRFJlZPWHP/Z')">
+            <div class="listing-gallery__current-image-item _active">
                 <img alt="House in Cascais, Lisbon, Portugal 1" class="lazy-load _loaded" importance="high" data-src="https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/56a7d499-1483-4736-890d-faa409b761a5/je/2000xxs.jpg" data-type="gallery" data-watermark="" src="https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/56a7d499-1483-4736-890d-faa409b761a5/je/2000xxs.jpg">
             </div>
 
-            <div class="listing-gallery__current-image-item" style="background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAADAAUDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAj/xAAfEAABAwQDAQAAAAAAAAAAAAABAAIDBAUGMQcRIUH/xAAVAQEBAAAAAAAAAAAAAAAAAAAFBv/EABwRAAEEAwEAAAAAAAAAAAAAAAEAAgMEEyJRMf/aAAwDAQACEQMRAD8AlHlDObxbckFBBcqyKlpoWOjY2UjouHZ92dDZ8+IiKIs2Zsrtz70osRM4F//Z')">
+            <div class="listing-gallery__current-image-item">
                 <div class="lazy-load " data-src="https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/bc1b1072-d609-43a5-8a8d-0c8769003748/je/2000xxs.jpg" data-type="gallery" data-watermark="" alt="House in Cascais, Lisbon, Portugal 2"></div>
             </div>
 

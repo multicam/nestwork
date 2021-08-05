@@ -1,5 +1,28 @@
 <script>
-    import ListingGallery from '../components/listing-gallery.svelte'
+  import ListingGallery from '../../components/listing-gallery.svelte'
+</script>
+
+<script context="module">
+    const {log} = console
+
+    export async function load({ page, fetch, session, context }) {
+      const url = `/listing/${page.params.slug}.json`;
+      const res = await fetch(url);
+
+      if (res.ok) {
+        const data = await res.json()
+        return {
+          props: {
+            article: data
+          }
+        };
+      }
+
+      return {
+        status: res.status,
+        error: new Error(`Could not load ${url}`)
+      };
+    }
 </script>
 
 <div class="listing-page__container js-listing-page" data-listing-price="2300000000">
@@ -299,25 +322,25 @@
                 <h2 class="texts__heading-28">Contact Agent</h2>
 
 
-<!--                <script type="text/javascript">-->
-<!--                  window.JE_INQUIRY_PARAMS = {-->
-<!--                    "texts": {-->
-<!--                      "errors": {-->
-<!--                        "requiredName": "Enter your name",-->
-<!--                        "requiredEmail": "Enter your email address",-->
-<!--                        "requiredMessage": "Enter your message",-->
-<!--                        "requiredTerms": "You must accept the Terms to send your message",-->
-<!--                        "invalidFormatEmail": "Check your email address",-->
-<!--                        "invalidFormatPhone": "Check your phone number"-->
-<!--                      }-->
-<!--                    },-->
-<!--                    "sendInquiryUrl": "/inquiries/send_inquiry",-->
-<!--                    "enableHumanVerification": true,-->
-<!--                    "listingId": 11521677,-->
-<!--                    "listingPriceUsd": "27297629.62",-->
-<!--                    "officeName": "Portugal Sotheby’s International Realty"-->
-<!--                  };-->
-<!--                </script>-->
+                <!--                <script type="text/javascript">-->
+                <!--                  window.JE_INQUIRY_PARAMS = {-->
+                <!--                    "texts": {-->
+                <!--                      "errors": {-->
+                <!--                        "requiredName": "Enter your name",-->
+                <!--                        "requiredEmail": "Enter your email address",-->
+                <!--                        "requiredMessage": "Enter your message",-->
+                <!--                        "requiredTerms": "You must accept the Terms to send your message",-->
+                <!--                        "invalidFormatEmail": "Check your email address",-->
+                <!--                        "invalidFormatPhone": "Check your phone number"-->
+                <!--                      }-->
+                <!--                    },-->
+                <!--                    "sendInquiryUrl": "/inquiries/send_inquiry",-->
+                <!--                    "enableHumanVerification": true,-->
+                <!--                    "listingId": 11521677,-->
+                <!--                    "listingPriceUsd": "27297629.62",-->
+                <!--                    "officeName": "Portugal Sotheby’s International Realty"-->
+                <!--                  };-->
+                <!--                </script>-->
 
                 <div class="contact-form ">
                     <div class="contact-form__agent ">
