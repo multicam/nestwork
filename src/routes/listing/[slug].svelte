@@ -8,14 +8,13 @@
 
     if (res.ok) {
       const data = await res.json()
-      log(data)
+      log('---',data)
       return {
         props: {
           article: data
         }
       };
     }
-
     return {
       status: res.status,
       error: new Error(`Could not load ${url}`)
