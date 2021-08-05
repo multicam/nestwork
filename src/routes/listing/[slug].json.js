@@ -1,8 +1,12 @@
+import {readFileSync,readdirSync} from 'fs'
+import {join} from 'path'
+
 const {log} = console
+
 
 const getFile = name => {
   log('loading', name, new Date())
-  return 123
+  return readFileSync(join('./src/data', name),'utf8')
 }
 
 export async function get({ params }) {
@@ -10,7 +14,7 @@ export async function get({ params }) {
   return {
     body: {
       slug: slug,
-      raw: getFile(`${slug}.yaml`)
+      raw: getFile(`${slug}.json`)
     }
   }
 }

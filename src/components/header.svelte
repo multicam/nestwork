@@ -64,11 +64,11 @@
 
                         <span>Call agent</span>
                     </a>
-                    <div class="je3-spinner">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+<!--                    <div class="je3-spinner">-->
+<!--                        <div></div>-->
+<!--                        <div></div>-->
+<!--                        <div></div>-->
+<!--                    </div>-->
                 </form>
 
 
@@ -1291,12 +1291,12 @@
         display: none
     }
 
-    .listing-page__contact-buttons .button .button._waiting+.je3-spinner,.listing-page__contact-buttons form .button._waiting+.je3-spinner {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        //border: 1px solid #E0E0E0;
-        box-sizing: border-box
-    }
+    //.listing-page__contact-buttons .button .button._waiting+.je3-spinner,.listing-page__contact-buttons form .button._waiting+.je3-spinner {
+    //    display: flex;
+    //    width: 100%;
+    //    height: 100%;
+    //    //border: 1px solid #E0E0E0;
+    //    box-sizing: border-box
+    //}
 
 </style>
