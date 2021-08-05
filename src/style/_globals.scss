@@ -1,0 +1,55 @@
+@import '@fontsource/fira-sans';
+@import '@fontsource/fira-mono';
+@import '@fontsource/bodoni-moda';
+
+:root {
+  --font-sans:
+          'Fira Sans',
+          Arial,
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          'Open Sans',
+          'Helvetica Neue',
+          sans-serif;
+  --font-serif:
+          'Bodoni Moda',
+          serif;
+  --font-mono:
+          'Fira Mono',
+          monospace;
+
+  --pure-white: #ffffff;
+  --primary-color: #b9c6d2;
+  --secondary-color: #d0dde9;
+  --tertiary-color: #edf0f8;
+  --accent-color: #ff3e00;
+  --heading-color: rgba(0, 0, 0, 0.7);
+  --text-color: #444444;
+  --background-without-opacity: rgba(255, 255, 255, 0.7);
+  --column-width: 42rem;
+  --column-margin-top: 4rem;
+}
+
+
+:root {
+  --bg-color: #151515;
+  --bg-color-bottmobar: #fff;
+  --text-color: #EEEDE7;
+  --text-color-inactive: #6F6763;
+  --text-hover-color: #AE8C6D;
+  --border-color: #292929;
+  --border-color-bottmobar: #F1F1F1;
+  --transition-speed: 120ms;
+  --header-height: 60px;
+  --bottom-bar-height: 60px;
+  --offset-xs: 16px;
+  --offset-s: 24px;
+  --offset-m: 32px;
+  --offset-l: 48px;
+  --offset-xl: 64px;
+}

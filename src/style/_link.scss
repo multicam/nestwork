@@ -1,0 +1,18 @@
+.link {
+  text-decoration: underline;
+  text-decoration-color: #D0D0D0;
+  color: #151515;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-underline-offset: 3px
+}
+
+.link:hover {
+  color: #151515;
+  text-decoration: underline;
+  text-decoration-color: #151515
+}
+
+.link:active {
+  text-decoration: none
+}

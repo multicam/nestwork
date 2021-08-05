@@ -1,0 +1,47 @@
+@import 'globals';
+
+body {
+	height: 100vh;
+	margin: 0;
+    overflow-x: auto;
+}
+
+svg {
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+    stroke: none
+}
+
+pre {
+	font-size: 16px;
+	font-family: var(--font-mono);
+	background-color: rgba(255, 255, 255, 0.45);
+	border-radius: 3px;
+	padding: 0.5em;
+	overflow-x: auto;
+	color: var(--text-color);
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+@import 'lazyload';
+@import 'checkbox';
+@import 'input';
+@import 'button';
+@import 'link';
+@import 'search_field';
+@import 'breadcrumbs';
+@import 'texts';
+
+@import 'contact_form';
+@import 'map';
