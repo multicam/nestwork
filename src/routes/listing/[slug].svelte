@@ -1,28 +1,30 @@
-<script>
-  import ListingGallery from '../../components/listing-gallery.svelte'
-</script>
-
 <script context="module">
-    const {log} = console
+  const {log} = console
 
-    export async function load({ page, fetch, session, context }) {
-      const url = `/listing/${page.params.slug}.json`;
-      const res = await fetch(url);
+  export async function load({ page, fetch, session, context }) {
+    const url = `/listing/${page.params.slug}.json`;
+    log('---',url)
+    const res = await fetch(url);
 
-      if (res.ok) {
-        const data = await res.json()
-        return {
-          props: {
-            article: data
-          }
-        };
-      }
-
+    if (res.ok) {
+      const data = await res.json()
+      log(data)
       return {
-        status: res.status,
-        error: new Error(`Could not load ${url}`)
+        props: {
+          article: data
+        }
       };
     }
+
+    return {
+      status: res.status,
+      error: new Error(`Could not load ${url}`)
+    };
+  }
+</script>
+
+<script>
+  import ListingGallery from '../../components/listing-gallery.svelte'
 </script>
 
 <div class="listing-page__container js-listing-page" data-listing-price="2300000000">
