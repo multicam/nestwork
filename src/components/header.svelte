@@ -24,16 +24,16 @@
             <div class="header-menu__content">
                 <div class="header-menu__container">
                     <div class=" header-menu__item">
-                        <a class="header-menu__item__label" title="Real Estate" href="#">Real Estate</a>
+                        <a class="header-menu__item__label" title="Real Estate" href="#">Item 1</a>
                     </div>
                     <div class=" header-menu__item">
-                        <a class="header-menu__item__label" title="Cars" href="#">Cars</a>
+                        <a class="header-menu__item__label" title="Cars" href="#">Item 2</a>
                     </div>
                     <div class=" header-menu__item">
-                        <a class="header-menu__item__label" title="Yachts" href="#">Yachts</a>
+                        <a class="header-menu__item__label" title="Yachts" href="#">Item 3</a>
                     </div>
                     <div class=" header-menu__item">
-                        <a class="header-menu__item__label" title="Jets" href="#">Jets</a>
+                        <a class="header-menu__item__label" title="Jets" href="#">Item 4</a>
                     </div>
                     <div class=" header-menu__item" data-submenu="others" data-submenu-label="Other">
                         <div class="header-menu__item__label">Other</div>
@@ -285,6 +285,7 @@
 
     .header__options {
         display: flex;
+      display: none;
         height: 100%;
         margin-left: auto;
 

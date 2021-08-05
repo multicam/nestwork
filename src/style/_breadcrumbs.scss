@@ -1,0 +1,87 @@
+
+.breadcrumbs {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #151515;
+  margin: -5px -8px
+}
+
+.breadcrumbs._hidden {
+  display: none
+}
+
+.breadcrumbs ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap
+}
+
+.breadcrumbs ol li {
+  display: flex;
+  align-items: center
+}
+
+.breadcrumbs ol li:not(:last-child):after {
+  content: "/";
+  color: #AFAFAF
+}
+
+.breadcrumbs ol li a {
+  padding: 5px 8px
+}
+
+.breadcrumbs ol li a:hover {
+  text-decoration: underline
+}
+
+.breadcrumbs ol li>span {
+  position: relative
+}
+
+.breadcrumbs ol li>span svg {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: 8px;
+  top: 5px;
+  pointer-events: none
+}
+
+.breadcrumbs ol li>span select {
+  appearance: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-size: 13px;
+  color: #151515;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0 15px
+}
+
+.breadcrumbs ol li>span span {
+  position: relative;
+  padding: 5px 8px 5px 8px;
+  display: inline-block;
+  pointer-events: none;
+  background: white
+}
+
+.breadcrumbs ol li>span select+span {
+  padding-right: 26px
+}
+
+.breadcrumbs__next {
+  color: #606060
+}
