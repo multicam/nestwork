@@ -11,7 +11,7 @@
             <a class="header__logo" aria-label="NestLove" href="/">
                 <Logo />
             </a>      <div class="header__options _hide-on-mobile">
-            <a class="header-button header-link header-link__sell je-desktop-only" href="/professional_seller">Sell</a>
+            <a class="header-button header-link header-link__sell je-desktop-only" href="#">Sell</a>
         </div>
             <div class="header__switchers _only-mobile js-header-switchers">
                 <svg viewBox="0 0 24 24">
@@ -24,16 +24,16 @@
             <div class="header-menu__content">
                 <div class="header-menu__container">
                     <div class=" header-menu__item">
-                        <a class="header-menu__item__label" title="Real Estate" href="/real_estate">Real Estate</a>
+                        <a class="header-menu__item__label" title="Real Estate" href="#">Real Estate</a>
                     </div>
                     <div class=" header-menu__item">
-                        <a class="header-menu__item__label" title="Cars" href="/cars">Cars</a>
+                        <a class="header-menu__item__label" title="Cars" href="#">Cars</a>
                     </div>
                     <div class=" header-menu__item">
-                        <a class="header-menu__item__label" title="Yachts" href="/yachts">Yachts</a>
+                        <a class="header-menu__item__label" title="Yachts" href="#">Yachts</a>
                     </div>
                     <div class=" header-menu__item">
-                        <a class="header-menu__item__label" title="Jets" href="/jets">Jets</a>
+                        <a class="header-menu__item__label" title="Jets" href="#">Jets</a>
                     </div>
                     <div class=" header-menu__item" data-submenu="others" data-submenu-label="Other">
                         <div class="header-menu__item__label">Other</div>
@@ -43,7 +43,7 @@
                         <a class="header-menu__item__label" title="Journal" href="https://www.jamesedition.com/stories">Journal</a>
                     </div>
                     <div class="je-mobile-only header-menu__item">
-                        <a class="header-menu__item__label" title="Sell" href="/professional_seller">Sell</a>
+                        <a class="header-menu__item__label" title="Sell" href="#">Sell</a>
                     </div>
                     <div class="js-intercom-show-message je-mobile-only header-menu__item">
                         <a class="header-menu__item__label" title="Help" href="#">Help</a>
@@ -128,18 +128,18 @@
                     <div class="header-submenu__container">
                         <div class="header-menu__section je-row">
                             <div class="header-menu__section__column je-col-2 je-offset-2">
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Motorcycles" href="/motorcycles">Motorcycles</a></div>
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Watches" href="/watches">Watches</a></div>
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Helicopters" href="/helicopters">Helicopters</a></div>
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Extraordinaire" href="/extraordinaire">Extraordinaire</a></div>
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Jewelry" href="/jewelry">Jewelry</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Motorcycles" href="/#">Motorcycles</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Watches" href="/#">Watches</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Helicopters" href="/#">Helicopters</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Extraordinaire" href="/#">Extraordinaire</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Jewelry" href="/#">Jewelry</a></div>
                             </div>
                             <div class="header-menu__section__column je-col-2">
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Lifestyle &amp; Collectibles" href="/lifestyle-collectibles">Lifestyle &amp; Collectibles</a></div>
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Vacation rentals" href="/real_estate/all?rental=true">Vacation rentals</a></div>
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Yacht rental" href="/yachts?rental=true">Yacht rental</a></div>
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Jet Charter" href="/jets?rental=true">Jet Charter</a></div>
-                                <div class="header-menu__item"><a class="header-menu__item__label" title="Experiences" href="/experiences">Experiences</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Lifestyle &amp; Collectibles" href="/#">Lifestyle &amp; Collectibles</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Vacation rentals" href="/#?rental=true">Vacation rentals</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Yacht rental" href="/#?rental=true">Yacht rental</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Jet Charter" href="/#?rental=true">Jet Charter</a></div>
+                                <div class="header-menu__item"><a class="header-menu__item__label" title="Experiences" href="/#">Experiences</a></div>
                             </div>
                         </div>
                     </div>
@@ -1266,7 +1266,7 @@
         padding: 10px 20px;
         justify-content: space-between;
         width: 100%;
-        box-shadow: 0px 0px 5px rgba(0,0,0,0.1)
+        box-shadow: 0 0 5px rgba(0,0,0,0.1)
     }
 
     .listing-page__contact-buttons .button,
@@ -1280,23 +1280,22 @@
     .listing-page__contact-buttons form .je3-spinner {
         display: none
     }
-
-    .listing-page__contact-buttons .button .button,.listing-page__contact-buttons form .button {
-        width: 100%;
-        height: 100%
-    }
-
-    .listing-page__contact-buttons .button .button._waiting,.listing-page__contact-buttons form .button._waiting {
-        display: none
-    }
-
-    .listing-page__contact-buttons .button .button._waiting+.je3-spinner,.listing-page__contact-buttons form .button._waiting+.je3-spinner {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        border: 1px solid #E0E0E0;
-        box-sizing: border-box
-    }
-
+    //
+    //.listing-page__contact-buttons .button .button,.listing-page__contact-buttons form .button {
+    //    width: 100%;
+    //    height: 100%
+    //}
+    //
+    //.listing-page__contact-buttons .button .button._waiting,.listing-page__contact-buttons form .button._waiting {
+    //    display: none
+    //}
+    //
+    //.listing-page__contact-buttons .button .button._waiting+.je3-spinner,.listing-page__contact-buttons form .button._waiting+.je3-spinner {
+    //    display: flex;
+    //    width: 100%;
+    //    height: 100%;
+    //    border: 1px solid #E0E0E0;
+    //    box-sizing: border-box
+    //}
 
 </style>

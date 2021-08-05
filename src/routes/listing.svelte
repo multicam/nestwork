@@ -16,13 +16,13 @@
                 <div class="breadcrumbs">
                     <ol>
                         <li>
-                            <a href="/real_estate">Real Estate</a>
+                            <a href="#">Real Estate</a>
                         </li>
                         <li>
-                            <a href="/real_estate/portugal">Portugal</a>
+                            <a href="#">Portugal</a>
                         </li>
                         <li>
-                            <a href="/real_estate/cascais-portugal">Cascais</a>
+                            <a href="#">Cascais</a>
                         </li>
 
 
