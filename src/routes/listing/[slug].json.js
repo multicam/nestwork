@@ -1,6 +1,7 @@
 import {readFileSync,readdirSync,statSync} from 'fs'
 import {join} from 'path'
 
+import test from '../data/test-something.json'
 const {log} = console
 
 const getAllFiles = function(dirPath, arrayOfFiles) {
@@ -31,7 +32,7 @@ export async function get({ params }) {
       slug: slug,
       // raw: getFile(`${slug}.json`)
       // raw: getFile(`test-something.json`)
-      raw: getAllFiles('.')
+      raw: test
     }
   }
 }
