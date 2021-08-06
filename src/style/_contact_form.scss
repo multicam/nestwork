@@ -70,21 +70,21 @@
   }
 }
 
-//.contact-form__agent-info .je3-spinner {
-//  display: none;
-//  height: 22px;
-//  justify-content: start;
-//  margin-left: 7px
-//}
-//
-//.contact-form__agent-info .je3-spinner div {
-//  width: 6px;
-//  height: 6px
-//}
+.contact-form__agent-info .je3-spinner {
+  display: none;
+  height: 22px;
+  justify-content: start;
+  margin-left: 7px
+}
 
-//.contact-form__agent-info .button._waiting+.je3-spinner {
-//  display: flex
-//}
+.contact-form__agent-info .je3-spinner div {
+  width: 6px;
+  height: 6px
+}
+
+.contact-form__agent-info .button._waiting+.je3-spinner {
+  display: flex
+}
 
 .contact-form__agent-avatar {
   min-width: 50px;

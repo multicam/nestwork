@@ -1,20 +1,20 @@
 
 .lazy-load {
   opacity: 0;
-  transition: opacity 200ms linear
-}
+  transition: opacity 200ms linear;
 
-.lazy-load._without-opacity {
-  opacity: unset;
-  transition: none
-}
+  &._without-opacity {
+    opacity: unset;
+    transition: none
+  }
 
-.lazy-load._loaded {
-  opacity: unset
-}
+  &._loaded {
+    opacity: unset
+  }
 
-.lazy-load._glowing {
-  animation: glow 2s linear infinite alternate
+  &._glowing {
+    animation: glow 2s linear infinite alternate
+  }
 }
 
 @keyframes glow {

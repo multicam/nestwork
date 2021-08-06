@@ -3,43 +3,43 @@
   padding: 11px 16px !important;
   outline: none;
   font-size: 16px;
-  line-height: 22px
-}
+  line-height: 22px;
 
-.input.small {
-  height: 40px
-}
+  &.small {
+    height: 40px
+  }
 
-.input::-webkit-input-placeholder {
-  color: #A0A0A0
-}
+  &::-webkit-input-placeholder {
+    color: #A0A0A0
+  }
 
-.input:-ms-input-placeholder {
-  color: #A0A0A0
-}
+  &:-ms-input-placeholder {
+    color: #A0A0A0
+  }
 
-.input::placeholder {
-  color: #A0A0A0
-}
+  &::placeholder {
+    color: #A0A0A0
+  }
 
-.input:-webkit-autofill::first-line {
-  font-family: var(--font-sans);
-  font-size: 16px
-}
+  &:-webkit-autofill::first-line {
+    font-family: var(--font-sans);
+    font-size: 16px
+  }
 
-.input:disabled,.input._disabled {
-  color: #A0A0A0;
-  background-color: #F8F8F8
-}
+  &:disabled,&._disabled {
+    color: #A0A0A0;
+    background-color: #F8F8F8
+  }
 
-.input:not(._error):focus {
-  border-color: #606060
-}
+  &:not(._error):focus {
+    border-color: #606060
+  }
 
-.input._error {
-  border-color: #E63232
-}
+  &._error {
+    border-color: #E63232
+  }
 
-.input._invalid {
-  border-color: #F4382C
+  &._invalid {
+    border-color: #F4382C
+  }
 }

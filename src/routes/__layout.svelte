@@ -1,6 +1,6 @@
 <script>
 	import '../style/app.scss';
-    import Header from '../components/header.svelte'
+    import Header from '../components/header/index.svelte'
     import Footer from '../components/footer.svelte'
     import Collection from '../components/icons/collection.svelte'
 </script>
