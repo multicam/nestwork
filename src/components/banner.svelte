@@ -19,12 +19,6 @@
                                     <path d="M26.6 6.80002L25.2 5.40002L16 14.6L6.80002 5.40002L5.40002 6.80002L14.6 16L5.40002 25.2L6.80002 26.6L16 17.4L25.2 26.6L26.6 25.2L17.4 16L26.6 6.80002Z"></path>
                                 </svg>
 
-
-
-
-
-
-
                             </button>
                         </div>
                         <div class="search-field__suggestions js-search-suggestions"></div>
