@@ -10,9 +10,5 @@
 <Banner />
 
 <section>
-body starts here.
+    body starts here.
 </section>
-
-<style>
-
-</style>

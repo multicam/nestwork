@@ -1,35 +1,33 @@
+<script>
+    const menuItems = [
+      {
+        slug: 'listing_template_1',
+        title: 'Listing template 1',
+        label: 'Listing 1',
+        url: '/listing/test-something'
+      },
+      {
+        slug: 'listing_template_2',
+        title: 'Listing template 2',
+        label: 'Listing 2',
+        url: '/listing/test-anther-thing'
+      },
+      {
+        slug: 'calculator',
+        title: 'Work',
+        label: 'Calc (dev)',
+        url: '/calculator'
+      }
+    ]
+</script>
 <div class="header-menu js-header-menu">
     <div class="header-menu__content">
         <div class="header-menu__container">
-            <div class=" header-menu__item">
-                <a class="header-menu__item__label" title="Real Estate" href="#">Item 1</a>
-            </div>
-            <div class=" header-menu__item">
-                <a class="header-menu__item__label" title="Cars" href="#">Item 2</a>
-            </div>
-            <div class=" header-menu__item">
-                <a class="header-menu__item__label" title="Yachts" href="#">Item 3</a>
-            </div>
-            <div class=" header-menu__item">
-                <a class="header-menu__item__label" title="Jets" href="#">Item 4</a>
-            </div>
-            <div class=" header-menu__item" data-submenu="others" data-submenu-label="Other">
-                <div class="header-menu__item__label">Other</div>
-                <div class="header-menu__item__arrow">
-                    <svg height="14px" viewBox="0 0 8 14" width="8px">
-                        <use xlink:href="#arrow-right"></use>
-                    </svg>
+            {#each menuItems as {slug,title,label,url} }
+                <div class=" header-menu__item">
+                    <a class="header-menu__item__label" title="{title}" href="{url}">{label}</a>
                 </div>
-            </div>
-            <div class=" header-menu__item">
-                <a class="header-menu__item__label" title="Journal" href="https://www.jamesedition.com/stories">Journal</a>
-            </div>
-            <div class="je-mobile-only header-menu__item">
-                <a class="header-menu__item__label" title="Sell" href="#">Sell</a>
-            </div>
-            <div class="js-intercom-show-message je-mobile-only header-menu__item">
-                <a class="header-menu__item__label" title="Help" href="#">Help</a>
-            </div>
+            {/each}
         </div>
     </div>
 </div>
@@ -190,23 +188,23 @@
     }
   }
 
-  .header-menu__item__arrow {
-    display: none
-  }
+  //.header-menu__item__arrow {
+  //  display: none
+  //}
 
-  .header-menu__section {
-    margin: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
-    @media (min-width: 1200px) {
-      padding: 20px 0
-    }
-
-    @media (max-width: 1199px) {
-      & + .header-menu__section__column {
-        border-top: 1px solid #E0E0E0
-      }
-    }
-  }
+  //.header-menu__section {
+  //  margin: 0;
+  //  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  //
+  //  @media (min-width: 1200px) {
+  //    padding: 20px 0
+  //  }
+  //
+  //  @media (max-width: 1199px) {
+  //    & + .header-menu__section__column {
+  //      border-top: 1px solid #E0E0E0
+  //    }
+  //  }
+  //}
 
 </style>

@@ -2,10 +2,6 @@
 	export const prerender = true;
 </script>
 
-<svelte:head>
-	<title>Home</title>
-</svelte:head>
-
 <script>
     import aside from '../data/aside.json'
     import content from '../data/content.json'
@@ -26,6 +22,10 @@
 
     contentParse(content).then(log)
 </script>
+
+<svelte:head>
+    <title>Home</title>
+</svelte:head>
 
 <section>
     <aside>aside</aside>
@@ -67,4 +67,5 @@
         align-items: center;
         justify-content: center;
     }
+
 </style>

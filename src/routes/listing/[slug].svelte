@@ -26,16 +26,15 @@
   import ListingGallery from '../../components/listing-gallery.svelte'
 </script>
 
-<div class="listing-page__container js-listing-page" data-listing-price="2300000000">
-    <div class="listing-page__left-side">
-
+<div class="page__container js-listing-page" data-listing-price="2300000000">
+    <div class="page__left-side">
         <ListingGallery/>
-
     </div>
 
-    <div class="listing-page__right-side">
-        <div class="listing-page__right-side__container">
-            <div class="listing-page__right-side__head">
+    <div class="page__right-side">
+
+        <div class="page__right-side__container">
+            <div class="page__right-side__head">
 
                 <div class="breadcrumbs">
                     <ol>
@@ -48,41 +47,33 @@
                         <li>
                             <a href="#">Cascais</a>
                         </li>
-
-
                     </ol>
                 </div>
 
-                <div class="listing-page__right-side__head__buttons">
+                <div class="page__right-side__head__buttons">
 
                     <button class="button _noborder _uppercase share" aria-label="Share">
                         <svg viewBox="0 0 21 20">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M9.87499 13.125V4.625L6.56249 7.9375L5.68749 7.0625L10.5 2.25L15.3125 7.0625L14.4375 7.9375L11.125 4.625V13.125H9.87499ZM16.75 16.1251V10.7501H18V17.3751H3V10.7501H4.25V16.1251H16.75Z"></path>
                         </svg>
-
-
                         <span>
        Share
       </span>
-
-
                     </button>
 
                     <button class="button _only-icon _noborder save " data-listing-id="11521677" aria-label="Save">
                         <svg>
                             <use xlink:href="#heart"></use>
                         </svg>
-
-
                     </button>
                 </div>
             </div>
-            <div class="listing-page__right-side__info">
+            <div class="page__right-side__info">
                 <h1 class="texts__heading-34">
                     Palace, 14 Bedrooms, For Sale
                 </h1>
-                <div class="listing-page__right-side__info__price">
+                <div class="page__right-side__info__price">
                     <span class="texts__heading-34">$ 37,104,930</span>
 
                     <button class="button _onlyicon _noborder" aria-label="This price is converted from €23,000,000">
@@ -99,8 +90,8 @@
 
                     </button>
                 </div>
-                <div class="listing-page__right-side__info__features">
-                    <div class="listing-page__right-side__info__features__feature">
+                <div class="page__right-side__info__features">
+                    <div class="page__right-side__info__features__feature">
                         <div>
                             <svg viewBox="0 0 24 24">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -110,7 +101,7 @@
                         </div>
                         <div>Bedrooms</div>
                     </div>
-                    <div class="listing-page__right-side__info__features__feature">
+                    <div class="page__right-side__info__features__feature">
                         <div>
                             <svg viewBox="0 0 24 24">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -120,7 +111,7 @@
                         </div>
                         <div>Bathrooms</div>
                     </div>
-                    <div class="listing-page__right-side__info__features__feature">
+                    <div class="page__right-side__info__features__feature">
                         <div>
                             <svg viewBox="0 0 25 24">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -130,7 +121,7 @@
                         </div>
                         <div>m<span>2</span></div>
                     </div>
-                    <div class="listing-page__right-side__info__features__feature">
+                    <div class="page__right-side__info__features__feature">
                         <div>
                             <svg viewBox="0 0 24 24">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -143,9 +134,9 @@
                 </div>
             </div>
 
-            <div class="listing-page__right-side__buttons js-sticky-buttons">
+            <div class="page__right-side__buttons js-sticky-buttons">
 
-                <button class="button save _uppercase " data-listing-id="11521677">
+                <button class="button save _uppercase " data-id="11521677">
                     <svg>
                         <use xlink:href="#heart"></use>
                     </svg>
@@ -161,8 +152,8 @@
                 </a>
             </div>
 
-            <div class="listing-page__right-side__office">
-                <div class="listing-page__right-side__office__left">
+            <div class="page__right-side__office">
+                <div class="page__right-side__office__left">
                     <div>For sale by</div>
                     <a class="js-mxp-track link" data-type="internal_office_link"
                        href="/offices/portugal-sotheby-s-international-realty-10501">Portugal Sotheby’s
@@ -170,7 +161,7 @@
                 </div>
             </div>
 
-            <div class="listing-page__right-side__description">
+            <div class="page__right-side__description">
                 <h2 class="texts__heading-28">Description</h2>
                 <input id="description" type="checkbox">
                 <div>
@@ -205,9 +196,9 @@
             </div>
 
 
-            <div class="listing-page__right-side__amenities">
+            <div class="page__right-side__amenities">
                 <h2 class="texts__heading-28">Amenities</h2>
-                <div class="listing-page__right-side__amenities__column">
+                <div class="page__right-side__amenities__column">
                     <h3 class="texts__regular-16">Lot</h3>
                     <div class="texts__regular-16">
                         Water View
@@ -219,7 +210,7 @@
                         Sea View
                     </div>
                 </div>
-                <div class="listing-page__right-side__amenities__column">
+                <div class="page__right-side__amenities__column">
                     <h3 class="texts__regular-16">Indoor</h3>
                     <div class="texts__regular-16">
                         Sauna
@@ -231,7 +222,7 @@
                         Library
                     </div>
                 </div>
-                <div class="listing-page__right-side__amenities__column">
+                <div class="page__right-side__amenities__column">
                     <h3 class="texts__regular-16">Outdoor</h3>
                     <div class="texts__regular-16">
                         Pool
@@ -240,23 +231,23 @@
             </div>
 
 
-            <div class="listing-page__right-side__other-info _empty js-price-insights">
-                <div class="listing-page__right-side__other-info__wrapper">
+            <div class="page__right-side__other-info _empty js-price-insights">
+                <div class="page__right-side__other-info__wrapper">
                     <h2 class="texts__heading-28">Price Insights</h2>
-                    <div class="listing-page__right-side__badge">new</div>
+                    <div class="page__right-side__badge">new</div>
                 </div>
             </div>
 
 
-            <div class="listing-page__right-side__other-info">
+            <div class="page__right-side__other-info">
                 <h2 class="texts__heading-28">Building Info</h2>
-                <div class="listing-page__right-side__other-info__columns">
+                <div class="page__right-side__other-info__columns">
                     <span>Year build<div>1957</div></span>
                     <span>Property type<div>House</div></span>
                 </div>
             </div>
 
-            <div class="listing-page__right-side__location">
+            <div class="page__right-side__location">
                 <h2 class="texts__heading-28">Location</h2>
                 <div class="texts__regular-16">Cascais, Cascais, Lisbon, Portugal</div>
 
@@ -332,7 +323,7 @@
 
             </div>
 
-            <div class="listing-page__right-side__contact-form">
+            <div class="page__right-side__contact-form">
                 <div id="seller-contacts"></div>
                 <h2 class="texts__heading-28">Contact Agent</h2>
 
@@ -391,9 +382,10 @@
                     </div>
                     <div class="contact-form__wrapper">
                         <form id="inquiry-form-listing" class="simple_form contact-form__form" novalidate="novalidate"
-                              action="" accept-charset="UTF-8" method="post"><input type="hidden"
-                                                                                    name="authenticity_token"
-                                                                                    value="4hzqZLrE3aDda2mHcPtiziUMMIjn2Un6PY2yarJRPYJlGU4OBWbyv7CI5I7KIznSUBnjIL1sgy2QT2g1elKsfg==">
+                              action="" accept-charset="UTF-8" method="post">
+                            <input type="hidden"
+                                   name="authenticity_token"
+                                   value="4hzqZLrE3aDda2mHcPtiziUMMIjn2Un6PY2yarJRPYJlGU4OBWbyv7CI5I7KIznSUBnjIL1sgy2QT2g1elKsfg==">
                             <div data-sitekey="6LeNK2caAAAAABqNVS2GtBowWgxSInPKc9XdX4PE" data-size="invisible"></div>
 
                             <input class="js-je-session" value="eyJpc19hdXRoZW50aWNhdGVkIjoiTm8iLCJncm91cF9pZCI6Miwib2ZmaWNl
@@ -489,16 +481,16 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
 
             </div>
 
-            <div class="listing-page__right-side__details">
+            <div class="page__right-side__details">
                 <h2 class="texts__heading-28">For sale by</h2>
-                <div class="listing-page__right-side__details__office">
-                    <div class="listing-page__right-side__details__office__left">
+                <div class="page__right-side__details__office">
+                    <div class="page__right-side__details__office__left">
                         <a class="js-mxp-track link" data-type="internal_office_link"
                            href="/offices/portugal-sotheby-s-international-realty-10501">Portugal Sotheby’s
                             International Realty</a>
                     </div>
                 </div>
-                <div class="listing-page__right-side__details__rows">
+                <div class="page__right-side__details__rows">
                     <div>
                         Registered on JamesEdition
                         <div>2015</div>
@@ -535,12 +527,12 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
 <style lang="scss">
 
   @media (min-width: 1200px) {
-    .listing-page__container {
+    .page__container {
       display: flex;
       flex-direction: row
     }
 
-    .listing-page__left-side {
+    .page__left-side {
       min-width: 50%;
       width: calc(100% - 1920px / 2 + 5% - 40px);
       position: sticky;
@@ -550,7 +542,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     }
   }
 
-  .listing-page__right-side {
+  .page__right-side {
     font-family: var(--font-sans);
     flex: 1;
     height: 100%;
@@ -570,7 +562,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     }
   }
 
-  .listing-page__right-side__container {
+  .page__right-side__container {
     width: 100%;
 
     @media (min-width: 1200px) {
@@ -579,13 +571,13 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side h2 {
+    .page__right-side h2 {
       font-size: 22px;
       line-height: 24px
     }
   }
 
-  .listing-page__right-side__head {
+  .page__right-side__head {
     display: flex;
     align-items: center;
     position: relative;
@@ -610,7 +602,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     }
   }
 
-  .listing-page__right-side__head__buttons {
+  .page__right-side__head__buttons {
     display: flex;
     margin-left: auto;
 
@@ -648,25 +640,25 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
 
   }
 
-  .listing-page__right-side__info {
+  .page__right-side__info {
     padding: 50px 0 25px;
     border-top: 1px solid #E0E0E0;
     text-align: center
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__info {
+    .page__right-side__info {
       padding: 30px 0 30px;
       border-bottom: 1px solid #E0E0E0
     }
 
-    .listing-page__right-side__info h1 {
+    .page__right-side__info h1 {
       font-size: 28px;
       line-height: 32px
     }
   }
 
-  .listing-page__right-side__info__price {
+  .page__right-side__info__price {
     margin-top: 30px;
     display: flex;
     align-items: center;
@@ -677,7 +669,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
       margin-top: 20px
     }
 
-    .listing-page__right-side__info__price .button {
+    .page__right-side__info__price .button {
       margin-left: -2px;
       color: #606060;
       background: none;
@@ -707,11 +699,11 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     }
   }
 
-  .listing-page__right-side__info__price__tooltip {
+  .page__right-side__info__price__tooltip {
     position: absolute
   }
 
-  .listing-page__right-side__info__features {
+  .page__right-side__info__features {
     padding-top: 30px;
 
     @media (min-width: 768px) and (max-width: 1199px) {
@@ -727,23 +719,23 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     }
   }
 
-  .listing-page__right-side__info__features__feature {
+  .page__right-side__info__features__feature {
     display: inline-block;
     padding: 0 24px;
     text-align: center
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__info__features__feature {
+    .page__right-side__info__features__feature {
       padding: 0 8px
     }
   }
 
-  .listing-page__right-side__info__features__feature + .listing-page__right-side__info__features__feature {
+  .page__right-side__info__features__feature + .page__right-side__info__features__feature {
     border-left: 1px solid #E0E0E0
   }
 
-  .listing-page__right-side__info__features__feature div:first-child {
+  .page__right-side__info__features__feature div:first-child {
     font-size: 20px;
     line-height: 24px;
     color: #151515;
@@ -754,26 +746,26 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__info__features__feature div:first-child {
+    .page__right-side__info__features__feature div:first-child {
       font-size: 16px
     }
   }
 
-  .listing-page__right-side__info__features__feature div:first-child svg {
+  .page__right-side__info__features__feature div:first-child svg {
     width: 24px;
     height: 24px;
     margin-right: 8px
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__info__features__feature div:first-child svg {
+    .page__right-side__info__features__feature div:first-child svg {
       width: 20px;
       height: 20px;
       margin-right: 5px
     }
   }
 
-  .listing-page__right-side__info__features__feature div:last-child {
+  .page__right-side__info__features__feature div:last-child {
     font-weight: 500;
     font-size: 11px;
     line-height: 20px;
@@ -782,13 +774,13 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     color: #606060
   }
 
-  .listing-page__right-side__info__features__feature div:last-child span {
+  .page__right-side__info__features__feature div:last-child span {
     line-height: 10px;
     font-size: 10px;
     vertical-align: top
   }
 
-  .listing-page__right-side__buttons {
+  .page__right-side__buttons {
     position: sticky;
     top: 60px;
     bottom: 0;
@@ -802,37 +794,37 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     transition: box-shadow 100ms ease
   }
 
-  .listing-page__right-side__buttons .save {
+  .page__right-side__buttons .save {
     height: 48px;
     width: calc(50% - 10px)
   }
 
-  .listing-page__right-side__buttons .save svg {
+  .page__right-side__buttons .save svg {
     fill: none;
     stroke: currentColor;
     stroke-width: 2
   }
 
-  .listing-page__right-side__buttons .save._active svg {
+  .page__right-side__buttons .save._active svg {
     fill: currentColor
   }
 
-  .listing-page__right-side__buttons .contact-agent {
+  .page__right-side__buttons .contact-agent {
     width: calc(50% - 10px);
     height: 48px
   }
 
-  .listing-page__right-side__buttons._sticky {
+  .page__right-side__buttons._sticky {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1)
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__buttons {
+    .page__right-side__buttons {
       display: none
     }
   }
 
-  .listing-page__right-side__office {
+  .page__right-side__office {
     margin: 5px 0 50px;
     padding-bottom: 30px;
     border-bottom: 1px solid #E0E0E0;
@@ -841,44 +833,44 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
   }
 
   @media (min-width: 768px) and (max-width: 1199px) {
-    .listing-page__right-side__office {
+    .page__right-side__office {
       padding: 15px 0;
       margin: 0 0 30px
     }
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__office {
+    .page__right-side__office {
       padding: 20px 0;
       margin: 0 0 30px
     }
   }
 
-  .listing-page__right-side__office__left {
+  .page__right-side__office__left {
     min-width: 0;
     margin-right: 20px
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__office__left {
+    .page__right-side__office__left {
       max-width: 250px
     }
   }
 
-  .listing-page__right-side__office__left div {
+  .page__right-side__office__left div {
     font-size: 14px;
     line-height: 18px;
     color: #606060
   }
 
-  .listing-page__right-side__office__left span {
+  .page__right-side__office__left span {
     font-size: 16px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis
   }
 
-  .listing-page__right-side__office__left a {
+  .page__right-side__office__left a {
     font-size: 16px;
     white-space: nowrap;
     overflow: hidden;
@@ -886,42 +878,42 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__office__left a {
+    .page__right-side__office__left a {
       white-space: pre-wrap
     }
   }
 
-  .listing-page__right-side__office > a {
+  .page__right-side__office > a {
     position: relative;
     margin-left: auto
   }
 
-  .listing-page__right-side__office > a img {
+  .page__right-side__office > a img {
     max-width: 120px;
     max-height: 40px
   }
 
-  .listing-page__right-side__description {
+  .page__right-side__description {
     margin-bottom: 50px
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__description {
+    .page__right-side__description {
       margin-bottom: 30px
     }
   }
 
-  .listing-page__right-side__description .texts__heading-28 {
+  .page__right-side__description .texts__heading-28 {
     margin-bottom: 20px
   }
 
-  .listing-page__right-side__description > div {
+  .page__right-side__description > div {
     font-size: 16px;
     line-height: 28px;
     word-break: break-word
   }
 
-  .listing-page__right-side__description > div label {
+  .page__right-side__description > div label {
     cursor: pointer;
     text-transform: lowercase;
     font-weight: 500;
@@ -929,116 +921,116 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     margin: -10px
   }
 
-  .listing-page__right-side__description input:checked + div {
+  .page__right-side__description input:checked + div {
     display: none
   }
 
-  .listing-page__right-side__description input:not(:checked) ~ div:last-child {
+  .page__right-side__description input:not(:checked) ~ div:last-child {
     display: none
   }
 
-  .listing-page__right-side__description input:checked ~ div:last-child {
+  .page__right-side__description input:checked ~ div:last-child {
     clip: auto;
     position: static
   }
 
-  .listing-page__right-side__virtual-tour {
+  .page__right-side__virtual-tour {
     border-top: 1px solid #E0E0E0;
     padding: 50px 0
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__virtual-tour {
+    .page__right-side__virtual-tour {
       padding: 30px 0
     }
   }
 
-  .listing-page__right-side__virtual-tour h2 {
+  .page__right-side__virtual-tour h2 {
     margin-bottom: 20px
   }
 
   @media (min-width: 1200px) {
-    .listing-page__right-side__virtual-tour__container {
+    .page__right-side__virtual-tour__container {
       display: flex;
       justify-content: space-between
     }
   }
 
-  .listing-page__right-side__virtual-tour__container div {
+  .page__right-side__virtual-tour__container div {
     width: 350px;
     line-height: 24px
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__virtual-tour__container div {
+    .page__right-side__virtual-tour__container div {
       width: 100%;
       margin-bottom: 20px
     }
   }
 
-  .listing-page__right-side__virtual-tour__container .button {
+  .page__right-side__virtual-tour__container .button {
     width: 240px;
     height: 48px
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__virtual-tour__container .button {
+    .page__right-side__virtual-tour__container .button {
       width: 100%
     }
   }
 
-  .listing-page__right-side__virtual-tour__container .button svg {
+  .page__right-side__virtual-tour__container .button svg {
     height: 16px
   }
 
-  .listing-page__right-side__amenities {
+  .page__right-side__amenities {
     border-top: 1px solid #E0E0E0
   }
 
   @media (min-width: 1200px) {
-    .listing-page__right-side__amenities {
+    .page__right-side__amenities {
       padding: 50px 0
     }
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__amenities {
+    .page__right-side__amenities {
       padding: 30px 0
     }
   }
 
-  .listing-page__right-side__amenities h2 {
+  .page__right-side__amenities h2 {
     margin-bottom: 20px
   }
 
-  .listing-page__right-side__amenities__column h3 {
+  .page__right-side__amenities__column h3 {
     color: #6D6D6D
   }
 
-  .listing-page__right-side__amenities__column > div {
+  .page__right-side__amenities__column > div {
     color: #2C2C2C !important
   }
 
   @media (min-width: 768px) {
-    .listing-page__right-side__amenities__column {
+    .page__right-side__amenities__column {
       display: inline-block;
       vertical-align: top;
       width: 180px;
       max-width: calc(33.3% - 30px)
     }
 
-    .listing-page__right-side__amenities__column + .listing-page__right-side__amenities__column {
+    .page__right-side__amenities__column + .page__right-side__amenities__column {
       margin-left: 30px
     }
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__amenities__column + .listing-page__right-side__amenities__column {
+    .page__right-side__amenities__column + .page__right-side__amenities__column {
       margin-top: 22px
     }
   }
 
-  .listing-page__right-side__amenities__column div.texts__regular-16 {
+  .page__right-side__amenities__column div.texts__regular-16 {
     margin-top: 12px;
     color: #606060;
     white-space: nowrap;
@@ -1046,56 +1038,56 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     text-overflow: ellipsis
   }
 
-  .listing-page__right-side__location {
+  .page__right-side__location {
     border-top: 1px solid #E0E0E0
   }
 
   @media (min-width: 1200px) {
-    .listing-page__right-side__location {
+    .page__right-side__location {
       padding: 50px 0
     }
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__location {
+    .page__right-side__location {
       padding: 30px 0
     }
   }
 
-  .listing-page__right-side__location h2 {
+  .page__right-side__location h2 {
     margin-bottom: 20px
   }
 
-  .listing-page__right-side__location .texts__regular-16 {
+  .page__right-side__location .texts__regular-16 {
     color: #606060
   }
 
-  .listing-page__right-side__location .map {
+  .page__right-side__location .map {
     height: 350px;
     margin-top: 20px;
     background-size: cover
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__location .map {
+    .page__right-side__location .map {
       margin-top: 30px
     }
   }
 
-  .listing-page__right-side__other-info {
+  .page__right-side__other-info {
     margin-bottom: 50px;
     padding-top: 50px;
     border-top: 1px solid #E0E0E0
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__other-info {
+    .page__right-side__other-info {
       padding-top: 30px;
       margin-bottom: 30px
     }
   }
 
-  .listing-page__right-side__other-info__columns {
+  .page__right-side__other-info__columns {
     display: flex;
     flex-wrap: wrap;
     font-size: 16px;
@@ -1103,21 +1095,21 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     color: #6D6D6D
   }
 
-  .listing-page__right-side__other-info__columns span {
+  .page__right-side__other-info__columns span {
     margin: 20px 25px 0 0
   }
 
-  .listing-page__right-side__other-info__columns span div {
+  .page__right-side__other-info__columns span div {
     color: #2C2C2C;
     margin-top: 10px
   }
 
-  .listing-page__right-side__other-info__columns._wide span {
+  .page__right-side__other-info__columns._wide span {
     margin-right: 30px
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__other-info__columns._wide {
+    .page__right-side__other-info__columns._wide {
       display: -ms-grid;
       display: grid;
       -ms-grid-columns: auto auto;
@@ -1125,34 +1117,34 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
       grid-gap: 0 20px
     }
 
-    .listing-page__right-side__other-info__columns._wide span {
+    .page__right-side__other-info__columns._wide span {
       margin-right: 5px
     }
   }
 
-  .listing-page__right-side__other-info__wrapper {
+  .page__right-side__other-info__wrapper {
     display: flex;
     align-items: center
   }
 
-  .listing-page__right-side__other-info p {
+  .page__right-side__other-info p {
     margin-top: 20px;
     color: #606060;
     font-size: 14px;
     line-height: 22px
   }
 
-  .listing-page__right-side__other-info._empty {
+  .page__right-side__other-info._empty {
     height: 152px
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__other-info._empty {
+    .page__right-side__other-info._empty {
       height: 244px
     }
   }
 
-  .listing-page__right-side__badge {
+  .page__right-side__badge {
     margin-left: 11px;
     background: #006C75;
     color: #fff;
@@ -1166,64 +1158,64 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     font-weight: 500
   }
 
-  .listing-page__right-side__contact-form {
+  .page__right-side__contact-form {
     border-top: 1px solid #E0E0E0
   }
 
   @media (min-width: 1200px) {
-    .listing-page__right-side__contact-form {
+    .page__right-side__contact-form {
       padding: 50px 0
     }
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__contact-form {
+    .page__right-side__contact-form {
       padding: 30px 0
     }
   }
 
-  .listing-page__right-side__contact-form h2 {
+  .page__right-side__contact-form h2 {
     margin-bottom: 20px
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__contact-form h2 {
+    .page__right-side__contact-form h2 {
       margin-bottom: 30px
     }
   }
 
-  .listing-page__right-side__contact-form #seller-contacts {
+  .page__right-side__contact-form #seller-contacts {
     float: left;
     margin-top: -180px
   }
 
   @media (min-width: 768px) and (max-width: 1199px) {
-    .listing-page__right-side__contact-form #seller-contacts {
+    .page__right-side__contact-form #seller-contacts {
       margin-top: -70px
     }
   }
 
   @media (max-width: 767px) {
-    .listing-page__right-side__contact-form #seller-contacts {
+    .page__right-side__contact-form #seller-contacts {
       margin-top: -79px
     }
   }
 
-  .listing-page__right-side__details {
+  .page__right-side__details {
     margin-bottom: 50px
   }
 
-  .listing-page__right-side__details h2 {
+  .page__right-side__details h2 {
     text-transform: capitalize
   }
 
   @media (max-width: 1199px) {
-    .listing-page__right-side__details {
+    .page__right-side__details {
       margin-bottom: 30px
     }
   }
 
-  .listing-page__right-side__details__office__left {
+  .page__right-side__details__office__left {
     min-width: 0;
     margin-right: 20px;
 
@@ -1257,7 +1249,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
   }
 
 
-  .listing-page__right-side__details__office {
+  .page__right-side__details__office {
     margin-top: 20px;
     display: flex;
     align-items: center;
@@ -1273,7 +1265,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     }
   }
 
-  .listing-page__right-side__details__rows {
+  .page__right-side__details__rows {
     margin-top: 2px;
 
     & > div {
@@ -1294,7 +1286,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     }
   }
 
-  .listing-page__right-side__admin-tools {
+  .page__right-side__admin-tools {
     border-top: 1px solid #E0E0E0;
     padding: 50px 0;
 
@@ -1307,7 +1299,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
     }
   }
 
-  .listing-page__full-width-section {
+  .page__full-width-section {
     max-width: 1920px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -1331,7 +1323,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
       }
     }
 
-    & + .listing-page__full-width-section {
+    & + .page__full-width-section {
       border-top: 1px solid #E0E0E0
     }
   }
