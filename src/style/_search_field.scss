@@ -80,7 +80,7 @@
   height: 100%;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: $font-size-standard;
   line-height: 24px;
   color: #151515;
   box-sizing: border-box;
@@ -148,8 +148,8 @@
 }
 
 .search-field__suggestion_icon svg {
-  width: 16px;
-  height: 16px;
+  width: $font-size-standard;
+  height: $font-size-standard;
   color: #606060
 }
 

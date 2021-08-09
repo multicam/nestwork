@@ -54,7 +54,7 @@
 
   @media (min-width: 768px) and (max-width: 1199px) {
       text-align:center;
-      margin-top: 16px
+      margin-top: $font-size-standard
   }
 
   & .button {
@@ -304,7 +304,7 @@
 }
 
 .contact-form__form-row+.contact-form__form-row {
-  margin-top: 16px
+  margin-top: $font-size-standard
 }
 
 .contact-form__finish {
@@ -378,7 +378,7 @@
     }
 
     & .contact-form__agent-info {
-      margin-top: 16px;
+      margin-top: $font-size-standard;
       text-align: center
     }
 

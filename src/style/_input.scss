@@ -1,8 +1,8 @@
 .input {
   border: 1px solid #E0E0E0;
-  padding: 11px 16px !important;
+  padding: 11px $font-size-standard !important;
   outline: none;
-  font-size: 16px;
+  font-size: $font-size-standard;
   line-height: 22px;
 
   &.small {
@@ -23,7 +23,7 @@
 
   &:-webkit-autofill::first-line {
     font-family: var(--font-sans);
-    font-size: 16px
+    font-size: $font-size-standard
   }
 
   &:disabled,&._disabled {

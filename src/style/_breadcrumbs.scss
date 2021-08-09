@@ -4,7 +4,7 @@
   font-style: normal;
   font-weight: 500;
   font-size: 11px;
-  line-height: 16px;
+  line-height: $font-size-standard;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: #151515;
@@ -46,8 +46,8 @@
 }
 
 .breadcrumbs ol li>span svg {
-  width: 16px;
-  height: 16px;
+  width: $font-size-standard;
+  height: $font-size-standard;
   position: absolute;
   right: 8px;
   top: 5px;

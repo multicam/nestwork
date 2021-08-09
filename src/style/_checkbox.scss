@@ -80,8 +80,8 @@
 }
 
 .checkbox._small .checkbox__icon {
-  height: 16px;
-  min-width: 16px
+  height: $font-size-standard;
+  min-width: $font-size-standard
 }
 
 .checkbox-alt {
@@ -143,7 +143,7 @@ input:disabled+.checkbox-alt__label {
 }
 
 .checkbox-alt.small .checkbox-alt {
-  --size: 16px}
+  --size: 16px }
 
 .checkbox-alt.small .checkbox-alt__label {
   line-height: normal

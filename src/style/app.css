@@ -1507,7 +1507,7 @@ input:disabled+.checkbox-alt__label {
 
 @media (max-width: 1199px) {
     .texts__heading-34 {
-        font-size:28px;
+        font-size: 28px;
         line-height: 32px
     }
 }
