@@ -1,5 +1,6 @@
 <script>
   import Chart from 'svelte-frappe-charts';
+  import {compound} from '$lib/financials'
 
   export let property
   export let stats
@@ -11,14 +12,6 @@
 
   const yearNow = new Date().getFullYear()
 
-  const compound = (length, initial, rate) => {
-    let acc = initial / (1 + rate), res = []
-    while (length--) {
-      acc *= 1. + rate
-      res.push(Math.round(acc))
-    }
-    return res
-  }
 
   $: data = {
     labels: new Array(years).fill(yearNow).map((i, n) => i + n),

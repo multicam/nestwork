@@ -2,6 +2,7 @@
   import MoneyInput from '../components/input-money.svelte'
   import Toggle from '../components/toggle.svelte'
   import Chart from '../components/investment-chart-frappe.svelte'
+  import {compound} from '$lib/financials'
 
   const {log} = console, {stringify} = JSON
 
@@ -91,6 +92,7 @@
     }
   }
 
+
   // https://www.smartpropertyinvestment.com.au/data/nsw/2107/whale-beach
   // GROWTH REPORT
   // Median Quarterly	17.4%	N/A
@@ -118,6 +120,11 @@
     return amount*(rate * Math.pow((1 + rate), months))/(Math.pow((1 + rate), months) - 1);
   }
 
+  const calculateProfit = (sharePrice,years,rate) => {
+    const temp = compound(years,sharePrice,rate).slice(-1)[0]
+    return temp - sharePrice
+  }
+
   let yearlyIncome
   $: taxAmount = calculateTaxes(yearlyIncome)
 
@@ -125,11 +132,13 @@
   let selectedLvr = lvrValues[0]
   $: loanAmount = propertyData.sharePrice * selectedLvr
 
-  const loanParams = { durationYears: 30, rate: .025 }
+  const loanParams = { durationYears: 30, rate: .035 }
   $: loanPayment = calculateLoan(loanAmount,loanParams)
 
   const exitYears = 7
+  const propertyStats = stats[propertyData.suburb]
 
+  $: exitProfit = calculateProfit(propertyData.sharePrice,exitYears,propertyStats.average_10y_annual)
 </script>
 
 <main class="calculator-container">
@@ -183,7 +192,7 @@
 
     <section>
         <h3>Exit / {exitYears} years</h3>
-
+        <div class="money"><span>Capital Growth</span>{formatMoney(exitProfit)}</div>
     </section>
 
 </main>
