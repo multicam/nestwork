@@ -1,11 +1,13 @@
 <script>
+
+  // https://svelte.dev/repl/b63c813830274248a8fee5ecc667b15c?version=3.12.1
+
   export let type = 'checkbox'
   export let checked = false
   export let group = ''
   export let value = void 0
 
   $: type === 'radio' && updateRadio(group, value)
-
   $: type === 'checkbox' && group && updateChekbox(group, value)
   $: type === 'checkbox' && group && updateGroup(checked, value)
 
@@ -31,6 +33,7 @@
       }
     }
   }
+
 </script>
 
 <label>

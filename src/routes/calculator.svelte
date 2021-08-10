@@ -1,8 +1,11 @@
 <script>
   import MoneyInput from '../components/input-money.svelte'
   import Toggle from '../components/toggle.svelte'
+  import Chart from '../components/investment-chart-frappe.svelte'
 
   const {log} = console, {stringify} = JSON
+
+  // https://www.ato.gov.au/rates/individual-income-tax-rates/
   //
   // 0 – $18,200 | Nil
   // $18,201 – $45,000 | 19 cents for each $1 over $18,200
@@ -10,6 +13,7 @@
   // $120,001 – $180,000 | $29,467 plus 37 cents for each $1 over $120,000
   // $180,001 and over | $51,667 plus 45 cents for each $1 over $180,000
   //
+  // -----------------
   const taxBracket = [
     {
       max: 18200,
@@ -41,7 +45,6 @@
     }
   ]
 
-  // -----------------
   const calculateTaxes = val => {
     if(!val) return {}
 
@@ -70,59 +73,119 @@
 
   }
 
-  let yearlyIncome
-  $: taxAmount = calculateTaxes(yearlyIncome)
+  // -----------------
+  const propertyData = {
+    sharePrice: 760000,
+    postcode: 2107,
+    suburb: 'whale-beach'
+  }
+
+  // -----------------
+   const stats = {
+    'whale-beach': {
+      median_price: 5928500,
+      median_quarterly: .174,
+      median_3y: .6939,
+      median_5y: .9534,
+      average_10y_annual: .1893
+    }
+  }
+
+  // https://www.smartpropertyinvestment.com.au/data/nsw/2107/whale-beach
+  // GROWTH REPORT
+  // Median Quarterly	17.4%	N/A
+  // Median 12 month	N/A	N/A
+  // Median 3 years	69.39%	N/A
+  // Median 5 years	95.34%	N/A
+  // 10 years average annual	18.93%	N/A
+  // Weekly media advert. rent	$3000	N/A
+  // Time on Market	0.0 days	N/A
+  // Gross Rental Yield Percent	2.63%	N/A
 
   const formatMoney = val => {
     if( !val ) return '-'
-    return new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD', maximumFractionDigits: 0, minimumFractionDigits: 0 }).format(val)
+    return new Intl.NumberFormat('en-AU', {
+      style: 'currency',
+      currency: 'AUD',
+      maximumFractionDigits: 0,
+      minimumFractionDigits: 0
+    }).format(val)
   }
-
   const formatPercent = val => `${Math.round(val * 100.)}%`
 
-  const propertyData = {
-    sharePrice: 760000
+  const calculateLoan = (amount,params) => {
+    const months = params.durationYears * 12, rate = params.rate
+    return amount*(rate * Math.pow((1 + rate), months))/(Math.pow((1 + rate), months) - 1);
   }
 
-  const lvrValues = [ .60, .65, .70, .75, .80 ]
+  let yearlyIncome
+  $: taxAmount = calculateTaxes(yearlyIncome)
 
+  const lvrValues = [ .60, .65, .70, .75, .80, .85, .9 ]
   let selectedLvr = lvrValues[0]
-
   $: loanAmount = propertyData.sharePrice * selectedLvr
+
+  const loanParams = { durationYears: 30, rate: .025 }
+  $: loanPayment = calculateLoan(loanAmount,loanParams)
+
+  const exitYears = 7
 
 </script>
 
 <main class="calculator-container">
     <h1>Live Calculator</h1>
+
     <section>
         <h3>Sample Property</h3>
         <pre>{stringify(propertyData)}</pre>
     </section>
+
     <section>
         <h3>Annual Income</h3>
         <div class="input-group">
             <MoneyInput bind:value={yearlyIncome} />
         </div>
     </section>
+
     <section>
         <h3>Tax Position</h3>
         <div class="money">{formatMoney(taxAmount?.amount)}</div>
-        <pre>{stringify(taxAmount)}</pre>
+        <pre>{stringify(taxAmount,null,2)}</pre>
     </section>
+
     <section>
         <h3>LVR</h3>
-        {#each lvrValues as lvr }
-            <Toggle type='radio' bind:group={selectedLvr} value={lvr} let:checked={checked}>
-                {checked ? '>> ' : '' }{formatPercent(lvr)}
-            </Toggle>
-        {/each}
+        <div class="options-container gapped">
+            {#each lvrValues as lvr }
+                <div>
+                    <Toggle type='radio' bind:group={selectedLvr} value={lvr} let:checked={checked}>
+                        {checked ? '>> ' : '' }{formatPercent(lvr)}{checked ? '<< ' : '' }
+                    </Toggle>
+                </div>
+            {/each}
+        </div>
         <pre>{stringify(selectedLvr)}</pre>
     </section>
+
     <section>
         <h3>Share Price</h3>
         <div class="money"><span>Total</span>{formatMoney(propertyData.sharePrice)}</div>
         <div class="money"><span>Loan</span>{formatMoney(loanAmount)}</div>
+
+        <h3>Monthly Deducted Interests</h3>
+        <div class="money"><span>Mthly</span>{formatMoney(loanPayment)}</div>
     </section>
+
+    <section>
+        <h3>Projections</h3>
+        <Chart years={exitYears} stats={stats[propertyData.suburb]} property={propertyData}/>
+    </section>
+
+    <section>
+        <h3>Exit / {exitYears} years</h3>
+
+    </section>
+
 </main>
 
 <style lang="scss">
@@ -136,7 +199,8 @@
       margin-top: 1em;
     }
 
-    pre {
+    :global(pre) {
+      max-width: 100%;
       white-space: pre-wrap;
       word-break: keep-all;
       color: rgba(0,0,0,.5)
@@ -150,6 +214,23 @@
         color: rgba(0,0,0,.3);
         font-size: .616em;
         margin-right: 1em;
+      }
+    }
+
+    .options-container {
+
+    }
+
+    .gapped {
+      --gap: 10px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      margin: calc(-1 * var(--gap)) 0 0 calc(-1 * var(--gap));
+      width: calc(100% + var(--gap));
+
+      & > * {
+        display: block;
+        margin: var(--gap) 0 0 var(--gap);
       }
     }
 </style>
