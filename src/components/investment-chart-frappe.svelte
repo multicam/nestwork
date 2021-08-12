@@ -16,15 +16,15 @@
   $: data = {
     labels: new Array(years).fill(yearNow).map((i, n) => i + n),
     datasets: [
-      {
-        name: "5y Median",
-        chartType: "line",
-        values: compound(years, property.sharePrice, stats.median_5y),
-      },
+      // {
+      //   name: "5y Median",
+      //   chartType: "line",
+      //   values: compound(years, property.purchasePrice, stats.median_5y),
+      // },
       {
         name: "10y Average",
         chartType: "line",
-        values: compound(years, property.sharePrice, stats.average_10y_annual),
+        values: compound(years, property.purchasePrice, stats.average_10y_annual),
       },
     ],
 

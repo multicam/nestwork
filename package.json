@@ -24,6 +24,8 @@
     "@lukeed/uuid": "^2.0.0",
     "cookie": "^0.4.1",
     "frappe-charts": "^1.6.2",
-    "svelte-frappe-charts": "^1.9.0"
+    "fusioncharts": "^3.17.0",
+    "svelte-frappe-charts": "^1.9.0",
+    "svelte-fusioncharts": "^1.0.0"
   }
 }

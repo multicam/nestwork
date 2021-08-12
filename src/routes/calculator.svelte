@@ -2,6 +2,7 @@
   import MoneyInput from '../components/input-money.svelte'
   import Toggle from '../components/toggle.svelte'
   import Chart from '../components/investment-chart-frappe.svelte'
+  import Fus from '../components/investment-chart-fusion.svelte'
   import {compound} from '$lib/financials'
 
   const {log} = console, {stringify} = JSON
@@ -76,7 +77,9 @@
 
   // -----------------
   const propertyData = {
-    sharePrice: 760000,
+    numberShares: 6,
+    purchasePrice: 5200000,
+    sharePrice: 1100000,
     postcode: 2107,
     suburb: 'whale-beach'
   }
@@ -88,21 +91,21 @@
       median_quarterly: .174,
       median_3y: .6939,
       median_5y: .9534,
-      average_10y_annual: .1893
+      average_10y_annual: .0893
     }
   }
 
 
   // https://www.smartpropertyinvestment.com.au/data/nsw/2107/whale-beach
   // GROWTH REPORT
-  // Median Quarterly	17.4%	N/A
-  // Median 12 month	N/A	N/A
+  // Median Quarterly	17.4%
+  // Median 12 month	N/A
   // Median 3 years	69.39%	N/A
   // Median 5 years	95.34%	N/A
-  // 10 years average annual	18.93%	N/A
-  // Weekly media advert. rent	$3000	N/A
-  // Time on Market	0.0 days	N/A
-  // Gross Rental Yield Percent	2.63%	N/A
+  // 10 years average annual	18.93%
+  // Weekly media advert. rent	$3000
+  // Time on Market	0.0 days
+  // Gross Rental Yield Percent	2.63%
 
   const formatMoney = val => {
     if( !val ) return '-'
@@ -126,7 +129,7 @@
   }
 
   let yearlyIncome
-  $: taxAmount = calculateTaxes(yearlyIncome)
+  $: taxPosition = calculateTaxes(yearlyIncome)
 
   const lvrValues = [ .60, .65, .70, .75, .80, .85, .9 ]
   let selectedLvr = lvrValues[0]
@@ -158,8 +161,8 @@
 
     <section>
         <h3>Tax Position</h3>
-        <div class="money">{formatMoney(taxAmount?.amount)}</div>
-        <pre>{stringify(taxAmount,null,2)}</pre>
+        <div class="money">{formatMoney(taxPosition?.amount)}</div>
+<!--        <pre>{stringify(taxAmount,null,2)}</pre>-->
     </section>
 
     <section>
@@ -173,7 +176,6 @@
                 </div>
             {/each}
         </div>
-        <pre>{stringify(selectedLvr)}</pre>
     </section>
 
     <section>
