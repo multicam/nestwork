@@ -41,4 +41,4 @@
 </script>
 
 <Chart data={data} colors={['red','grey']}/>
-<pre>{stringify({years, stats, property}, null, 2)}</pre>
+<!--<pre>{stringify({years, stats, property}, null, 2)}</pre>-->

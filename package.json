@@ -5,6 +5,7 @@
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
+    "calculator": "nodemon scripts/calculator.js",
     "update": "yarn upgrade-interactive && yarn"
   },
   "devDependencies": {

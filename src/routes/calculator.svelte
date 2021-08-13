@@ -116,7 +116,7 @@
       minimumFractionDigits: 0
     }).format(val)
   }
-  const formatPercent = val => `${Math.round(val * 100.)}%`
+  const formatPercent = val => `${val * 100.}%`
 
   const calculateLoan = (amount,params) => {
     const months = params.durationYears * 12, rate = params.rate
@@ -124,7 +124,7 @@
   }
 
   const calculateProfit = (sharePrice,years,rate) => {
-    const temp = compound(years,sharePrice,rate).slice(-1)[0]
+    const temp = compound(years,sharePrice,rate).pop()
     return temp - sharePrice
   }
 
@@ -141,6 +141,7 @@
   const exitYears = 7
   const propertyStats = stats[propertyData.suburb]
 
+  $: exitSale = compound(7,propertyData.purchasePrice,propertyStats.average_10y_annual).pop()
   $: exitProfit = calculateProfit(propertyData.sharePrice,exitYears,propertyStats.average_10y_annual)
 </script>
 
@@ -188,15 +189,18 @@
     </section>
 
     <section>
+        <h3>Exit / {exitYears} years</h3>
+        <div><span>Growth Average 10 years</span>{formatPercent(propertyStats.average_10y_annual)}</div>
+        <div class="money"><span>Property Future Sale</span>{formatMoney(exitSale)}</div>
+        <div class="money"><span>Capital Growth</span>{formatMoney(exitProfit)}</div>
+    </section>
+
+    <section>
         <h3>Projections</h3>
         <Chart years={exitYears} stats={stats[propertyData.suburb]} property={propertyData}/>
     </section>
 
-    <section>
-        <h3>Exit / {exitYears} years</h3>
-        <div class="money"><span>Capital Growth</span>{formatMoney(exitProfit)}</div>
-    </section>
-
+    <section>&nbsp;</section>
 </main>
 
 <style lang="scss">
@@ -217,19 +221,19 @@
       color: rgba(0,0,0,.5)
     }
 
+    span {
+      color: rgba(0,0,0,.4);
+      font-size: .616em;
+      margin-right: 1em;
+    }
+
     .money {
-      font-size: 1.6em;
+      font-size: 1.3em;
       color: orangered;
 
-      span {
-        color: rgba(0,0,0,.3);
-        font-size: .616em;
-        margin-right: 1em;
-      }
     }
 
     .options-container {
-
     }
 
     .gapped {
