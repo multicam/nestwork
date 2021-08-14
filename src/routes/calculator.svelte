@@ -89,7 +89,7 @@
     postcode: 2107,
     suburb: 'whale-beach',
 
-    stampDuty: 300952,
+    stampDuty: 318000,
     landTax: 20020,
 
     sharePrice: 996000,
@@ -227,7 +227,7 @@
             </tr>
             <tr>
                 <td>
-                    <strong>Taxable Income</strong>
+                    <strong>Adjusted Income</strong>
                 </td>
                 {#each costsIndividual.map(i => yearlyIncome - i - loanPayment) as val }
                     <td class="text-mono">{formatMoney(val)}</td>
@@ -235,7 +235,7 @@
             </tr>
             <tr>
                 <td>
-                    <strong>New Tax Position</strong>
+                    <strong>Adjusted Tax Position</strong>
                 </td>
                 {#each costsIndividual.map(i => calculateTaxes(yearlyIncome - i - loanPayment)?.amount) as val }
                     <td class="text-mono">{formatMoney(val)}</td>
@@ -246,14 +246,10 @@
                     <strong>Tax Benefit</strong>
                 </td>
                 {#each costsIndividual.map(i => calculateTaxes(yearlyIncome)?.amount - calculateTaxes(yearlyIncome - i - loanPayment).amount) as val }
-                    <td class="text-mono">{formatMoney(val)}</td>
+                    <td class="text-mono italic">{formatMoney(val)}</td>
                 {/each}
             </tr>
         </table>
-    </section>
-    <section>
-        <h3>Projections</h3>
-        <Chart years={exitYears} stats={stats[propertyData.suburb]} property={propertyData}/>
     </section>
     <section>
         <h3>
@@ -268,8 +264,12 @@
         <div class="money"><span>Equity Growth</span>{formatMoney(exitGrowth/propertyData.numberShares)}</div>
         <div class="money"><span>Total Costs</span>{formatMoney(costsIndividualTotal)}</div>
         <div class="money"><span>Growth Incl. Costs</span>{formatMoney(growthIndividual)}</div>
-        <div><span>Performance</span>{formatPercent(growthIndividual/(propertyData.sharePrice - loanAmount))}</div>
+        <div><span>Performance</span>{formatPercent(growthIndividual/(propertyData.sharePrice - loanAmount))} total, {formatPercent(growthIndividual/(propertyData.sharePrice - loanAmount)/exitYears)} per year</div>
 
+    </section>
+    <section>
+        <h3>Projections</h3>
+        <Chart years={exitYears} stats={stats[propertyData.suburb]} property={propertyData}/>
     </section>
     <section>&nbsp;</section>
 </main>
