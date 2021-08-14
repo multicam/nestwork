@@ -256,7 +256,7 @@
         <div class="money"><span>Total Costs</span>{formatMoney(costsIndividualTotal)}</div>
         <div class="money"><span>Growth Incl. Costs</span>{formatMoney(growthIndividualInclCosts)}</div>
         <div><span>Performance</span>{formatPercent(1+growthIndividualInclCosts/(propertyData.sharePrice - loanAmount))} total, {formatPercent((1+growthIndividualInclCosts/(propertyData.sharePrice - loanAmount))/exitYears)} per year</div>
-
+        <div><span>Details</span> = (Investment + Growth)/Investment, for 7 years</div>
     </section>
     <section>
         <h3>Projections</h3>
