@@ -247,6 +247,7 @@
             Equity after {exitYears} years
         </h3>
         <div><span>Growth Av. 10 years</span>{formatPercent(propertyStats.average_10y_annual)}</div>
+        <h4>Property</h4>
         <div class="money"><span>Future Value</span>{formatMoney(exitSale)}</div>
         <div class="money"><span>Property Growth</span>{formatMoney(exitSale - propertyData.purchasePrice)}</div>
         <div class="money"><span>Equity Growth</span>{formatMoney(exitGrowth)}</div>
@@ -255,6 +256,7 @@
         <div class="money"><span>Equity Growth</span>{formatMoney(exitGrowth/propertyData.numberShares)}</div>
         <div class="money"><span>Total Costs</span>{formatMoney(costsIndividualTotal)}</div>
         <div class="money"><span>Growth Incl. Costs</span>{formatMoney(growthIndividualInclCosts)}</div>
+        <h4>Performance</h4>
         <div><span>Performance</span>{formatPercent(1+growthIndividualInclCosts/(propertyData.sharePrice - loanAmount))} total, {formatPercent((1+growthIndividualInclCosts/(propertyData.sharePrice - loanAmount))/exitYears)} per year</div>
         <div><span>Details</span> = (Investment + Growth)/Investment, for 7 years</div>
     </section>
