@@ -150,7 +150,6 @@
 
   $: labelYears = new Array(exitYears).fill(new Date().getFullYear()).map((i, n) => i + n)
   $: costsIndividual = propertyData.costs.map( i => i / propertyData.numberShares )
-  $: loanPayments = new Array(exitYears).map( i => loanPayment )
 
   $: costsIndividualTotal = costsIndividual.map(i => i + loanPayment).reduce((r,i) => { r += i; return r },0)
   $: growthIndividual = exitGrowth/propertyData.numberShares - costsIndividualTotal
@@ -199,14 +198,6 @@
                 <td>&nbsp;</td>
                 {#each labelYears as year }
                     <td>{year}</td>
-                {/each}
-            </tr>
-            <tr>
-                <td>
-                    <strong>Loan Payments</strong>
-                </td>
-                {#each loanPayments as val }
-                    <td class="text-mono">{formatMoney(val)}</td>
                 {/each}
             </tr>
             <tr>
