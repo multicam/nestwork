@@ -138,6 +138,7 @@
   const lvrValues = [ .60, .65, .70, .75, .80, .85, .9 ]
   let selectedLvr = lvrValues[0]
   $: loanAmount = propertyData.sharePrice * selectedLvr
+  $: equityAmount = propertyData.sharePrice - loanAmount
 
   const loanParams = { durationYears: 30, rate: .065 }
   $: loanPayment = calculateLoan(loanAmount,loanParams)
@@ -152,7 +153,7 @@
   $: costsIndividual = propertyData.costs.map( i => i / propertyData.numberShares )
 
   $: costsIndividualTotal = costsIndividual.map(i => i + loanPayment).reduce((r,i) => { r += i; return r },0)
-  $: growthIndividualInclCosts = exitGrowth/propertyData.numberShares * selectedLvr - costsIndividualTotal
+  $: growthIndividualInclCosts = exitGrowth/propertyData.numberShares * (1-selectedLvr) - costsIndividualTotal
 </script>
 
 <main class="calculator-container">
@@ -257,7 +258,7 @@
         <div class="money italic"><span>Equity Growth</span>{formatMoney(exitGrowth/propertyData.numberShares * selectedLvr)}</div>
         <div class="money"><span>Growth Incl. Costs</span>{formatMoney(growthIndividualInclCosts)}</div>
         <h4>Performance</h4>
-        <div><span>Performance</span>{formatPercent(1+growthIndividualInclCosts/(propertyData.sharePrice - loanAmount))} total, {formatPercent((1+growthIndividualInclCosts/(propertyData.sharePrice - loanAmount))/exitYears)} per year</div>
+        <div><span>Performance</span>{formatPercent(1+growthIndividualInclCosts/equityAmount)} total, {formatPercent((1+growthIndividualInclCosts/equityAmount)/exitYears)} per year</div>
         <div><span>Details</span> = (Investment + Growth)/Investment, for 7 years</div>
     </section>
     <section>
