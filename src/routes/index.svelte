@@ -10,5 +10,5 @@
 <Banner />
 
 <section>
-    body starts here.
+    <a href="/calculator">Go to Calculator</a>
 </section>

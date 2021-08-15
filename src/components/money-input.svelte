@@ -3,8 +3,9 @@
   export let value;
 
   function int2str(i) {
-    return i ? i.toLocaleString("en-AU") : 0
+    return i ? i.toLocaleString() : 0
   }
+
   function str2int(s) {
     return parseInt(s.replace(/\,/g, ""));
   }

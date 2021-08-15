@@ -1,3 +1,4 @@
+
 const {log} = console, {pow} = Math
 
 const principal = 400000
@@ -16,3 +17,8 @@ const monthlyPayment = (p, n, i) => p * i * (pow(1 + i, n)) / (pow(1 + i, n) - 1
 log('--- principal',currency(principal))
 log('--- monthly', currency(monthlyPayment(principal,months,rate/12)))
 log('---', new Date().toLocaleDateString(), new Date().toLocaleTimeString())
+
+//
+// import res from './danfo-test.js'
+// res()
+//

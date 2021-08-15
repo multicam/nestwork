@@ -5,12 +5,13 @@
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
-    "calculator": "nodemon scripts/calculator.js",
+    "calculator": "nodemon scripts/calculator/",
     "update": "yarn upgrade-interactive && yarn"
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "^1.0.0-next.24",
     "@sveltejs/kit": "^1.0.0-next.140",
+    "danfojs-node": "^0.2.7",
     "puppeteer": "^10.1.0",
     "sass": "^1.37.2",
     "svelte": "^3.42.1",
@@ -23,6 +24,7 @@
     "@fontsource/fira-mono": "^4.2.2",
     "@fontsource/fira-sans": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
+    "@tensorflow/tfjs-node": "^3.8.0",
     "cookie": "^0.4.1",
     "frappe-charts": "^1.6.2",
     "fusioncharts": "^3.17.0",

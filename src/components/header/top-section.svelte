@@ -7,10 +7,10 @@
         <div class="hamburger-button js-hamburger-menu _light"></div>
     </div>
     <a class="header__logo" aria-label="NestLove" href="/">
-        <Logo/>
+        <Logo />
     </a>
     <div class="header__options _hide-on-mobile">
-        <a class="header-button header-link header-link__sell je-desktop-only" href="#">Yes</a>
+        <a class="header-button header-link header-link__sell je-desktop-only" href="./#">Yes</a>
     </div>
     <div class="header__switchers _only-mobile js-header-switchers">
         <svg viewBox="0 0 24 24">
@@ -72,11 +72,11 @@
     }
 
 
-    @media (max-width: 1199px) {
-      &.active {
-        color: var(--text-color)
-      }
-    }
+    //@media (max-width: 1199px) {
+    //  &.active {
+    //    color: var(--text-color)
+    //  }
+    //}
   }
 
   //.header-button__user__name {
@@ -150,24 +150,24 @@
   //}
 
   .header-button {
-    &:focus, &:active {
-      color: var(--text-color);
-      text-decoration: none
-    }
-
-    &:hover, &:active {
-      opacity: 0.6;
-      color: var(--text-color);
-      text-decoration: none
-    }
-
-    &:visited {
-      text-decoration: none
-    }
-
-    & + & {
-      margin-left: 25px
-    }
+    //&:focus, &:active {
+    //  color: var(--text-color);
+    //  text-decoration: none
+    //}
+    //
+    //&:hover, &:active {
+    //  opacity: 0.6;
+    //  color: var(--text-color);
+    //  text-decoration: none
+    //}
+    //
+    //&:visited {
+    //  text-decoration: none
+    //}
+    //
+    //& + & {
+    //  margin-left: 25px
+    //}
 
     //& + .header-button__login {
     //  margin-left: 15px
@@ -179,27 +179,27 @@
     //  margin-left: 3px
     //}
 
-    @media (min-width: 1200px) {
-      & + & {
-        margin-left: 30px
-      }
+    //@media (min-width: 1200px) {
+    //  //& + & {
+    //  //  margin-left: 30px
+    //  //}
+    //
+    //  //& + .header-button__login {
+    //  //  margin-left: 20px;
+    //  //  position: relative
+    //  //}
+    //}
 
-      //& + .header-button__login {
-      //  margin-left: 20px;
-      //  position: relative
-      //}
-    }
 
-
-    @media (max-width: 1199px) {
-      & + & {
-        margin-left: 0
-      }
-    }
-
-    &.active {
-      color: #000
-    }
+    //@media (max-width: 1199px) {
+    //  & + & {
+    //    margin-left: 0
+    //  }
+    //}
+    //
+    //&.active {
+    //  color: #000
+    //}
   }
 
   //.header-button__explore {
@@ -317,17 +317,17 @@
     }
   }
 
-  .header__options {
-    display: none;
-    height: 100%;
-    margin-left: auto;
-
-    @media (max-width: 1199px) {
-      &._hide-on-mobile {
-        display: none
-      }
-    }
-  }
+  //.header__options {
+  //  display: none;
+  //  height: 100%;
+  //  margin-left: auto;
+  //
+  //  @media (max-width: 1199px) {
+  //    &._hide-on-mobile {
+  //      display: none
+  //    }
+  //  }
+  //}
 
 
   //.header__switchers {

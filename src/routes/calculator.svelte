@@ -1,6 +1,7 @@
 <script>
 
-  import MoneyInput from '../components/input-money.svelte'
+  import MoneyInput from '../components/money-input.svelte'
+  import DisplayLine from '../components/display-line.svelte'
   import Toggle from '../components/toggle.svelte'
   import Chart from '../components/investment-chart-frappe.svelte'
 
@@ -161,14 +162,17 @@
 
     <section>
         <h3>Sample Property</h3>
-        <pre>{stringify(propertyData,null,2)}</pre>
+        <DisplayLine label="Purchase Price" value={propertyData.purchasePrice} money/>
+        <DisplayLine label="Share Price" value={propertyData.sharePrice} money/>
+        <DisplayLine label="Suburb" value={propertyData.suburb} emphasis/>
+<!--        <pre>{stringify(propertyData,null,2)}</pre>-->
     </section>
     <section>
         <h3>Annual Income</h3>
         <div class="input-group">
             <MoneyInput bind:value={yearlyIncome} />
         </div>
-        <div class="money"><span>Tax Position</span>{formatMoney(taxPosition?.amount)}</div>
+        <DisplayLine label="Tax Position" value={taxPosition?.amount} money/>
 <!--    <pre>{stringify(taxAmount,null,2)}</pre>-->
     </section>
     <section>
@@ -185,10 +189,10 @@
     </section>
     <section>
         <h3>Individual Shareholder</h3>
-        <div class="money"><span>Total</span>{formatMoney(propertyData.sharePrice)}</div>
-        <div class="money"><span>Equity</span>{formatMoney(propertyData.sharePrice - loanAmount)}</div>
-        <div class="money"><span>Loan</span>{formatMoney(loanAmount)}</div>
-        <div class="money"><span>Monthly Payment</span>{formatMoney(loanPayment)}</div>
+        <DisplayLine label="Share Price" value={propertyData.sharePrice} money/>
+        <DisplayLine label="Equity" value={propertyData.sharePrice - loanAmount} money/>
+        <DisplayLine label="Loan" value={loanAmount} money/>
+        <DisplayLine label="Monthly Payment" value={loanPayment} money/>
 
 <!--        <h3>Monthly Deducted Interests</h3>-->
 <!--        <div class="money"><span>Mthly</span>{formatMoney(loanPayment)}</div>-->
@@ -244,22 +248,20 @@
         </table>
     </section>
     <section>
-        <h3>
-            Equity after {exitYears} years
-        </h3>
-        <div><span>Growth Av. 10 years</span>{formatPercent(propertyStats.average_10y_annual)}</div>
+        <h3>Equity after {exitYears} years</h3>
+        <DisplayLine label="Growth Av. 10 years" value="{propertyStats.average_10y_annual}" percent />
         <h4>Property</h4>
-        <div class="money"><span>Future Value</span>{formatMoney(exitSale)}</div>
-        <div class="money"><span>Property Growth</span>{formatMoney(exitSale - propertyData.purchasePrice)}</div>
-        <div class="money"><span>Equity Growth</span>{formatMoney(exitGrowth)}</div>
+        <DisplayLine label="Future Value" value="{exitSale}" money />
+        <DisplayLine label="Future Growth" value="{exitSale - propertyData.purchasePrice}" money />
+        <DisplayLine label="Equity Growth" value="{exitGrowth}" money />
         <h4>Shareholder</h4>
-        <div class="money"><span>Investment</span>{formatMoney(propertyData.sharePrice - loanAmount)}</div>
-        <div class="money"><span>Total Costs</span>{formatMoney(costsIndividualTotal)}</div>
-        <div class="money italic"><span>Equity Growth</span>{formatMoney(exitGrowth/propertyData.numberShares * selectedLvr)}</div>
-        <div class="money"><span>Growth Incl. Costs</span>{formatMoney(growthIndividualInclCosts)}</div>
+        <DisplayLine label="Investment" value="{propertyData.sharePrice - loanAmount}" money />
+        <DisplayLine label="Total Costs" value="{costsIndividualTotal}" money />
+        <DisplayLine label="Equity Growth" value="{exitGrowth/propertyData.numberShares * selectedLvr}" money italic />
+        <DisplayLine label="Growth Incl. Costs" value="{growthIndividualInclCosts}" money />
         <h4>Performance</h4>
-        <div><span>Performance</span>{formatPercent(1+growthIndividualInclCosts/equityAmount)} total, {formatPercent((1+growthIndividualInclCosts/equityAmount)/exitYears)} per year</div>
-        <div><span>Details</span> = (Investment + Growth)/Investment, for 7 years</div>
+        <DisplayLine label="Performance" value="{1+growthIndividualInclCosts/equityAmount}" percent />
+        <DisplayLine label="Details" value=" = (Investment + Growth)/Investment, for {exitYears} years" />
     </section>
     <section>
         <h3>Projections</h3>
@@ -270,32 +272,27 @@
 
 <style lang="scss">
 
-    .calculator-container {
+  :global(pre) {
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: keep-all;
+    color: rgba(0,0,0,.6)
+  }
+
+  .calculator-container {
       font-family: var(--font-sans);
       padding: 0 60px ;
+      overflow-x: hidden;
     }
 
     section {
       margin-top: 1em;
     }
 
-    :global(pre) {
-      max-width: 100%;
-      white-space: pre-wrap;
-      word-break: keep-all;
-      color: rgba(0,0,0,.6)
-    }
-
-    span, tr td:first-child {
+    td:first-child {
       margin-right: 1em;
       display: inline-block;
       width: 120px;
-    }
-
-    div>span {
-      color: rgba(0,0,0,.4);
-      font-size: .8em;
-      line-height: 30px;
     }
 
     td {
@@ -308,11 +305,6 @@
 
     tr {
       line-height: 20px
-    }
-
-    .money {
-      color: orangered;
-      line-height: 30px;
     }
 
     .options-container {
