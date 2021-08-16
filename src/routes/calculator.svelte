@@ -97,12 +97,12 @@
 
     costs: [
       95000,
-      35000,
-      15000,
-      15000,
-      15000,
-      15000,
-      15000
+      50000,
+        52000,
+        54000,
+        56000,
+        58000,
+        60000
     ]
   }
 
@@ -260,7 +260,8 @@
         <DisplayLine label="Equity Growth" value="{exitGrowth/propertyData.numberShares * selectedLvr}" money italic />
         <DisplayLine label="Growth Incl. Costs" value="{growthIndividualInclCosts}" money />
         <h4>Performance</h4>
-        <DisplayLine label="Performance" value="{1+growthIndividualInclCosts/equityAmount}" percent />
+        <DisplayLine label="Net Equity Return" value="{1+growthIndividualInclCosts/equityAmount}" percent />
+        <DisplayLine label="-- per annum" value="{(1+growthIndividualInclCosts/equityAmount)/exitYears}" percent />
         <DisplayLine label="Details" value=" = (Investment + Growth)/Investment, for {exitYears} years" />
     </section>
     <section>
