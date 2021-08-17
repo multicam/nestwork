@@ -369,8 +369,8 @@ input:disabled+.checkbox-alt__label {
 }
 
 .button._cyan {
-    background: #006C75;
-    border-color: #006C75;
+    background: darkcyan;
+    border-color: darkcyan;
     color: #FFFFFF
 }
 
@@ -880,7 +880,7 @@ input:disabled+.checkbox-alt__label {
     margin-top: -8px;
     margin-bottom: -8px;
     background: none;
-    color: #006C75
+    color: orangered
 }
 
 .contact-form__agent-info .button._waiting {
@@ -961,14 +961,14 @@ input:disabled+.checkbox-alt__label {
 }
 
 .contact-form__agent__buttons .button {
-    color: #006C75;
+    color: orangered;
     padding: 11px 20px;
     border-radius: 22px !important;
     font-size: 11px !important
 }
 
 .contact-form__agent__buttons .button:hover {
-    border-color: #006C75
+    border-color: orangered
 }
 
 .contact-form__agent__buttons .button:nth-child(2) {
@@ -1147,7 +1147,7 @@ input:disabled+.checkbox-alt__label {
 }
 
 .contact-form__finish.success svg {
-    fill: #006C75;
+    fill: orangered;
     width: 64px;
     height: 64px
 }
@@ -1487,7 +1487,7 @@ input:disabled+.checkbox-alt__label {
 .map__address>a {
     margin-left: -15px;
     margin-bottom: -6px;
-    color: #006C75
+    color: orangered
 }
 
 

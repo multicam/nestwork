@@ -62,7 +62,7 @@
     margin-top: -8px;
     margin-bottom: -8px;
     background: none;
-    color: #006C75
+    color: orangered
   }
 
   & .button._waiting {
@@ -154,14 +154,14 @@
 }
 
 .contact-form__agent__buttons .button {
-  color: #006C75;
+  color: orangered;
   padding: 11px 20px;
   border-radius: 22px !important;
   font-size: 11px !important
 }
 
 .contact-form__agent__buttons .button:hover {
-  border-color: #006C75
+  border-color: orangered
 }
 
 .contact-form__agent__buttons .button:nth-child(2) {
@@ -340,7 +340,7 @@
 }
 
 .contact-form__finish.success svg {
-  fill: #006C75;
+  fill: orangered;
   width: 64px;
   height: 64px
 }

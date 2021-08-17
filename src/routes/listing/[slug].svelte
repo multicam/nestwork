@@ -147,7 +147,7 @@
 
 
                 </button>
-                <a href="#seller-contacts" class="button _cyan _uppercase contact-agent" data-location="Listing page">
+                <a href="#seller-contacts" class="button _uppercase contact-agent" data-location="Listing page">
                     <span>Contact agent</span>
                 </a>
             </div>
@@ -418,7 +418,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
                                           required="">I'm interested in Palace, 14 Bedrooms, For Sale (Cascais, Portugal).</textarea>
                             </div>
                             <div class="contact-form__form-row">
-                                <button type="submit" class="contact-form__submit button _cyan _uppercase"
+                                <button type="submit" class="contact-form__submit button _uppercase"
                                         name="inquiry-submit">
                                     <span>Send message</span>
                                 </button>
@@ -454,7 +454,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
                         <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
                                   d="M0 32C0 14.4 14.4 0 32 0C49.6 0 64 14.4 64 32C64 49.6 49.6 64 32 64C14.4 64 0 49.6 0 32ZM2 32C2 48.5 15.5 62 32 62C48.5 62 62 48.5 62 32C62 15.5 48.5 2 32 2C15.5 2 2 15.5 2 32ZM21.6998 33.3L27.9998 39.5L45.2998 22.3L46.6998 23.7L28.0998 42.3L20.2998 34.7L21.6998 33.3Z"
-                                  fill="#006C75"></path>
+                                  fill="orangered"></path>
                         </svg>
 
                         <div class="contact-form__finish-title">
@@ -1145,7 +1145,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
 
   .page__right-side__badge {
     margin-left: 11px;
-    background: #006C75;
+    background: orangered;
     color: #fff;
     align-items: center;
     padding: 0 6px;

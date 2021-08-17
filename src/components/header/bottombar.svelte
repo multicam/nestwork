@@ -3,7 +3,7 @@
     <div class="listing-page__contact-buttons">
 
         <form id="in-contact-buttons">
-            <a href="/#" class="button js-phone-button listing-page__bottom-button _cyan _uppercase"
+            <a href="/#" class="button js-phone-button listing-page__bottom-button _uppercase"
                data-error="Try again later."
                data-fetch-phone-numbers-url="/listings/11521677/fetch-phones-numbers"
                data-missing-number-error="Currently unavailable" data-location="Listing page">
@@ -21,7 +21,7 @@
         </form>
 
 
-        <a href="#seller-contacts" class="button listing-page__bottom-button _cyan _uppercase">
+        <a href="#seller-contacts" class="button listing-page__bottom-button _uppercase">
             <svg class="je2-icon" width="14" height="14" viewBox="0 0 14 14">
                 <use xlink:href="#message-bubble"></use>
             </svg>
@@ -47,7 +47,7 @@
 
     @media (max-width: 1199px) {
       display: flex;
-      color: #0ebab4;
+      color: orangered;
       box-sizing: border-box
     }
   }

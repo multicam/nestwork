@@ -93,16 +93,16 @@
     stampDuty: 318000,
     landTax: 20020,
 
-    sharePrice: 996000,
+    sharePrice: 896000,
 
     costs: [
       95000,
       50000,
-        52000,
-        54000,
-        56000,
-        58000,
-        60000
+      52000,
+      54000,
+      56000,
+      58000,
+      60000
     ]
   }
 
@@ -136,13 +136,15 @@
   let yearlyIncome = 150000
   $: taxPosition = calculateTaxes(yearlyIncome)
 
-  const lvrValues = [ .60, .65, .70, .75, .80, .85, .9 ]
+  const lvrValues = [ .50, .55, .60, .65, .70, .75, .80, .85, .9 ]
   let selectedLvr = lvrValues[0]
+
   $: loanAmount = propertyData.sharePrice * selectedLvr
   $: equityAmount = propertyData.sharePrice - loanAmount
 
   const loanParams = { durationYears: 30, rate: .065 }
   $: loanPayment = calculateLoan(loanAmount,loanParams)
+  $: loanPaymentYearly = loanPayment * 12
 
   const exitYears = 7
   const propertyStats = stats[propertyData.suburb]
@@ -151,14 +153,22 @@
   $: exitGrowth = exitSale - propertyData.sharePrice * propertyData.numberShares
 
   $: labelYears = new Array(exitYears).fill(new Date().getFullYear()).map((i, n) => i + n)
-  $: costsIndividual = propertyData.costs.map( i => i / propertyData.numberShares )
 
-  $: costsIndividualTotal = costsIndividual.map(i => i + loanPayment).reduce((r,i) => { r += i; return r },0)
-  $: growthIndividualInclCosts = exitGrowth/propertyData.numberShares * (1-selectedLvr) - costsIndividualTotal
+  $: costsIndividual = propertyData.costs.map( i => i / propertyData.numberShares )
+  $: costsIndividualInclLoan = costsIndividual.map(i => i + loanPaymentYearly)
+
+  $: adjustedIncome = costsIndividual.map(i => yearlyIncome - i - loanPaymentYearly)
+  $: adjustedTaxPosition = costsIndividual.map(i => calculateTaxes(yearlyIncome - i - loanPaymentYearly)?.amount)
+  $: taxBenefits = adjustedTaxPosition.map(i => taxPosition.amount - i )
+  $: taxBenefitTotal = taxBenefits.reduce((r,i) => r+i, 0)
+
+  $: costsIndividualTotal = costsIndividual.map(i => i + loanPaymentYearly).reduce((r,i) => r + i,0)
+  $: adjustedGrowth = exitGrowth/propertyData.numberShares * (1-selectedLvr) - costsIndividualTotal + taxBenefitTotal
+
 </script>
 
 <main class="calculator-container">
-    <h1>Live Calculator</h1>
+    <h1>Sample Calculator</h1>
 
     <section>
         <h3>Sample Property</h3>
@@ -217,7 +227,7 @@
                 <td>
                     <strong>Incl. Loan</strong>
                 </td>
-                {#each costsIndividual.map(i => i + loanPayment) as val }
+                {#each costsIndividualInclLoan as val }
                     <td class="text-mono">{formatMoney(val)}</td>
                 {/each}
             </tr>
@@ -225,7 +235,7 @@
                 <td>
                     <strong>Adjusted Income</strong>
                 </td>
-                {#each costsIndividual.map(i => yearlyIncome - i - loanPayment) as val }
+                {#each adjustedIncome as val }
                     <td class="text-mono">{formatMoney(val)}</td>
                 {/each}
             </tr>
@@ -233,7 +243,7 @@
                 <td>
                     <strong>Adjusted Tax Position</strong>
                 </td>
-                {#each costsIndividual.map(i => calculateTaxes(yearlyIncome - i - loanPayment)?.amount) as val }
+                {#each adjustedTaxPosition as val }
                     <td class="text-mono">{formatMoney(val)}</td>
                 {/each}
             </tr>
@@ -241,7 +251,7 @@
                 <td>
                     <strong>Tax Benefit</strong>
                 </td>
-                {#each costsIndividual.map(i => calculateTaxes(yearlyIncome)?.amount - calculateTaxes(yearlyIncome - i - loanPayment).amount) as val }
+                {#each taxBenefits as val }
                     <td class="text-mono italic">{formatMoney(val)}</td>
                 {/each}
             </tr>
@@ -256,12 +266,13 @@
         <DisplayLine label="Equity Growth" value="{exitGrowth}" money />
         <h4>Shareholder</h4>
         <DisplayLine label="Investment" value="{propertyData.sharePrice - loanAmount}" money />
-        <DisplayLine label="Total Costs" value="{costsIndividualTotal}" money />
         <DisplayLine label="Equity Growth" value="{exitGrowth/propertyData.numberShares * selectedLvr}" money italic />
-        <DisplayLine label="Growth Incl. Costs" value="{growthIndividualInclCosts}" money />
+        <DisplayLine label="Total Costs" value="{costsIndividualTotal}" money />
+        <DisplayLine label="Tax Benefits" value="{taxBenefitTotal}" money />
+        <DisplayLine label="Adjusted Growth" value="{adjustedGrowth}" money />
         <h4>Performance</h4>
-        <DisplayLine label="Net Equity Return" value="{1+growthIndividualInclCosts/equityAmount}" percent />
-        <DisplayLine label="-- per annum" value="{(1+growthIndividualInclCosts/equityAmount)/exitYears}" percent />
+        <DisplayLine label="Net Equity Return" value="{1+adjustedGrowth/equityAmount}" percent />
+        <DisplayLine label="-- per annum" value="{(1+adjustedGrowth/equityAmount)/exitYears}" percent />
         <DisplayLine label="Details" value=" = (Investment + Growth)/Investment, for {exitYears} years" />
     </section>
     <section>
@@ -323,4 +334,5 @@
         margin: var(--gap) 0 0 var(--gap);
       }
     }
+
 </style>
