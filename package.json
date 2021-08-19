@@ -1,6 +1,8 @@
 {
   "name": "nestwork",
   "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
@@ -10,25 +12,19 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "^1.0.0-next.24",
-    "@sveltejs/kit": "^1.0.0-next.140",
-    "danfojs-node": "^0.2.7",
-    "puppeteer": "^10.1.0",
+    "@sveltejs/kit": "next",
     "sass": "^1.37.2",
     "svelte": "^3.42.1",
     "svelte-image": "^0.2.9",
     "svelte-preprocess": "^4.7.4"
   },
-  "type": "module",
   "dependencies": {
     "@fontsource/bodoni-moda": "^4.5.0",
     "@fontsource/fira-mono": "^4.2.2",
     "@fontsource/fira-sans": "^4.5.0",
     "@lukeed/uuid": "^2.0.0",
-    "@tensorflow/tfjs-node": "^3.8.0",
-    "cookie": "^0.4.1",
     "frappe-charts": "^1.6.2",
     "fusioncharts": "^3.17.0",
-    "svelte-frappe-charts": "^1.9.0",
-    "svelte-fusioncharts": "^1.0.0"
+    "svelte-frappe-charts": "^1.9.0"
   }
 }

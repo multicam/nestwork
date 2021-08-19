@@ -85,7 +85,7 @@
 
   // -----------------
   const propertyData = {
-    numberShares: 6,
+    numberShares: 8,
     purchasePrice: 5200000,
     postcode: 2107,
     suburb: 'whale-beach',
@@ -93,7 +93,7 @@
     stampDuty: 318000,
     landTax: 20020,
 
-    sharePrice: 896000,
+    sharePrice: 796000,
 
     costs: [
       95000,
@@ -228,7 +228,7 @@
                     <strong>Incl. Loan</strong>
                 </td>
                 {#each costsIndividualInclLoan as val }
-                    <td class="text-mono">{formatMoney(val)}</td>
+                    <td class="text-mono italic">{formatMoney(val)}</td>
                 {/each}
             </tr>
             <tr>
@@ -270,10 +270,6 @@
         <DisplayLine label="Total Costs" value="{costsIndividualTotal}" money />
         <DisplayLine label="Tax Benefits" value="{taxBenefitTotal}" money />
         <DisplayLine label="Adjusted Growth" value="{adjustedGrowth}" money />
-        <h4>Performance</h4>
-        <DisplayLine label="Net Equity Return" value="{1+adjustedGrowth/equityAmount}" percent />
-        <DisplayLine label="-- per annum" value="{(1+adjustedGrowth/equityAmount)/exitYears}" percent />
-        <DisplayLine label="Details" value=" = (Investment + Growth)/Investment, for {exitYears} years" />
     </section>
     <section>
         <h3>Projections</h3>

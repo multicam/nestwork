@@ -19,6 +19,3 @@ log('--- monthly', currency(monthlyPayment(principal,months,rate/12)))
 log('---', new Date().toLocaleDateString(), new Date().toLocaleTimeString())
 
 //
-// import res from './danfo-test.js'
-// res()
-//

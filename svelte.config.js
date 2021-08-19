@@ -1,12 +1,12 @@
 /** @type {import('@sveltejs/kit').Config} */
-import vercel from '@sveltejs/adapter-vercel'
 import image from "svelte-image";
-import sveltePreprocess from 'svelte-preprocess'
+import preprocess from 'svelte-preprocess'
+import vercel from '@sveltejs/adapter-vercel'
 
 const config = {
   preprocess: [
-    image(),
-    sveltePreprocess()
+    preprocess(),
+    image()
   ],
   kit: {
     // hydrate the <div id="svelte"> element in src/app.html
@@ -14,5 +14,4 @@ const config = {
     adapter: vercel()
   }
 };
-
 export default config;
