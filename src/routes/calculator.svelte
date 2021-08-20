@@ -109,11 +109,28 @@
   // -----------------
    const stats = {
     'whale-beach': {
-      median_price: 5928500,
-      median_quarterly: .174,
-      median_3y: .6939,
-      median_5y: .9534,
-      average_10y_annual: .0893
+      postcode: 2107,
+      average_10y_annual: .0849
+    },
+    'portsea': {
+      postcode: 3944,
+      average_10y_annual: .0709
+    },
+    'barwon-heads': {
+      postcode: 3227,
+      average_10y_annual: .0725
+    },
+    'noosa-heads': {
+      postcode: 4567,
+      average_10y_annual: .0837
+    },
+    'mollymook': {
+      postcode: 2539,
+      average_10y_annual: .0622
+    },
+    'yamba': {
+      postcode: 2464,
+      average_10y_annual: .0548
     }
   }
 
@@ -174,7 +191,9 @@
         <h3>Sample Property</h3>
         <DisplayLine label="Purchase Price" value={propertyData.purchasePrice} money/>
         <DisplayLine label="Share Price" value={propertyData.sharePrice} money/>
-        <DisplayLine label="Suburb" value={propertyData.suburb} emphasis/>
+        <DisplayLine label="Setup costs" value={propertyData.sharePrice*propertyData.numberShares - propertyData.purchasePrice} money/>
+        <DisplayLine label="Setup rate" value={(propertyData.sharePrice*propertyData.numberShares - propertyData.purchasePrice)/propertyData.purchasePrice} percent/>
+        <DisplayLine label="Suburb" value={propertyData.suburb+' | '+propertyData.postcode} emphasis/>
 <!--        <pre>{stringify(propertyData,null,2)}</pre>-->
     </section>
     <section>
@@ -206,6 +225,7 @@
 
 <!--        <h3>Monthly Deducted Interests</h3>-->
 <!--        <div class="money"><span>Mthly</span>{formatMoney(loanPayment)}</div>-->
+
     </section>
     <section>
         <table>

@@ -23,22 +23,11 @@
         values: compound(years, property.purchasePrice, stats.average_10y_annual),
       },
 
-      //
-      // {
-      //   name: "5y Median",
-      //   chartType: "line",
-      //   values: compound(years, property.purchasePrice, stats.median_5y),
-      // },
-
     ],
 
     axisOptions: {
       xAxisMode: 'tick' // default: 'span'
     },
-
-    // yMarkers: [{ label: "y Marker", value: 50 }],
-    //
-    // yRegions: [{ label: "y Region", start: -10, end: 10 }, { label: "hey", start: 40, end: 70 }]
 
   }
 
