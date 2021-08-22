@@ -4,6 +4,7 @@
   import DisplayLine from '../components/display-line.svelte'
   import Toggle from '../components/toggle.svelte'
   import Chart from '../components/investment-chart-frappe.svelte'
+  import RateSelector from '../components/rate-selector.svelte'
 
   import {compound} from '$lib/financials'
   import {formatMoney,formatPercent} from '$lib/utils'
@@ -146,22 +147,22 @@
   // Gross Rental Yield Percent	2.63%
 
   const calculateLoan = (amount,params) => {
-    const months = params.durationYears * 12, rate = params.rate/12
+    const months = params.durationYears, rate = params.rate
     return amount*(rate * Math.pow((1 + rate), months))/(Math.pow((1 + rate), months) - 1);
   }
 
   let yearlyIncome = 150000
   $: taxPosition = calculateTaxes(yearlyIncome)
 
-  const lvrValues = [ .50, .55, .60, .65, .70, .75, .80, .85, .9 ]
+  const lvrValues = [ .40, .45, .50, .55, .60, .65, .70, .75, .80 ]
   let selectedLvr = lvrValues[0]
 
   $: loanAmount = propertyData.sharePrice * selectedLvr
   $: equityAmount = propertyData.sharePrice - loanAmount
 
   const loanParams = { durationYears: 30, rate: .065 }
-  $: loanPayment = calculateLoan(loanAmount,loanParams)
-  $: loanPaymentYearly = loanPayment * 12
+  $: loanPaymentYearly = calculateLoan(loanAmount,loanParams)
+  $: loanPayment = loanPaymentYearly / 12
 
   const exitYears = 7
   const propertyStats = stats[propertyData.suburb]
@@ -181,6 +182,8 @@
 
   $: costsIndividualTotal = costsIndividual.map(i => i + loanPaymentYearly).reduce((r,i) => r + i,0)
   $: adjustedGrowth = exitGrowth/propertyData.numberShares * (1-selectedLvr) - costsIndividualTotal + taxBenefitTotal
+
+  let value, min, max
 
 </script>
 
@@ -215,6 +218,10 @@
                 </div>
             {/each}
         </div>
+    </section>
+    <section>
+        <h3>Rate Selector</h3>
+        <RateSelector bind:min bind:max bind:value/>
     </section>
     <section>
         <h3>Individual Shareholder</h3>

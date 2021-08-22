@@ -7,7 +7,7 @@
   }
 
   function str2int(s) {
-    return parseInt(s.replace(/\,/g, ""));
+    return parseInt(s.replace(/,/g, ""));
   }
 
   let internal = int2str(value);
