@@ -5,15 +5,15 @@
   "menu": [
     {
       "title": "About",
-      "url": "#"
+      "url": "/#"
     },
     {
       "title": "Services",
-      "url": "#"
+      "url": "/#"
     },
     {
       "title": "Contact",
-      "url": "#"
+      "url": "/#"
     }
   ]
 }

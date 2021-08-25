@@ -1,10 +1,10 @@
 <script>
 
-  import MoneyInput from '../components/money-input.svelte'
-  import DisplayLine from '../components/display-line.svelte'
-  import Toggle from '../components/toggle.svelte'
-  import Chart from '../components/investment-chart-frappe.svelte'
-  import RateSelector from '../components/rate-selector.svelte'
+  import MoneyInput from '../components/calculator/money-input.svelte'
+  import DisplayLine from '../components/calculator/display-line.svelte'
+  import Toggle from '../components/calculator/toggle.svelte'
+  import Chart from '../components/calculator/investment-chart-frappe.svelte'
+  import RateSelector from '../components/calculator/rate-selector.svelte'
 
   import {compound} from '$lib/financials'
   import {formatMoney,formatPercent} from '$lib/utils'
@@ -315,7 +315,7 @@
   }
 
   .calculator-container {
-      font-family: var(--font-sans);
+      //font-family: var(--font-sans);
       padding: 0 60px ;
       overflow-x: hidden;
     }

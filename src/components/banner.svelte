@@ -186,7 +186,7 @@
     .top-banner__title {
         font-size: 68px;
         line-height: 68px;
-        font-family: var(--font-serif);
+        /*font-family: var(--font-serif);*/
         color: white;
         font-weight: 500
     }
@@ -218,7 +218,7 @@
         color: white;
         font-size: 11px;
         font-weight: 500;
-        font-family: var(--font-sans);
+        /*font-family: var(--font-sans);*/
         text-transform: uppercase;
         line-height: 11px;
         letter-spacing: 1px;

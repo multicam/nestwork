@@ -542,7 +542,7 @@ c2FsZSIsInN1Yl9zZWN0aW9uIjoiUmVhbEVzdGF0ZSJ9
   }
 
   .page__right-side {
-    font-family: var(--font-sans);
+    //font-family: var(--font-sans);
     flex: 1;
     height: 100%;
     display: flex;

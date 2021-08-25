@@ -27,7 +27,7 @@
     justify-content: center;
     position: sticky;
     z-index: 300;
-    font-family: var(--font-sans);
+    //font-family: var(--font-sans);
 
     --bg-color: #151515;
     --bg-color-bottmobar: #fff;
@@ -144,7 +144,7 @@
 
     top: 0;
     position: sticky;
-    font-family: var(--font-sans);
+    //font-family: var(--font-sans);
     transition: transform var(--transition-speed) ease, background-color 250ms ease, color 250ms ease;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid #E0E0E0;

@@ -4,7 +4,7 @@
   background-color: #fff;
   position: relative;
   overflow: hidden;
-  font-family: var(--font-sans);
+  //font-family: var(--font-sans);
 
   @media (min-width: 768px) and (max-width: 1199px) {
       display: flex
@@ -92,7 +92,7 @@
   height: 50px;
   color: #6D6D6D;
   border-radius: 100%;
-  font: normal 500 20px/26px var(--font-sans);
+  //font: normal 500 20px/26px var(--font-sans);
 
   @media (min-width: 768px) and (max-width: 1199px) {
       min-width:80px;
@@ -128,11 +128,11 @@
   align-items: center;
   justify-content: center;
   background-color: #d3d3d3;
-  font: normal 500 20px/26px var(--font-sans)
+  //font: normal 500 20px/26px var(--font-sans)
 }
 
 .contact-form__agent-name {
-  font: normal normal 16px/24px var(--font-sans);
+  //font: normal normal 16px/24px var(--font-sans);
   margin-left: 11px
 }
 
@@ -184,7 +184,7 @@
   padding-top: 8px;
   margin-bottom: -8px;
   color: #E63232;
-  font: normal normal 12px/14px var(--font-sans)
+  //font: normal normal 12px/14px var(--font-sans)
 }
 
 @media (max-width: 767px) {
@@ -268,7 +268,7 @@
   outline: none;
   background: none;
   border: 1px solid #E0E0E0;
-  font: normal normal 14px/20px var(--font-sans);
+  //font: normal normal 14px/20px var(--font-sans);
   z-index: 0
 }
 
@@ -286,7 +286,7 @@
   padding: 0 10px;
   color: #2C2C2C;
   align-items: center;
-  font: normal normal 14px/20px var(--font-sans)
+  //font: normal normal 14px/20px var(--font-sans)
 }
 
 .contact-form__form-row .iti__country-name {
@@ -330,13 +330,13 @@
 .contact-form__finish-title {
   color: #151515;
   margin-top: 32px;
-  font: normal normal 28px/32px var(--font-serif)
+  //font: normal normal 28px/32px var(--font-serif)
 }
 
 .contact-form__finish-text {
   color: #606060;
   margin-top: 15px;
-  font: normal normal 16px/24px var(--font-sans)
+  //font: normal normal 16px/24px var(--font-sans)
 }
 
 .contact-form__finish.success svg {

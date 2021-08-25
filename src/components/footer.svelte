@@ -3,7 +3,7 @@
 </footer>
 <style>
     footer {
-        font-family: var(--font-sans);
+        /*font-family: var(--font-sans);*/
         display: flex;
     }
     small {

@@ -567,7 +567,7 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 3px 14px;
-    font: normal 500 12px/20px var(--font-sans);
+    //font: normal 500 12px/20px var(--font-sans);
     color: white;
     right: 20px;
     bottom: 22px;
@@ -685,7 +685,7 @@
   @media (max-width: 1199px) {
     .listing-gallery__contact-form__title {
       padding-bottom: 30px;
-      font: normal normal 22px/24px var(--font-serif);
+      //font: normal normal 22px/24px var(--font-serif);
       color: #151515
     }
   }
@@ -867,7 +867,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    font: normal normal 16px/24px var(--font-sans)
+    //font: normal normal 16px/24px var(--font-sans)
   }
 
   @media (max-width: 1199px) {
