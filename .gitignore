@@ -7,4 +7,3 @@ node_modules
 yarn.lock
 package-lock.json
 .vercel_build_output/
-static/
