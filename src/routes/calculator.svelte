@@ -184,6 +184,20 @@
   $: adjustedGrowth = exitGrowth/propertyData.numberShares * (1-selectedLvr) - costsIndividualTotal + taxBenefitTotal
 
   let value, min, max
+  let taxPosition;
+  let loanAmount, equityAmount;
+  let labelYears;
+  let costsIndividual;
+  let loanPayment;
+  let costsIndividualInclLoan;
+  let costsIndividualTotal;
+  let adjustedTaxPosition, adjustedIncome;
+  let taxBenefits;
+  let exitSale;
+  let loanPaymentYearly;
+  let exitGrowth;
+  let taxBenefitTotal;
+  let adjustedGrowth;
 
 </script>
 

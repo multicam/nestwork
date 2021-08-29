@@ -1,0 +1,354 @@
+@function Fs($si) {
+  @return clamp( 16px, #{$si}, #{$si})
+}
+@function Fs_alt($si, $so) {
+  @return clamp( #{$so}, #{$si}, #{$si})
+}
+
+:root {
+  --type-space: 1vw;
+}
+
+body {
+  font-family: 'Gotham A', 'Gotham B', sans-serif;
+}
+
+::placeholder {
+  color: var(--grey80);
+}
+
+.lc {
+  text-transform: none;
+}
+
+.uc {
+  text-transform: uppercase;
+}
+
+.sc {
+  font-variant: small-caps;
+}
+
+blockquote {
+  margin: 0;
+  font-size: Fs(1vw);
+  line-height: 1.5;
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1.35;
+}
+
+//h1 {
+//	font-weight: 500;
+//}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+// -- design scale -- width ref: 1920
+
+// h1: 96px -> 5vw
+// h2: 60px -> 3.125vw
+// h3: 48px -> 2.5vw
+// h4: 34px -> 1.8vw
+
+h1 {
+  font-size: Fs_alt(3.125vw, 32px);
+}
+
+h2 {
+  font-size: Fs_alt(2.5vw, 24px);
+}
+
+h3 {
+  font-size: Fs_alt(2.5vw, 24px);
+  line-height: 1.2;
+}
+
+h4 {
+  font-size: Fs_alt(1.56vw, 22px);
+}
+
+h5 {
+  font-size: Fs_alt(1.1vw, 18px);
+}
+
+li, p {
+  line-height: 1.65;
+  font-weight: 300;
+}
+p {
+  font-size: Fs(.833vw);
+}
+
+a {
+  font-weight: 500;
+  transition: all .3s ease;
+  &:hover {
+    color: var(--yellow);
+  }
+}
+
+figcaption {
+  font-size: Fs_alt(.75vw, 14px);
+
+}
+
+.txt-left { text-align: left }
+.txt-right { text-align: right }
+.txt-center { text-align: center }
+
+.txt-desc {
+  p {
+    font-size: Fs(1.56vw);
+  }
+
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.italic {
+  font-style: italic;
+}
+.normal-style {
+  font-style: normal;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.book {
+  font-weight: 300;
+}
+.mo-book {
+  @media (max-width: 1028px) {
+    font-weight: 300;
+  }
+}
+.normal {
+  font-weight: 400;
+}
+.mo-normal {
+  @media (max-width: 1028px) {
+    font-weight: 400!important;
+  }
+}
+.semibold {
+  font-weight: 500;
+}
+
+.bold {
+  font-weight: 700;
+}
+.text-right {
+  text-align: right;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+
+.font-0_66vw {
+  font-size: Fs_alt(0.66vw, 10px) !important;
+}
+.font-0_7vw {
+  font-size: Fs_alt(.7vw, 14px);
+}
+.font-0_77vw {
+  font-size: Fs_alt(.77vw, 15px);
+}
+.font-0_83vw {
+  font-size: Fs(.833vw);
+  p {
+    font-size: Fs(.833vw);
+  }
+}
+.font-1vw {
+  font-size: Fs(1vw);
+}
+
+.font-1_11vw {
+  font-size: Fs_alt(1.11vw, 17px)!important;
+  p {
+    font-size: Fs_alt(1.11vw, 17px)!important;
+  }
+}
+.font-1_25vw {
+  font-size: Fs_alt(1.25vw, 16px)!important;
+  p {
+    font-size: Fs_alt(1.25vw, 16px)!important;
+  }
+}
+.font-1_56vw {
+  font-size: Fs_alt(1.56vw, 18px)!important;
+  p {
+    font-size: Fs_alt(1.56vw, 18px)
+  }
+}
+.font-1_66vw {
+  font-size: Fs_alt(1.66vw, 18px)!important;
+  p {
+    font-size: Fs_alt(1.66vw, 18px)
+  }
+}
+.font-1_77vw {
+  font-size: Fs_alt(1.77vw, 22px) !important;
+}
+.font-2_1vw {
+  font-size: Fs_alt(2.1vw,  21px);
+  p {
+    font-size: Fs_alt(2.1vw, 21px)!important;
+  }
+}
+.font-2_5vw {
+  font-size: Fs_alt(2.5vw,  28px);
+  p {
+    font-size: Fs_alt(2.5vw, 28px)!important;
+  }
+}
+
+.font-3_12vw {
+  font-size: Fs_alt(3.125vw, 32px)!important;
+  p {
+    font-size: Fs_alt(3.125vw, 32px)!important;
+  }
+}
+.font-3_3vw {
+  font-size: Fs_alt(3.33vw, 32px)!important;
+  p {
+    font-size: Fs_alt(3.33vw, 32px)!important;
+  }
+}
+.font-5vw {
+  font-size: Fs_alt(5vw, 40px);
+}
+.font-6vw {
+  font-size: Fs_alt(6vw, 40px);
+}
+.font-6_25vw {
+  font-size: Fs_alt(6.25vw, 40px);
+}
+.font-7_29vw {
+  font-size: Fs_alt(7.29vw, 40px);
+}
+.lh-1 {
+  line-height: 1;
+}
+.lh-1_125 {
+  line-height: 1.125;
+}
+.lh-1_25 {
+  line-height: 1.25;
+}
+.lh-1_4 {
+  line-height: 1.4;
+}
+.lh-1_5 {
+  line-height: 1.5;
+}
+.lh-1_6 {
+  line-height: 1.6;
+}
+.lh-1_75 {
+  line-height: 1.75!important;
+  p {
+    line-height: 1.75;
+  }
+}
+.lh-2 {
+  line-height: 2!important;
+  p {
+    line-height: 2;
+  }
+}
+
+.hover-blue {
+  transition: all .3s ease;
+  &:hover {
+    color: var(--blue);
+  }
+}
+.hover-bg-blue {
+  transition: all .3s ease;
+  cursor: pointer;
+  &:hover {
+    color: var(--white);
+    background: var(--blue);
+  }
+}
+.hover-bg-blue-child {
+  transition: all .3s ease;
+  cursor: pointer;
+  &:hover {
+    * {
+      color: var(--white);
+    }
+    background: var(--blue);
+  }
+}
+.hover-bg-yellow {
+  transition: all .3s ease;
+  &:hover {
+    color: var(--black);
+    background: var(--yellow);
+  }
+}
+.hover-bg-black {
+  transition: all .3s ease;
+  &:hover {
+    color: var(--yellow);
+    background: var(--black);
+  }
+}
+.list-type-none {
+  margin-left: 0;
+  li {
+    list-style-type: none;
+  }
+}
+.align-baseline {
+  vertical-align: baseline;
+}
+.mo-font-0_66vw {
+  @media (max-width: 1028px) {
+    font-size: Fs_alt(0.66vw, 12px);
+  }
+}
+.mo-font-0_77vw {
+  @media (max-width: 1028px) {
+    font-size: Fs_alt(.77vw, 14px);
+  }
+}
+.mo-font-2_5vw {
+  @media (max-width: 1028px) {
+    font-size: Fs_alt(2.5vw, 28px);
+    p {
+      font-size: Fs_alt(2.25vw, 28px) !important;
+    }
+  }
+}
+.mo-font-3_12vw {
+  @media (max-width: 1028px) {
+    font-size: Fs_alt(3.125vw, 32px) !important;
+    p {
+      font-size: Fs_alt(3.125vw, 32px) !important;
+    }
+  }
+}
+.mo-text-left {
+  @media (max-width: 1028px) {
+    text-align: left
+  }
+}
+.mo-text-center {
+  @media (max-width: 1028px) {
+    text-align: center;
+  }
+}

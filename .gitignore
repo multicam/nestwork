@@ -1,9 +1,8 @@
 .idea/
-.DS_Store
 node_modules
 /.svelte-kit
-/.idea
+.vercel_build_output/
 /package
+.DS_Store
 yarn.lock
 package-lock.json
-.vercel_build_output/

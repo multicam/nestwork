@@ -2,6 +2,7 @@
 
 @import 'reset';
 @import 'variables';
+@import 'globals';
 @import 'lazyload';
 @import 'checkbox';
 @import 'input';
@@ -13,7 +14,9 @@
 @import 'table';
 @import 'utilities';
 @import 'grid';
+@import 'flex';
 @import 'spacing';
+@import 'typography';
 
 @import 'contact_form';
 @import 'map';
