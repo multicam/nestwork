@@ -46,3 +46,13 @@ pre {
     outline: 1px solid red !important;
   }
 }
+
+.crop {
+  overflow: hidden;
+}
+
+.cabs {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}

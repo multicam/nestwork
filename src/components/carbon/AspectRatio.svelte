@@ -1,6 +1,6 @@
 <script>
-
     export let ratio = "16x9";
+    export let crop, center
 </script>
 
 <div
@@ -14,6 +14,8 @@
     class:bx--aspect-ratio--3x2="{ratio === '3x2'}"
     class:bx--aspect-ratio--9x16="{ratio === '9x16'}"
     class:bx--aspect-ratio--1x2="{ratio === '1x2'}"
+    class:crop
+    class:center
     {...$$restProps}
 >
     <div class:bx--aspect-ratio--object="{true}">
@@ -22,6 +24,9 @@
 </div>
 
 <style>
+    .crop {
+        overflow: hidden;
+    }
     .bx--aspect-ratio {
         position: relative;
     }
