@@ -1,12 +1,20 @@
-## Init
+# nestwork
+
+## References
+
+https://codepen.io/nicholaspetersen/pen/pgDfi
+https://phptuts.github.io/svelte-mortgage-calc-yt/
+
+## Cookbook
+
+### Init
 ```bash
 npm init svelte@next
-
 ```
 
 > Note: the `@next` is temporary
 
-## Developing
+### Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
@@ -17,7 +25,7 @@ npm run dev
 npm run dev -- --open
 ```
 
-## Building
+### Building
 
 Before creating a production version of your app, install an [adapter](https://kit.svelte.dev/docs#adapters) for your target environment. Then:
 
