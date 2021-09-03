@@ -26,6 +26,6 @@
 
     .inner {
         height: 100vh;
-        outline: 1px solid rgba(255, 0, 0, 0.66);
+        outline: 1px solid rgba(0, 0, 0, 0.06);
     }
 </style>
