@@ -5,11 +5,11 @@
     import Debug from '../components/debug.svelte'
 </script>
 
-<Header />
-
 <main class="app">
 	<slot />
 </main>
+
+<Header />
 
 <Footer/>
 

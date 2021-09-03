@@ -1,5 +1,5 @@
 <script>
-    import Logo from "../icons/logo.svelte"
+    import Logo from "../../icons/logo.svelte"
 </script>
 
 <div class="header__top-section">
@@ -10,7 +10,7 @@
         <Logo />
     </a>
     <div class="header__options _hide-on-mobile">
-        <a class="header-button header-link header-link__sell je-desktop-only" href="./#">Yes</a>
+        <a class="header-button header-link header-link__sell je-desktop-only" href="..#">Yes</a>
     </div>
     <div class="header__switchers _only-mobile js-header-switchers">
         <svg viewBox="0 0 24 24">
