@@ -1,0 +1,1 @@
+<strong>Privacy Policy</strong>
