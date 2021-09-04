@@ -201,7 +201,7 @@
 
 </script>
 
-<main class="calculator-container">
+<main class="calculator-container px">
     <h1>Sample Calculator</h1>
 
     <section>

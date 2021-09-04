@@ -40,7 +40,9 @@
 
 <Headroom duration="200ms" on:pin={pin} on:unpin={unpin}>
     <header class="px">
-        <Logo/>
+        <div>
+            <Logo/>
+        </div>
         <nav>
             {#each links as link}
                 <a href="{link.url}">{link.label}</a>
