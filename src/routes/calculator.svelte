@@ -202,7 +202,6 @@
 </script>
 
 <main class="calculator-container px py">
-    <h1>Sample Calculator</h1>
 
     <section>
         <h3>Sample Property</h3>
