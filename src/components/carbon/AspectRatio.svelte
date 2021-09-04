@@ -27,6 +27,9 @@
     .crop {
         overflow: hidden;
     }
+    .center {
+        justify-self: center
+    }
     .bx--aspect-ratio {
         position: relative;
     }

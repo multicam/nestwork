@@ -27,6 +27,7 @@
     "yootils": "^0.3.1"
   },
   "dependencies": {
+    "svelte-fluid-header": "^0.2.1",
     "svelte-headroom": "^2.2.1"
   }
 }

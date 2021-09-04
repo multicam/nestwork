@@ -36,3 +36,8 @@
         </g>
     </g>
 </svg>
+<style>
+    svg g {
+        left: 0
+    }
+</style>
