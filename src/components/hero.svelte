@@ -10,14 +10,13 @@
             muted
             playsinline
             loop
-        />
+        ></video>
     </AspectRatio>
 </div>
 <style>
     .container {
         overflow: hidden;
     }
-
     video {
         width: 100%;
     }

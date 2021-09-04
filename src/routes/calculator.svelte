@@ -201,7 +201,7 @@
 
 </script>
 
-<main class="calculator-container px">
+<main class="calculator-container px py">
     <h1>Sample Calculator</h1>
 
     <section>
@@ -330,7 +330,6 @@
 
   .calculator-container {
       //font-family: var(--font-sans);
-      padding: 0 60px ;
       overflow-x: hidden;
     }
 

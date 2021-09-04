@@ -31,10 +31,10 @@
     },
   ]
   const pin = e => {
-    log('pin', e)
+    // log('pin', e)
   }
   const unpin = e => {
-    log('unpin', e)
+    // log('unpin', e)
   }
 </script>
 
