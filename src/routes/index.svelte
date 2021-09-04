@@ -5,6 +5,7 @@
     import AspectRatio from "../components/carbon/AspectRatio.svelte";
 </script>
 
+<!--head-->
 <svelte:head>
     <title>NestLove | Own, Relax, Enjoy</title>
 </svelte:head>
