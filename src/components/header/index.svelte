@@ -1,7 +1,6 @@
 <script>
   import Headroom from 'svelte-headroom'
   import Logo from "../icons/logo.svelte"
-
   const {log} = console
 
   const links = [
@@ -40,9 +39,9 @@
 
 <Headroom duration="200ms" on:pin={pin} on:unpin={unpin}>
     <header class="px">
-        <div class="logo">
-            <Logo/>
-        </div>
+        <a class="logo" href="/">
+            <Logo />
+        </a>
         <nav>
             {#each links as link}
                 <a href="{link.url}">{link.label}</a>
@@ -52,6 +51,7 @@
 </Headroom>
 
 <style lang="scss">
+
   header {
     display: flex;
     justify-content: space-between;
@@ -85,4 +85,5 @@
   .logo {
     padding: 1vw 0;
   }
+
 </style>

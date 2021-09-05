@@ -27,8 +27,10 @@ input::-moz-focus-inner {
 }
 
 pre {
+  max-width: 100%;
   white-space: pre-wrap;
-  break-word: break-word;
+  word-break: keep-all;
+  color: rgba(0,0,0,.6)
 }
 
 .v {

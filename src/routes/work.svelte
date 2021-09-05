@@ -44,6 +44,10 @@
 
 <style>
 
+    :global(body) {
+        overflow: hidden;
+    }
+
     section {
         display: flex;
         flex:1;

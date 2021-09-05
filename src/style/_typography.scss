@@ -1,16 +1,13 @@
 @function Fs($si) {
   @return clamp( 16px, #{$si}, #{$si})
 }
+
 @function Fs_alt($si, $so) {
   @return clamp( #{$so}, #{$si}, #{$si})
 }
 
 :root {
   --type-space: 1vw;
-}
-
-body {
-  font-family: 'Gotham A', 'Gotham B', sans-serif;
 }
 
 ::placeholder {
@@ -91,7 +88,6 @@ a {
 
 figcaption {
   font-size: Fs_alt(.75vw, 14px);
-
 }
 
 .txt-left { text-align: left }
