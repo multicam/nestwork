@@ -3,6 +3,7 @@
     import Hero from '../components/hero.svelte'
     import Forms from '../components/forms.svelte'
     import AspectRatio from "../components/carbon/AspectRatio.svelte";
+    import LinkArrow from "../components/bits/LinkArrow.svelte";
 </script>
 
 <!--head-->
@@ -30,17 +31,11 @@
             <h3 class="mo-mt2 mo-mb2 mt2 mb2">
                 Exclusive <strong>Investment Co-ownership.</strong>
             </h3>
-            <a class="font-0_77vw hover-blue decoration-none semibold text-black" href="/#/co-ownership-is-for-me">
-                Is Co-ownership for you, find out more
-                <div>
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img"
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="ml1 mo-ml1"
-                     style="top:0.15em;position:relative;height:1.1em;transform:rotate(-45deg);transform-origin:center center">
-                    <path fill="currentColor"
-                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path>
-                </svg>
-                </div>
-            </a>
+            <LinkArrow
+                class="font-0_77vw hover-blue decoration-none semibold text-black"
+                url="/#/co-ownership-is-for-me"
+                label="Is Co-ownership for you, find out more"
+            />
         </div>
         <div class="col-4 off-1 pt9 pb9  mo-pt7 mo-pb7">
             <div class="font-1_25vw mo-mb2">
@@ -79,15 +74,11 @@
             <h3 class="mo-mt2 mo-mb2 mt2 mb2">
                 Show Up & Relax. <strong>We Take Care of You.</strong>
             </h3>
-            <a class="flex font-0_77vw hover-blue decoration-none semibold text-black" href="/#/nestlovers">
-                How NestLove takes care of NestLovers
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img"
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="ml1 mo-ml1"
-                     style="top:0.15em;position:relative;height:1.1em;transform:rotate(-45deg);transform-origin:center center">
-                    <path fill="currentColor"
-                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path>
-                </svg>
-            </a>
+            <LinkArrow
+                class="font-0_77vw hover-blue decoration-none semibold text-black"
+                label="How NestLove takes care of NestLovers"
+                url="/#/nestlovers"
+            />
         </div>
     </div>
 </section>
@@ -100,10 +91,10 @@
         </h2>
     </div>
     <div class="row px div mo-fw mo-between mb6">
-        {#each ['image9', 'pexels-amanda-klamrowski-1464793', 'dusk_35_elaine'] as house}
+        {#each ['image9', 'pexels-amanda-klamrowski-1464793', 'dusk_35_elaine'] as house, n}
             <div class="col-4 mb1 mo-mb0">
                 <AspectRatio ratio="1x1" crop center>
-                    <img class="cabs" src="/property/{house}.png" alt="house 1">
+                    <img class="cabs" src="/property/{house}.png" alt="house {n}">
                 </AspectRatio>
             </div>
         {/each}
@@ -120,15 +111,11 @@
             <h3 class="mo-mt2 mo-mb2 mt2 mb2">
                 Holidays made easy. <strong>Investment Maximised.</strong>
             </h3>
-            <a class="flex font-0_77vw hover-blue decoration-none semibold text-black" href="/#/nestlovers">
-                Holidaying in your own NestLove
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img"
-                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="ml1 mo-ml1"
-                     style="top:0.15em;position:relative;height:1.1em;transform:rotate(-45deg);transform-origin:center center">
-                    <path fill="currentColor"
-                          d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path>
-                </svg>
-            </a>
+            <LinkArrow
+                class="font-0_77vw hover-blue decoration-none semibold text-black"
+                label="Holidaying in your own NestLove"
+                url="/#/holidaying"
+            />
         </div>
         <div class="col-4 off-1 pt9 pb9  mo-pt7 mo-pb7">
             <div class="font-1_25vw mo-mb2">
@@ -169,16 +156,11 @@
             <div class="font-1_25vw book mo-mb2">
                 <p>Get a better grip on what NestLove is and how it can work for you, learn how to use the calculator
                     too!</p>
-                <a class="flex font-0_77vw hover-blue decoration-none semibold text-black" href="/#/nestlovers">
-                    I'm ready to use the calculator
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img"
-                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="ml1 mo-ml1"
-                         style="top:0.15em;position:relative;height:1.1em;transform:rotate(-45deg);transform-origin:center center">
-                        <path fill="currentColor"
-                              d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"></path>
-                    </svg>
-                </a>
-
+                <LinkArrow
+                    class="font-0_77vw hover-blue decoration-none semibold text-black"
+                    label="I'm ready to use the calculator"
+                    url="/#/calculator"
+                />
             </div>
         </div>
     </div>
@@ -245,7 +227,8 @@
         <div class="col-6 off-3 center"><h3 class="font-3_3vw mo-font-3_12vw">Nestlovers on the <a
                 class="text-black decoration-none hover-blue" href="https://www.instagram.com/thegraphicdesignschool/"
                 target="_blank" rel="noopener">Gram</a></h3>
-            <p class="font-1_25vw">Be the first to know when a new property is released.<br>Share the love with other NestLovers. @nestloveproperties</p>
+            <p class="font-1_25vw">Be the first to know when a new property is released.<br>Share the love with other
+                NestLovers. @nestloveproperties</p>
         </div>
     </div>
     <div class="row px mb4 mo-mb4">
@@ -260,4 +243,4 @@
 </section>
 
 <!--forms-->
-<Forms />
+<Forms/>

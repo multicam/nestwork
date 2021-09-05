@@ -19,7 +19,7 @@
     },
     {
       label: 'Properties',
-      url: '/#'
+      url: '/properties'
     },
     {
       label: 'FAQs',
@@ -40,7 +40,7 @@
 
 <Headroom duration="200ms" on:pin={pin} on:unpin={unpin}>
     <header class="px">
-        <div>
+        <div class="logo">
             <Logo/>
         </div>
         <nav>
@@ -55,7 +55,7 @@
   header {
     display: flex;
     justify-content: space-between;
-    height: 4vw;
+    height: 5vw;
     font-size: 1vw;
     font-weight: 800
   }
@@ -80,5 +80,9 @@
     &:last-of-type {
       padding-right: 0;
     }
+  }
+
+  .logo {
+    padding: 1vw 0;
   }
 </style>
