@@ -320,15 +320,7 @@
 
 <style lang="scss">
 
-  :global(pre) {
-    max-width: 100%;
-    white-space: pre-wrap;
-    word-break: keep-all;
-    color: rgba(0,0,0,.6)
-  }
-
   .calculator-container {
-      //font-family: var(--font-sans);
       overflow-x: hidden;
     }
 
@@ -368,6 +360,10 @@
         display: block;
         margin: var(--gap) 0 0 var(--gap);
       }
+    }
+
+    h3, h4 {
+      margin: 1vw 0 .5vw 0;
     }
 
 </style>

@@ -25,7 +25,7 @@
 <style>
 
     div {
-        line-height: 30px;
+        line-height: 3vw;
     }
 
     span {
@@ -40,7 +40,7 @@
     }
 
     span:first-child {
-	    width: 120px;
+	    width: 16vw;
     }
 
     span:nth-child(2) {

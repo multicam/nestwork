@@ -9,7 +9,7 @@
 
   const {stringify} = JSON, {log} = console
 
-  $: log('---', data)
+  // $: log('---', data)
 
   const yearNow = new Date().getFullYear()
 

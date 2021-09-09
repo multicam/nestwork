@@ -1,7 +1,7 @@
 import {readFileSync,readdirSync,statSync} from 'fs'
 import {join} from 'path'
 
-import test from '../data/test-something.json'
+import test from '../data/properties/test-something.json'
 const {log} = console
 
 const getAllFiles = function(dirPath, arrayOfFiles) {
