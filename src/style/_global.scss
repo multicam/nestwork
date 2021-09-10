@@ -30,22 +30,23 @@ pre {
   max-width: 100%;
   white-space: pre-wrap;
   word-break: keep-all;
-  color: rgba(0,0,0,.6)
+  //color: rgba(0,0,0,.6)
+  color: orangered
 }
 
 .v {
-  outline: 1px solid red !important;
+  outline: 1px solid orangered !important;
 }
 
 .vv {
   > * {
-    outline: 1px solid red !important;
+    outline: 1px solid orangered !important;
   }
 }
 
 .vvv {
   * {
-    outline: 1px solid red !important;
+    outline: 1px solid orangered !important;
   }
 }
 
