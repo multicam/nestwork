@@ -4,8 +4,9 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "svelte-kit dev",
+    "dev": "yarn data && svelte-kit dev",
     "build": "svelte-kit build",
+    "data": "sh src/data/y2j.sh",
     "preview": "svelte-kit preview",
     "calculator": "nodemon scripts/calculator/",
     "update": "yarn upgrade-interactive && yarn",

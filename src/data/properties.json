@@ -1,0 +1,76 @@
+[
+  {
+    "slug": "bungan-beach",
+    "shares": {
+      "total": 8,
+      "left": 2
+    },
+    "summary": "5 Beds, 4 Baths + Self Contained Granny",
+    "address": "Bungan Beach, Sydney",
+    "thumb": "image9",
+    "beds": 5,
+    "pool": 1
+  },
+  {
+    "slug": "clareville-beach",
+    "shares": {
+      "total": 8,
+      "left": 3
+    },
+    "summary": "4 Beds, 4 Baths + Jetty",
+    "address": "Clareville Beach, Sydney",
+    "thumb": "pexels-amanda-klamrowski-1464793",
+    "beds": 4,
+    "pool": 1,
+    "wharf": 1
+  },
+  {
+    "slug": "avalon-beach-elaine",
+    "shares": {
+      "total": 8,
+      "left": 1
+    },
+    "summary": "6 Beds, 4 Baths + 2 Kitchens",
+    "address": "Avalon Beach, Sydney",
+    "thumb": "dusk_35_elaine",
+    "beds": 6,
+    "pool": 1
+  },
+  {
+    "slug": "whale-beach",
+    "shares": {
+      "total": 8,
+      "left": 2
+    },
+    "summary": "5 Beds, 4 Baths + Self Contained Granny",
+    "address": "Whale Beach, Sydney",
+    "thumb": "james1",
+    "beds": 5,
+    "pool": 1
+  },
+  {
+    "slug": "palmbeach",
+    "shares": {
+      "total": 8,
+      "left": 4
+    },
+    "summary": "4 Beds, 3 Baths",
+    "address": "Palm Beach, Sydney",
+    "thumb": "james3",
+    "beds": 4,
+    "pool": 1
+  },
+  {
+    "slug": "avalon-beach-2",
+    "shares": {
+      "total": 8,
+      "left": 4
+    },
+    "summary": "6 Beds, 4 Baths + 2 Kitchens",
+    "address": "Avalon Beach, Sydney",
+    "thumb": "james2",
+    "beds": 6,
+    "pool": 1,
+    "wharf": 1
+  }
+]

@@ -6,6 +6,7 @@
   import IconBeds from '../components/icons/beds.svelte'
   import IconPool from '../components/icons/pool.svelte'
   import IconWharf from '../components/icons/wharf.svelte'
+  const {log} = console, {stringify} = JSON
 
   const properties = [
     {
@@ -59,6 +60,8 @@
       wharf: 1
     },
   ]
+
+  log(stringify(properties))
 </script>
 
 <!--head-->
