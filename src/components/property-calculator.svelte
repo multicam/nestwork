@@ -163,9 +163,9 @@
         </div>
     </div>
     <div class="pb4" />
-    <div class="px">
-        <pre>{stringify(property.data,null,2)}</pre>
-    </div>
+<!--    <div class="px">-->
+<!--        <pre>{stringify(property.data,null,2)}</pre>-->
+<!--    </div>-->
 </section>
 
 

@@ -8,7 +8,7 @@
 </script>
 <div class="flex">
     {#each lvrPresets as lvr }
-        <div style="padding:.25vw">
+        <div style="padding:.5vw">
             <Toggle class='col' type='radio' bind:group={selectedLvr} value={lvr} let:checked={checked}>
                 <span class:active={checked}>{formatPercentRound(lvr)}</span>
             </Toggle>
