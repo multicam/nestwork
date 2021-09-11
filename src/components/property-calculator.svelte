@@ -48,10 +48,10 @@
 </style>
 <section>
     <div class="mt4 mb4 px row">
-        <h2 class="col-12 normal mb0 text-center font-6vw">
+        <h2 class="col-12 normal px mb0 text-center font-6vw mo-text-left">
             Ready to Invest
         </h2>
-        <p class="col-12 text-center">
+        <p class="col-12 px text-center mo-text-left">
             If you are ready to take the next step to becoming a NestLover. <br>
             Let’s get you started….
         </p>
@@ -107,7 +107,7 @@
 
             </div>
         </div>
-        <div class="row px mt4">
+        <div class="row px mt4 mo-hidden">
             <div class="col-12">
 
                 <table>

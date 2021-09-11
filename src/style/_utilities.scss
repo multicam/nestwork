@@ -30,3 +30,9 @@
 .italic {
   font-style: italic;
  }
+
+@media (max-width: 1028px) {
+  .mo-hidden {
+    display: none!important;
+  }
+}
