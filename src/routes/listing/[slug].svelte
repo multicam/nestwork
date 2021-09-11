@@ -30,7 +30,7 @@
     <div class="page__left-side">
         <ListingGallery/>
     </div>
-z
+
     <div class="page__right-side">
 
         <div class="page__right-side__container">
