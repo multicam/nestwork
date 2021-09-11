@@ -1,5 +1,14 @@
 <script>
     export let property
+    const {log} = console
+
+    const goPrevious = () => {
+        log('go previous')
+    }
+
+    const goNext = () => {
+        log('go next')
+    }
 </script>
 
 <div class="listing-gallery">
@@ -22,12 +31,12 @@
                 </svg>
 
             </button>
-            <button class="listing-gallery__arrow _left">
+            <button class="listing-gallery__arrow _left" on:click={goPrevious}>
                 <svg class="icon" width="8" height="12" viewBox="0 0 8 12">
                     <use xlink:href="#arrow-left"></use>
                 </svg>
             </button>
-            <button class="listing-gallery__arrow _right">
+            <button class="listing-gallery__arrow _right" on:click={goNext}>
                 <svg class="icon" width="8" height="12" viewBox="0 0 8 12">
                     <use xlink:href="#arrow-right"></use>
                 </svg>
@@ -44,7 +53,7 @@
         </div>
     </div>
 
-    <div class="listing-gallery__images">
+    <div class="listing-gallery__images px">
 
         {#each property.images as image, n}
             <div class="listing-gallery__image" class:_active={n === 0}>
@@ -64,10 +73,11 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    --images-count: 5;
+
+    --images-count: 4;
     --transition-duration: 300ms;
-    --previews-height: 110px;
-    --previews-offset: 10px;
+    --previews-height: calc((100vw / var(--images-count) * .6 - var(--previews-offset)));
+    --previews-offset: 1vw;
     --main-image-height: calc(100% - (var(--previews-height) + var(--previews-offset)))
   }
 
@@ -78,8 +88,8 @@
     max-height: var(--main-image-height);
 
     @media (max-width: 1199px) {
-      height: calc(100vw * 0.69);
-      max-height: calc(100vh * 0.6)
+      height: calc(100vw * 0.5);
+      max-height: calc(100vh * 0.5)
     }
   }
 
@@ -110,13 +120,13 @@
       object-fit: cover
     }
 
-    &:nth-child(2) {
-      padding-left: 1px
-    }
-
-    &._active {
-      padding-left: 0
-    }
+    //&:nth-child(2) {
+    //  padding-left: 1px
+    //}
+    //
+    //&._active {
+    //  padding-left: 0
+    //}
 
     &._no-background {
       background: none
@@ -292,46 +302,14 @@
     height: 40px
   }
 
-  @media (min-width: 1200px) {
     .listing-gallery__image._active > img {
       transition: opacity 300ms linear;
       opacity: 0.3
     }
-  }
 
-  @media (min-width: 1200px) {
-    .listing-gallery__contact-form {
-      width: 800px
-    }
-  }
 
-  @media (max-width: 1199px) {
-    .listing-gallery__contact-form {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 6px 20px 28px
-    }
-  }
 
-  @media (max-width: 767px) {
-    .listing-gallery__contact-form {
-      padding-top: 14px
-    }
-  }
 
-  @media (min-width: 1200px) {
-    .listing-gallery__contact-form__title {
-      display: none
-    }
-  }
-
-  @media (max-width: 1199px) {
-    .listing-gallery__contact-form__title {
-      padding-bottom: 30px;
-      //font: normal normal 22px/24px var(--font-serif);
-      color: #151515
-    }
-  }
 
   .listing-gallery._fullscreen {
     --images-count: 11;
