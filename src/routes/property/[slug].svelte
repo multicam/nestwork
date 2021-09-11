@@ -1,6 +1,7 @@
 <script>
     import { page,session } from '$app/stores';
     import ListingGallery from '../../components/listing-gallery.svelte'
+    import PropertyCalculator from '../../components/property-calculator.svelte'
     import LinkArrow from "../../components/bits/LinkArrow.svelte";
 
     const {stringify} = JSON, {log} = console
@@ -13,7 +14,7 @@
 
 <section>
     <div class="row pt px mo-flex-col">
-        <div class="col-4 off-1 pt9 pb9 mo-pt7 mo-pb7">
+        <div class="col-4 off-1 pt9 mo-pt7">
             <h5 class="book uc mo-font-0_77vw mo-normal">
                 {property.location}
             </h5>
@@ -22,11 +23,11 @@
             </h3>
             <LinkArrow
                     class="font-0_77vw hover-blue decoration-none semibold text-black"
-                    url="/#/co-ownership-is-for-me"
+                    url="#/request-more-info"
                     label="Request More Info"
             />
         </div>
-        <div class="col-4 off-1 pt9 pb9  mo-pt7 mo-pb7">
+        <div class="col-4 off-1 pt9 mo-pt7">
             <div class="font-1_25vw mo-mb2">
                 <p>
                     <strong>Location</strong><br>
@@ -44,6 +45,8 @@
         </div>
     </div>
 </section>
+
+<PropertyCalculator property={property} />
 
 <!--<section class="px">-->
 

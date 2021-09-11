@@ -86,9 +86,9 @@
 
   // -----------------
   const propertyData = {
+    postcode: 2107,
     numberShares: 8,
     purchasePrice: 5200000,
-    postcode: 2107,
     suburb: 'whale-beach',
 
     stampDuty: 318000,

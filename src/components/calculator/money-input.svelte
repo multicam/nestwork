@@ -17,6 +17,7 @@
     internal = int2str(value);
   }
 
+  refresh()
 </script>
 
-<input class='input' type="text" bind:value={ internal } on:input={ refresh }>
+<input  {...$$restProps} class='input' type="text" bind:value={ internal } on:input={ refresh }>
