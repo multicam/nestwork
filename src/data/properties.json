@@ -6,7 +6,8 @@
       "left": 2
     },
     "summary": "5 Beds, 4 Baths + Self Contained Granny",
-    "address": "Bungan Beach, Sydney",
+    "location": "Bungan Beach, Sydney",
+    "address": "Bungan Beach, NSW 2106, Australia",
     "thumb": "image9",
     "beds": 5,
     "pool": 1,
@@ -28,7 +29,17 @@
       "image15",
       "image16",
       "floorplan1"
-    ]
+    ],
+    "calc": {
+      "price": 5000000,
+      "share": 890000
+    },
+    "agent": {
+      "name": "Agent Name",
+      "contact": {
+        "phone": "+614 555 123 456"
+      }
+    }
   },
   {
     "slug": "clareville-beach",
@@ -37,7 +48,8 @@
       "left": 3
     },
     "summary": "4 Beds, 4 Baths + Jetty",
-    "address": "Clareville Beach, Sydney",
+    "location": "Clareville Beach, Sydney",
+    "address": "Clareville Beach, NSW 2107, Australia",
     "thumb": "pexels-amanda-klamrowski-1464793",
     "beds": 4,
     "pool": 1,
@@ -50,7 +62,8 @@
       "left": 1
     },
     "summary": "6 Beds, 4 Baths + 2 Kitchens",
-    "address": "Avalon Beach, Sydney",
+    "location": "Avalon Beach, Sydney",
+    "address": "Avalon Beach, NSW 2107, Australia",
     "thumb": "dusk_35_elaine",
     "beds": 6,
     "pool": 1
@@ -62,7 +75,8 @@
       "left": 2
     },
     "summary": "5 Beds, 4 Baths + Self Contained Granny",
-    "address": "Whale Beach, Sydney",
+    "location": "Whale Beach, Sydney",
+    "address": "Whale Beach, NSW 2106, Australia",
     "thumb": "james1",
     "beds": 5,
     "pool": 1
@@ -74,7 +88,8 @@
       "left": 4
     },
     "summary": "4 Beds, 3 Baths",
-    "address": "Palm Beach, Sydney",
+    "location": "Palm Beach, Sydney",
+    "address": "Palm Beach, 2107 NSW, Australia",
     "thumb": "james3",
     "beds": 4,
     "pool": 1
@@ -86,7 +101,8 @@
       "left": 4
     },
     "summary": "6 Beds, 4 Baths + 2 Kitchens",
-    "address": "Avalon Beach, Sydney",
+    "location": "Avalon Beach, Sydney",
+    "address": "Avalon Beach, NSW 2107, Australia",
     "thumb": "james2",
     "beds": 6,
     "pool": 1,
