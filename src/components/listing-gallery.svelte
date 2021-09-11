@@ -78,16 +78,19 @@
         "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/29bc27de-50d2-495d-a3d9-ca20cc88d4b6/je/355x210xc.jpg",
         "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/662ddf1f-5792-4b38-af27-5160e4d1f434/je/355x210xc.jpg"
     ]
+    export let property
 </script>
+
 <div class="listing-gallery">
     <div class="listing-gallery__current-image">
         <div class="listing-gallery__current-image-scroll ">
-            {#each images as image,n }
+
+            {#each property.images as image,n }
                 <div class="listing-gallery__current-image-item" class:_active={n === 0}>
                     <img alt="{title} {n+1}" class="lazy-load _loaded" importance="high"
-                         data-src="{image}"
+                         data-src="/property/{property.slug}/{image}.jpg"
                          data-type="gallery" data-watermark=""
-                         src="{image}">
+                         src="/property/{property.slug}/{image}.jpg" >
                 </div>
             {/each}
         </div>
@@ -122,11 +125,11 @@
 
     <div class="listing-gallery__images">
 
-        {#each thumbnails as image, n}
+        {#each property.images as image, n}
             <div class="listing-gallery__image" class:_active={n === 0}>
                 <img class="lazy-load _loaded" alt="House {n+1}"
-                     data-src="{image}"
-                     src="{image}">
+                     data-src="/property/{property.slug}/{image}-thumb.jpg"
+                     src="/property/{property.slug}/{image}-thumb.jpg" >
             </div>
         {/each}
 
@@ -224,7 +227,7 @@
     width: 40px;
     height: 40px;
     padding: 8px;
-    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -258,7 +261,7 @@
     background-color: #fff;
     position: absolute;
     transform: translateY(-50%);
-    box-shadow: 0px 0px 15px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 
     &._left {
@@ -557,7 +560,7 @@
       padding: 0;
       flex-direction: row-reverse;
       justify-content: space-between;
-      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       height: 48px
     }
   }
