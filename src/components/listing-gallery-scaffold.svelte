@@ -79,11 +79,11 @@
         "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/662ddf1f-5792-4b38-af27-5160e4d1f434/je/355x210xc.jpg"
     ]
 </script>
-<div class="listing-gallery">
+<div id="main-gallery" class="listing-gallery">
     <div class="listing-gallery__current-image">
         <div class="listing-gallery__current-image-scroll ">
             {#each images as image,n }
-                <div class="listing-gallery__current-image-item" class:_active={n === 0}>
+                <div class="listing-gallery__current-image-item _active">
                     <img alt="{title} {n+1}" class="lazy-load _loaded" importance="high"
                          data-src="{image}"
                          data-type="gallery" data-watermark=""
@@ -123,8 +123,8 @@
     <div class="listing-gallery__images">
 
         {#each thumbnails as image, n}
-            <div class="listing-gallery__image" class:_active={n === 0}>
-                <img class="lazy-load _loaded" alt="House {n+1}"
+            <div class="listing-gallery__image _active">
+                <img class="lazy-load _loaded" alt="House"
                      data-src="{image}"
                      src="{image}">
             </div>

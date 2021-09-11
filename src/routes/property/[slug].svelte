@@ -1,11 +1,13 @@
 <script>
+    import { getStores, navigating, page, session } from '$app/stores';
+    import ListingGallery from '../../components/listing-gallery.svelte'
     const {stringify} = JSON
-    export async function load({page, fetch, session, context}) {
-      log(page)
-      return {
-        status: 200,
-        error: new Error(`Can't even...`)
-      };
-    }
 </script>
-<pre>coucou</pre>
+
+<ListingGallery />
+
+<section class="px pb">
+    <pre>{stringify(page)}</pre>
+    <pre>{stringify(session)}</pre>
+</section>
+

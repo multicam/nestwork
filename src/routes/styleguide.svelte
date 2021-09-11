@@ -1,5 +1,5 @@
 <script>
-    import Collection from '../components/icons/collection.svelte'
+    import CollectionRecup from '../components/icons/collection-recup.svelte'
     import {onMount} from "svelte";
     const {log} = console
 
@@ -9,7 +9,7 @@
 
 </script>
 
-<Collection />
+<CollectionRecup />
 
 <section>
 
