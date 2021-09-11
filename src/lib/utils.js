@@ -8,3 +8,4 @@ export const formatMoney = val => {
   }).format(val)
 }
 export const formatPercent = val => `${(val * 100.).toFixed(2)}%`
+export const formatPercentRound = val => `${(val * 100.).toFixed(0)}%`

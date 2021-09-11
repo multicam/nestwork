@@ -2,13 +2,16 @@
     export let property
     const {log} = console
 
+    $: current = 0
+
     const goPrevious = () => {
-        log('go previous')
+        current = (current - 1) % property.images.length
     }
 
     const goNext = () => {
-        log('go next')
+        current = (current + 1) % property.images.length
     }
+
 </script>
 
 <div class="listing-gallery">
@@ -16,7 +19,7 @@
         <div class="listing-gallery__current-image-scroll ">
 
             {#each property.images as image,n }
-                <div class="listing-gallery__current-image-item" class:_active={n === 0}>
+                <div class="listing-gallery__current-image-item" class:_active={n === current}>
                     <img alt="{property.address} {n+1}" class="lazy-load _loaded" importance="high"
                          data-src="/property/{property.slug}/{image}.jpg"
                          data-type="gallery" data-watermark=""
@@ -56,7 +59,7 @@
     <div class="listing-gallery__images px">
 
         {#each property.images as image, n}
-            <div class="listing-gallery__image" class:_active={n === 0}>
+            <div class="listing-gallery__image" class:_active={n === current}>
                 <img class="lazy-load _loaded" alt="House {n+1}"
                      data-src="/property/{property.slug}/{image}-thumb.jpg"
                      src="/property/{property.slug}/{image}-thumb.jpg" >

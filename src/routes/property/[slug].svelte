@@ -37,7 +37,7 @@
                     <strong>Shares</strong><br>
                     {property.shares.left} Left, {property.shares.total - property.shares.left} Sold<br>
                     <strong>Price</strong><br>
-                    {formatMoney(property.calc.share)} <br>
+                    {formatMoney(property.data.share)} <br>
                     <strong>Agent</strong><br>
                     {property.agent.name} {property.agent.contact.phone} <br>
                 </p>

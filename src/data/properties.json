@@ -2,7 +2,7 @@
   {
     "slug": "bungan-beach",
     "shares": {
-      "total": 8,
+      "total": 6,
       "left": 2
     },
     "summary": "5 Beds, 4 Baths + Self Contained Granny",
@@ -30,9 +30,27 @@
       "image16",
       "floorplan1"
     ],
-    "calc": {
-      "price": 5000000,
-      "share": 890000
+    "stats": {
+      "average_10y_annual": 0.0849
+    },
+    "data": {
+      "purchasePrice": 5200000,
+      "numberShares": 6,
+      "sharePrice": 796000,
+      "share": [
+        890000
+      ],
+      "stampDuty": 318000,
+      "landTax": 20020,
+      "costs": [
+        95000,
+        50000,
+        52000,
+        54000,
+        56000,
+        58000,
+        60000
+      ]
     },
     "agent": {
       "name": "Agent Name",

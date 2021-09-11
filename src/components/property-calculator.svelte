@@ -1,9 +1,51 @@
 <script>
+    import {calculateLoan, calculateTaxes, compound} from "$lib/financials";
+    import {formatMoney} from "$lib/utils";
+
     export let property
     const {log} = console, {stringify} = JSON
 
     import MoneyInput from './calculator/money-input.svelte'
+    import LvrInput from './calculator/lvr-input.svelte'
+
+    let exitYears = 7
+
+    let yearlyIncome = 150000
+    $: taxPosition = calculateTaxes(yearlyIncome)
+
+    let selectedLvr = .4
+    $: loanAmount = property.data.sharePrice * selectedLvr
+    $: equityAmount = property.data.sharePrice - loanAmount
+
+    $: loanParams = { durationYears: 30, rate: .065 }
+    $: loanPaymentYearly = calculateLoan(loanAmount,loanParams)
+    $: loanPaymentMonthly = loanPaymentYearly / 12
+
+    $: exitSale = compound(exitYears,property.data.purchasePrice,property.stats.average_10y_annual).pop()
+    $: exitGrowth = exitSale - property.data.sharePrice * property.data.numberShares
+    $: equityGrowth = exitGrowth /  property.data.numberShares * (1-selectedLvr)
+
+    $: labelYears = new Array(exitYears).fill(new Date().getFullYear()).map((i, n) => i + n)
+
+    $: costsIndividual = property.data.costs.map( i => i / property.data.numberShares )
+    $: costsIndividualInclLoan = costsIndividual.map(i => i + loanPaymentYearly)
+
+    $: adjustedIncome = costsIndividual.map(i => yearlyIncome - i - loanPaymentYearly)
+    $: adjustedTaxPosition = costsIndividual.map(i => calculateTaxes(yearlyIncome - i - loanPaymentYearly)?.amount)
+    $: taxBenefits = adjustedTaxPosition.map(i => taxPosition.amount - i )
+    $: taxBenefitTotal = taxBenefits.reduce((r,i) => r+i, 0)
+
+    $: costsIndividualTotal = costsIndividual.map(i => i + loanPaymentYearly).reduce((r,i) => r + i,0)
+    $: adjustedGrowth = exitGrowth/property.data.numberShares * (1-selectedLvr) - costsIndividualTotal + taxBenefitTotal
+
 </script>
+<style>
+    .money {
+        color: #8a082d;
+        font-weight: 500;
+        font-size: 1.5vw;
+    }
+</style>
 <section>
     <div class="mt4 mb4 px row">
         <h2 class="col-12 normal mb0 text-center font-6vw">
@@ -16,31 +58,113 @@
     </div>
     <div class="row  px mo-flex-col">
         <div class="col-4 off-1 pt9 mo-pt7 ">
-            <h3 class="mb1">Yealy Income</h3>
-            <MoneyInput class="pt7" value="130000"/>
-<!--            <h5 class="book uc mo-font-0_77vw mo-normal">-->
-<!--                Own-->
-<!--            </h5>-->
-<!--            <h3 class="mo-mt2 mo-mb2 mt2 mb2">-->
-<!--                Exclusive <strong>Investment Co-ownership.</strong>-->
-<!--            </h3>-->
+            <div class="font-1_25vw mo-mb2">
+
+                <h3 class="mb1">Investor</h3>
+                <h4 class="mt1 mb1">Yearly Income</h4>
+                <MoneyInput bind:value={yearlyIncome} />
+
+                <h4 class="mt2 mb1">Tax Position per Year</h4>
+                <div class="money">{formatMoney(taxPosition.amount)}</div>
+
+                <h4 class="mt2 mb1">Growth</h4>
+
+                <h5 class="mt1 mb1">Equity Growth</h5>
+                <div class="money">{formatMoney(equityGrowth)}</div>
+
+                <h5 class="mt1 mb1">Tax Benefits</h5>
+                <div class="money">{formatMoney(taxBenefitTotal)}</div>
+
+                <h5 class="mt1 mb1">Total Costs</h5>
+                <div class="money">{formatMoney(costsIndividualTotal)}</div>
+
+                <h5 class="mt1 mb1">Adjusted Growth</h5>
+                <div class="money">{formatMoney(adjustedGrowth)}</div>
+            </div>
         </div>
         <div class="col-4 off-1 pt9 mo-pt7 ">
             <div class="font-1_25vw mo-mb2">
-<!--                <p>-->
-<!--                    Our target areas for property acquisition are prestige holiday locations around Australia. We create-->
-<!--                    specific purpose Trusts for each home with 5 or 6 shares. We then vet and fund our co-owners-->
-<!--                    (NestLovers) into each shareholding. NestLovers have the advantage of diversifying their property-->
-<!--                    holdings into the most sought after areas in Australia. <strong>You own, we handle all the details.-->
-<!--                    So that you together with your co-owners will enjoy 100% ownership of the home.</strong> NestLove-->
-<!--                    does not retain any shares.-->
-<!--                </p>-->
+                <h3 class="mb1">Investment</h3>
+
+                <h4 class="mt1 mb1">Share Price</h4>
+                <div class="money">{formatMoney(property.data.sharePrice)}</div>
+
+                <h4 class="mt2 mb1">Loan & Equity</h4>
+
+                <h5 class="mt1 mb1">LVR</h5>
+                <LvrInput bind:selectedLvr />
+
+                <h5 class="mt1 mb1">Loan Amount</h5>
+                <div class="money">{formatMoney(loanAmount)}</div>
+
+                <h5 class="mt1 mb1">Equity</h5>
+                <div class="money">{formatMoney(equityAmount)}</div>
+
+                <h4 class="mt2 mb1">Growth after {exitYears} years</h4>
+
+                <h5 class="mt1 mb1">Property Value</h5>
+                <div class="money">{formatMoney(exitSale)}</div>
+
+            </div>
+        </div>
+        <div class="row px mt4">
+            <div class="col-12">
+
+                <table>
+                    <tr class="bold text-right">
+                        <td>&nbsp;</td>
+                        {#each labelYears as year }
+                            <td>{year}</td>
+                        {/each}
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Costs</strong>
+                        </td>
+                        {#each costsIndividual as val }
+                            <td class="text-mono text-right">{formatMoney(val)}</td>
+                        {/each}
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Incl. Loan</strong>
+                        </td>
+                        {#each costsIndividualInclLoan as val }
+                            <td class="text-mono text-right italic" style="color: orangered">{formatMoney(val)}</td>
+                        {/each}
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Adjusted Income</strong>
+                        </td>
+                        {#each adjustedIncome as val }
+                            <td class="text-mono text-right ">{formatMoney(val)}</td>
+                        {/each}
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Adjusted Tax Position</strong>
+                        </td>
+                        {#each adjustedTaxPosition as val }
+                            <td class="text-mono text-right ">{formatMoney(val)}</td>
+                        {/each}
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Tax Benefit</strong>
+                        </td>
+                        {#each taxBenefits as val }
+                            <td class="text-mono text-right italic" style="color: orangered">{formatMoney(val)}</td>
+                        {/each}
+                    </tr>
+                </table>
+
             </div>
         </div>
     </div>
     <div class="pb4" />
     <div class="px">
-        <pre>{stringify(property.calc,null,2)}</pre>
+        <pre>{stringify(property.data,null,2)}</pre>
     </div>
 </section>
 

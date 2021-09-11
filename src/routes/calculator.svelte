@@ -8,6 +8,7 @@
 
   import {compound} from '$lib/financials'
   import {formatMoney,formatPercent} from '$lib/utils'
+  import {calculateTaxes,calculateLoan} from "$lib/financials";
 
   const {log} = console, {stringify} = JSON
 
@@ -25,76 +26,16 @@
   // Funny: A -> 318,000 | B -> 300,952
 
   // -----------------
-  const taxBracket = [
-    {
-      max: 18200,
-      bt: 0,
-      rn: 0
-    },
-    {
-      min: 18201,
-      max: 45000,
-      bt: 0,
-      rn: .19
-    },
-    {
-      min: 45001,
-      max: 120000,
-      bt: 5092,
-      rn: .325
-    },
-    {
-      min: 120001,
-      max: 180000,
-      bt: 29467,
-      rn: .37
-    },
-    {
-      min: 180001,
-      bt: 51667,
-      rn: .45
-    }
-  ]
-
-  const calculateTaxes = val => {
-    if(!val) return {}
-
-    const last = taxBracket.slice(-1)[0]
-    const first = taxBracket[0]
-
-    if( val < first.max ) {
-      return {
-        bracket: first,
-        amount: val * first.rn
-      }
-    }
-
-    if( val > last.min ) {
-      return {
-        bracket: last,
-        amount: last.bt + ( val - last.min - 1 ) * last.rn
-      }
-    }
-
-    const res = taxBracket.find( i => val <= i.max && val >= i.min )
-    return {
-      bracket: res,
-      amount: res.bt + ( val - res.min - 1 ) * res.rn
-    }
-
-  }
-
-  // -----------------
   const propertyData = {
     postcode: 2107,
     numberShares: 8,
-    purchasePrice: 5200000,
     suburb: 'whale-beach',
+    purchasePrice: 5200000,
 
     stampDuty: 318000,
     landTax: 20020,
 
-    sharePrice: 796000,
+    sharePrice: 750000,
 
     costs: [
       95000,
@@ -112,6 +53,7 @@
     'whale-beach': {
       postcode: 2107,
       average_10y_annual: .0849
+      // average_10y_annual: .15
     },
     'portsea': {
       postcode: 3944,
@@ -146,11 +88,11 @@
   // Time on Market	0.0 days
   // Gross Rental Yield Percent	2.63%
 
-  const calculateLoan = (amount,params) => {
-    const months = params.durationYears, rate = params.rate
-    return amount*(rate * Math.pow((1 + rate), months))/(Math.pow((1 + rate), months) - 1);
-  }
-
+  // const calculateLoan = (amount,params) => {
+  //   const months = params.durationYears, rate = params.rate
+  //   return amount*(rate * Math.pow((1 + rate), months))/(Math.pow((1 + rate), months) - 1);
+  // }
+  //
   let yearlyIncome = 150000
   $: taxPosition = calculateTaxes(yearlyIncome)
 
@@ -160,7 +102,7 @@
   $: loanAmount = propertyData.sharePrice * selectedLvr
   $: equityAmount = propertyData.sharePrice - loanAmount
 
-  const loanParams = { durationYears: 30, rate: .065 }
+  $: loanParams = { durationYears: 30, rate: .065 }
   $: loanPaymentYearly = calculateLoan(loanAmount,loanParams)
   $: loanPayment = loanPaymentYearly / 12
 
@@ -226,15 +168,11 @@
             {#each lvrValues as lvr }
                 <div>
                     <Toggle type='radio' bind:group={selectedLvr} value={lvr} let:checked={checked}>
-                        {checked ? '>> ' : '' }{formatPercent(lvr)}{checked ? '<< ' : '' }
+                        { checked ? '>> ' : '' }{formatPercent(lvr)}{ checked ? '<< ' : '' }
                     </Toggle>
                 </div>
             {/each}
         </div>
-    </section>
-    <section>
-        <h3>Rate Selector</h3>
-        <RateSelector bind:min bind:max bind:value/>
     </section>
     <section>
         <h3>Individual Shareholder</h3>
@@ -296,6 +234,11 @@
                 {/each}
             </tr>
         </table>
+    </section>
+    <section>
+        <h3>Rate Selector</h3>
+        <RateSelector bind:min bind:max bind:value={loanParams.rate}/>
+        <pre>{stringify(loanParams)}</pre>
     </section>
     <section>
         <h3>Equity after {exitYears} years</h3>
