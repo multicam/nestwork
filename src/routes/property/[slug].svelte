@@ -8,9 +8,10 @@
 
 <ListingGallery property={property} />
 
-<section class="px pb">
+<section class="px">
+
+    <pre>{stringify(property)}</pre>
     <pre>{stringify($page)}</pre>
     <pre>{stringify($session)}</pre>
-    <pre>{stringify(property)}</pre>
 </section>
 

@@ -59,3 +59,15 @@ pre {
   left: 50%;
   transform: translate(-50%, -50%)
 }
+
+
+::-webkit-scrollbar {
+  background: rgba(0,0,0,.1);
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.5);
+  border-radius: 1vw;
+}
+

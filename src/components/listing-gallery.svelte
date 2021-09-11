@@ -1,83 +1,4 @@
 <script>
-    let title = "House in Cascais, Lisbon, Portugal"
-    let images = [
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/56a7d499-1483-4736-890d-faa409b761a5/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/bc1b1072-d609-43a5-8a8d-0c8769003748/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/c5fe2aa1-2240-4685-b0c5-6002364a1210/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/e32b2aa9-e893-457b-bbd7-5669e4837276/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/aed3489a-923a-44e0-b53f-1700eeca8cc5/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/189267c1-b394-4e67-828e-02f569ca1aba/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/9a480d7e-f705-4770-a824-de9d031f0b31/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/3874b892-c606-4a98-9f51-9273c0103d80/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/55b43061-def5-44c4-9a3b-19624ac069d0/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/8733c13c-a9df-453b-b4fa-d4ad245b1475/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/688c3bbc-bb8d-4683-b583-8a161225eabd/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/69ffdbde-1d2e-4d20-a667-034e49d475e1/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/caa914b5-b00b-49f1-966d-68368b7272df/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/55011a50-6ebc-4e0e-a4bb-1fd93a6f6932/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/805bfbb2-bab5-412a-ab51-aa725d2a18a7/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/c9964e8b-b2f8-43e8-aac3-8b0d29338504/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/21c0494e-eacc-4652-b9e5-ecb165a5100c/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/9935827d-8b07-4104-bc18-7e1f7b43a72a/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/ea6ad889-a1e4-4b24-91bd-17bd99c30df8/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/858e1e31-238b-451f-a30a-97e5403c89ba/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/419ea689-e72d-4d77-bf53-07053eab2f71/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/9b31b870-4752-4c00-ae57-409e84905762/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/f86e1e70-f8e6-4f5c-b826-3b13d64e27b2/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/0ad02b99-40f6-406f-8494-fc060da304ee/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/f535589c-109d-4548-854b-59ec74e832fc/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/8138641c-27a2-4fc2-9bd9-2846c7d3c0d1/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/9137e60e-7d0f-4c7c-b911-58ef0fd220b8/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/dbfd4417-8f9b-4b9d-a16a-231413ba9fa4/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/c4fcd113-c851-44df-a148-81283ce83dc3/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/14165dfe-b81d-48ca-8e9a-75ca7815c2ea/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/3d779acf-3ce3-42e7-94c6-7d0c70f46b0e/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/784eccf0-a8ba-4b0d-b63c-ac83c6e04aeb/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/1781095a-53a7-4f93-8f2c-345eec9df2e8/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/234612d8-27a8-406f-9f0a-55e648ca146f/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/6fc039a1-9160-47ca-9d8e-acb2890563d8/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/29bc27de-50d2-495d-a3d9-ca20cc88d4b6/je/2000xxs.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/662ddf1f-5792-4b38-af27-5160e4d1f434/je/2000xxs.jpg"
-    ]
-    let thumbnails = [
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/56a7d499-1483-4736-890d-faa409b761a5/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/bc1b1072-d609-43a5-8a8d-0c8769003748/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/c5fe2aa1-2240-4685-b0c5-6002364a1210/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/e32b2aa9-e893-457b-bbd7-5669e4837276/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/aed3489a-923a-44e0-b53f-1700eeca8cc5/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/189267c1-b394-4e67-828e-02f569ca1aba/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/9a480d7e-f705-4770-a824-de9d031f0b31/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/3874b892-c606-4a98-9f51-9273c0103d80/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/55b43061-def5-44c4-9a3b-19624ac069d0/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/8733c13c-a9df-453b-b4fa-d4ad245b1475/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/688c3bbc-bb8d-4683-b583-8a161225eabd/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/69ffdbde-1d2e-4d20-a667-034e49d475e1/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/caa914b5-b00b-49f1-966d-68368b7272df/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/55011a50-6ebc-4e0e-a4bb-1fd93a6f6932/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/805bfbb2-bab5-412a-ab51-aa725d2a18a7/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/c9964e8b-b2f8-43e8-aac3-8b0d29338504/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/21c0494e-eacc-4652-b9e5-ecb165a5100c/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/9935827d-8b07-4104-bc18-7e1f7b43a72a/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/ea6ad889-a1e4-4b24-91bd-17bd99c30df8/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/858e1e31-238b-451f-a30a-97e5403c89ba/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/419ea689-e72d-4d77-bf53-07053eab2f71/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/9b31b870-4752-4c00-ae57-409e84905762/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/f86e1e70-f8e6-4f5c-b826-3b13d64e27b2/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/0ad02b99-40f6-406f-8494-fc060da304ee/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/f535589c-109d-4548-854b-59ec74e832fc/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/8138641c-27a2-4fc2-9bd9-2846c7d3c0d1/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/9137e60e-7d0f-4c7c-b911-58ef0fd220b8/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/dbfd4417-8f9b-4b9d-a16a-231413ba9fa4/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/c4fcd113-c851-44df-a148-81283ce83dc3/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/14165dfe-b81d-48ca-8e9a-75ca7815c2ea/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/3d779acf-3ce3-42e7-94c6-7d0c70f46b0e/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/784eccf0-a8ba-4b0d-b63c-ac83c6e04aeb/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/1781095a-53a7-4f93-8f2c-345eec9df2e8/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/234612d8-27a8-406f-9f0a-55e648ca146f/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/6fc039a1-9160-47ca-9d8e-acb2890563d8/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/29bc27de-50d2-495d-a3d9-ca20cc88d4b6/je/355x210xc.jpg",
-        "https://img.jamesedition.com/listing_images/2021/07/01/14/53/15/662ddf1f-5792-4b38-af27-5160e4d1f434/je/355x210xc.jpg"
-    ]
     export let property
 </script>
 
@@ -87,7 +8,7 @@
 
             {#each property.images as image,n }
                 <div class="listing-gallery__current-image-item" class:_active={n === 0}>
-                    <img alt="{title} {n+1}" class="lazy-load _loaded" importance="high"
+                    <img alt="{property.address} {n+1}" class="lazy-load _loaded" importance="high"
                          data-src="/property/{property.slug}/{image}.jpg"
                          data-type="gallery" data-watermark=""
                          src="/property/{property.slug}/{image}.jpg" >
