@@ -43,7 +43,7 @@
     .money {
         color: #8a082d;
         font-weight: 500;
-        font-size: 1.5vw;
+        font-size: clamp(16px, 1.75vw, 1.75vw);
     }
 </style>
 <section>
