@@ -56,7 +56,6 @@
     display: flex;
     justify-content: space-between;
     height: 5vw;
-    font-size: 1vw;
     font-weight: 800
   }
 
@@ -72,6 +71,7 @@
     text-decoration: none;
     font-weight: 800;
     color: #123;
+    font-size: clamp(1em,1vw,1vw);
 
     &:hover {
       color: white
