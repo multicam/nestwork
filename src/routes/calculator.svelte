@@ -53,7 +53,7 @@
     'whale-beach': {
       postcode: 2107,
       average_10y_annual: .0849
-      // average_10y_annual: .15
+      // average_10y_annual: .12
     },
     'portsea': {
       postcode: 3944,
