@@ -1,3 +1,4 @@
+// FUNCTIONS
 
 export const compound = (length, initial, rate) => {
   let acc = initial / (1 + rate), res = []
@@ -8,7 +9,8 @@ export const compound = (length, initial, rate) => {
   return res
 }
 
-// --- // --- TAX POSITION
+// TAX POSITION CALCULATOR
+
 const taxBracket = [
   {
     max: 18200,
@@ -68,7 +70,8 @@ export const calculateTaxes = val => {
 
 }
 
-// --- // ---
+// LOAN CALCULATOR
+
 export const calculateLoan = (amount,params) => {
   const months = params.durationYears, rate = params.rate
   return amount*(rate * Math.pow((1 + rate), months))/(Math.pow((1 + rate), months) - 1);

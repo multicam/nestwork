@@ -1,8 +1,10 @@
 <script>
+    export let property
+
+    import {dev} from '$app/env'
     import {calculateLoan, calculateTaxes, compound} from "$lib/financials";
     import {formatMoney} from "$lib/utils";
 
-    export let property
     const {log} = console, {stringify} = JSON
 
     import MoneyInput from './calculator/money-input.svelte'
@@ -21,6 +23,7 @@
     $: loanPaymentYearly = calculateLoan(loanAmount,loanParams)
     $: loanPaymentMonthly = loanPaymentYearly / 12
 
+
     $: exitSale = compound(exitYears,property.data.purchasePrice,property.stats.average_10y_annual).pop()
     $: exitGrowth = exitSale - property.data.sharePrice * property.data.numberShares
     $: equityGrowth = exitGrowth /  property.data.numberShares * (1-selectedLvr)
@@ -38,14 +41,24 @@
     $: costsIndividualTotal = costsIndividual.map(i => i + loanPaymentYearly).reduce((r,i) => r + i,0)
     $: adjustedGrowth = exitGrowth/property.data.numberShares * (1-selectedLvr) - costsIndividualTotal + taxBenefitTotal
 
+    $: costBase = costsIndividualInclLoan
+
+    $: equity10y =
+        compound(exitYears,property.data.purchasePrice,property.stats.average_10y_annual)
+            .map( i => (i / property.shares.total - property.data.sharePrice) * (1 - selectedLvr))
+    $: equity3y =
+        compound(exitYears,property.data.purchasePrice,property.stats.average_3y_annual)
+            .map( i => (i / property.shares.total - property.data.sharePrice) * (1 - selectedLvr))
+
+    // $: dev && (
+    //     log('pty_10', equity10y),
+    //     log('pty_3', equity3y),
+    //     log('costs', costsIndividualInclLoan),
+    //     log('tb', taxBenefits)
+    // )
+
 </script>
-<style>
-    .money {
-        color: #8a082d;
-        font-weight: 500;
-        font-size: clamp(16px, 1.75vw, 1.75vw);
-    }
-</style>
+
 <section>
     <div class="mt4 mb4 px row">
         <h2 class="col-12 normal px mb0 text-center font-6vw mo-text-left">
@@ -64,22 +77,22 @@
                 <h4 class="mt1 mb1">Yearly Income</h4>
                 <MoneyInput bind:value={yearlyIncome} />
 
-                <h4 class="mt2 mb1">Tax Position per Year</h4>
-                <div class="money">{formatMoney(taxPosition.amount)}</div>
+<!--                <h4 class="mt2 mb1">Tax Position per Year</h4>-->
+<!--                <div class="money">{formatMoney(taxPosition.amount)}</div>-->
 
-                <h4 class="mt2 mb1">Growth</h4>
+<!--                <h4 class="mt2 mb1">Growth</h4>-->
 
-                <h5 class="mt1 mb1">Equity Growth</h5>
-                <div class="money">{formatMoney(equityGrowth)}</div>
+<!--                <h5 class="mt1 mb1">Equity Growth</h5>-->
+<!--                <div class="money">{formatMoney(equityGrowth)}</div>-->
 
-                <h5 class="mt1 mb1">Tax Benefits</h5>
-                <div class="money">{formatMoney(taxBenefitTotal)}</div>
+<!--                <h5 class="mt1 mb1">Tax Benefits</h5>-->
+<!--                <div class="money">{formatMoney(taxBenefitTotal)}</div>-->
 
-                <h5 class="mt1 mb1">Total Costs</h5>
-                <div class="money">{formatMoney(costsIndividualTotal)}</div>
+<!--                <h5 class="mt1 mb1">Total Costs</h5>-->
+<!--                <div class="money">{formatMoney(costsIndividualTotal)}</div>-->
 
-                <h5 class="mt1 mb1">Adjusted Growth</h5>
-                <div class="money">{formatMoney(adjustedGrowth)}</div>
+<!--                <h5 class="mt1 mb1">Adjusted Growth</h5>-->
+<!--                <div class="money">{formatMoney(adjustedGrowth)}</div>-->
             </div>
         </div>
         <div class="col-4 off-1 pt9 mo-pt7 ">
@@ -89,83 +102,131 @@
                 <h4 class="mt1 mb1">Share Price</h4>
                 <div class="money">{formatMoney(property.data.sharePrice)}</div>
 
-                <h4 class="mt2 mb1">Loan & Equity</h4>
+<!--                <h4 class="mt2 mb1">Loan & Equity</h4>-->
 
                 <h5 class="mt1 mb1">LVR</h5>
                 <LvrInput bind:selectedLvr />
 
-                <h5 class="mt1 mb1">Loan Amount</h5>
-                <div class="money">{formatMoney(loanAmount)}</div>
+<!--                <h5 class="mt1 mb1">Loan Amount</h5>-->
+<!--                <div class="money">{formatMoney(loanAmount)}</div>-->
 
-                <h5 class="mt1 mb1">Equity</h5>
-                <div class="money">{formatMoney(equityAmount)}</div>
+<!--                <h5 class="mt1 mb1">Equity</h5>-->
+<!--                <div class="money">{formatMoney(equityAmount)}</div>-->
 
-                <h4 class="mt2 mb1">Growth after {exitYears} years</h4>
+<!--                <h4 class="mt2 mb1">Growth after {exitYears} years</h4>-->
 
-                <h5 class="mt1 mb1">Property Value</h5>
-                <div class="money">{formatMoney(exitSale)}</div>
+<!--                <h5 class="mt1 mb1">Property Value</h5>-->
+<!--                <div class="money">{formatMoney(exitSale)}</div>-->
 
             </div>
         </div>
-        <div class="row px mt4 mo-hidden">
-            <div class="col-12">
 
-                <table>
-                    <tr class="bold text-right">
-                        <td>&nbsp;</td>
-                        {#each labelYears as year }
-                            <td>{year}</td>
-                        {/each}
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Costs</strong>
-                        </td>
-                        {#each costsIndividual as val }
-                            <td class="text-mono text-right">{formatMoney(val)}</td>
-                        {/each}
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Incl. Loan</strong>
-                        </td>
-                        {#each costsIndividualInclLoan as val }
-                            <td class="text-mono text-right italic" style="color: orangered">{formatMoney(val)}</td>
-                        {/each}
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Adjusted Income</strong>
-                        </td>
-                        {#each adjustedIncome as val }
-                            <td class="text-mono text-right ">{formatMoney(val)}</td>
-                        {/each}
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Adjusted Tax Position</strong>
-                        </td>
-                        {#each adjustedTaxPosition as val }
-                            <td class="text-mono text-right ">{formatMoney(val)}</td>
-                        {/each}
-                    </tr>
-                    <tr>
-                        <td>
-                            <strong>Tax Benefit</strong>
-                        </td>
-                        {#each taxBenefits as val }
-                            <td class="text-mono text-right italic" style="color: orangered">{formatMoney(val)}</td>
-                        {/each}
-                    </tr>
-                </table>
+    </div>
+    <div class="row px mt4 mo-hidden">
+        <div class="col-12">
 
-            </div>
+            <table>
+                <tr class="bold text-right">
+                    <td>&nbsp;</td>
+                    {#each labelYears as year }
+                        <td>{year}</td>
+                    {/each}
+                </tr>
+                <tr>
+                    <td>
+                        Per Year
+                    </td>
+                </tr>
+                <tr>
+                    <td style="line-height: 3vw">
+                        <strong>Costs</strong>
+                    </td>
+                    {#each costsIndividual as val }
+                        <td class="text-mono text-right">{formatMoney(val)}</td>
+                    {/each}
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Incl. Loan</strong>
+                    </td>
+                    {#each costsIndividualInclLoan as val }
+                        <td class="text-mono text-right italic" style="color: orangered">{formatMoney(val)}</td>
+                    {/each}
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Adjusted Income</strong>
+                    </td>
+                    {#each adjustedIncome as val }
+                        <td class="text-mono text-right ">{formatMoney(val)}</td>
+                    {/each}
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Adjusted Tax Position</strong>
+                    </td>
+                    {#each adjustedTaxPosition as val }
+                        <td class="text-mono text-right ">{formatMoney(val)}</td>
+                    {/each}
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Tax Benefit</strong>
+                    </td>
+                    {#each taxBenefits as val }
+                        <td class="text-mono text-right italic" style="color: orangered">{formatMoney(val)}</td>
+                    {/each}
+                </tr>
+                <tr>
+                    <td style="line-height: 3vw">
+                        Compound
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Cost Base</strong>
+                    </td>
+                    {#each costBase as val }
+                        <td class="text-mono text-right">{formatMoney(val)}</td>
+                    {/each}
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Growth 10y Ave</strong>
+                    </td>
+                    {#each equity10y as val }
+                        <td class="text-mono text-right">{formatMoney(val)}</td>
+                    {/each}
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Growth 3y Ave</strong>
+                    </td>
+                    {#each equity3y as val }
+                        <td class="text-mono text-right">{formatMoney(val)}</td>
+                    {/each}
+                </tr>
+            </table>
+
         </div>
     </div>
-    <div class="pb4" />
-<!--    <div class="px">-->
-<!--        <pre>{stringify(property.data,null,2)}</pre>-->
-<!--    </div>-->
+    <div class="row px mt4">
+
+    </div>
 </section>
 
 
+<style>
+    table {
+        width: 100%;
+    }
+    td {
+        padding: 0;
+        line-height: 2vw;
+    }
+    .money {
+        color: #8a082d;
+        font-weight: 500;
+        font-size: clamp(16px, 1.65vw, 1.65vw);
+    }
+</style>

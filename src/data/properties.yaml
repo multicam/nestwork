@@ -12,6 +12,7 @@
   images: [ main, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, floorplan1 ]
   stats:
     average_10y_annual: .0849
+    average_3y_annual: .1462
   data:
     purchasePrice: 5200000
     numberShares: 6
@@ -21,7 +22,7 @@
     stampDuty: 318000
     landTax: 20020
 
-    costs: [ 95000, 50000, 52000, 54000, 56000, 58000, 60000, 62000, 64000, 66000, 68000, 70000, 72000, 74000 ]
+    costs: [ 95000, 50000, 52000, 54000, 56000, 58000, 60000 ]
 
   agent:
     name: Agent Name

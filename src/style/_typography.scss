@@ -90,15 +90,9 @@ figcaption {
   font-size: Fs_alt(.75vw, 14px);
 }
 
-.txt-left { text-align: left }
-.txt-right { text-align: right }
-.txt-center { text-align: center }
 
-.txt-desc {
-  p {
-    font-size: Fs(1.56vw);
-  }
-
+.text-mono {
+  font-family: var(--font-mono);
 }
 
 .uppercase {
@@ -136,6 +130,10 @@ figcaption {
 
 .bold {
   font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
 }
 .text-right {
   text-align: right;
