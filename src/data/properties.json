@@ -53,11 +53,9 @@
         60000
       ]
     },
-    "agent": {
-      "name": "Agent Name",
-      "contact": {
-        "phone": "+614 555 123 456"
-      }
+    "contact": {
+      "name": "Contact Name",
+      "phone": "+614 555 123 456"
     }
   },
   {

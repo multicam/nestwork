@@ -1,12 +1,14 @@
 <script>
-    import { page,session } from '$app/stores';
+    import { page } from '$app/stores';
     import ListingGallery from '../../components/listing-gallery.svelte'
     import PropertyCalculator from '../../components/property-calculator.svelte'
     import LinkArrow from "../../components/bits/LinkArrow.svelte";
 
-    const {stringify} = JSON, {log} = console
     import properties from "../../data/properties.json";
     import {formatMoney} from "$lib/utils";
+
+    const {stringify} = JSON, {log} = console
+
     let property = properties.find(i => i.slug === $page.params.slug)
 </script>
 
@@ -36,10 +38,10 @@
                     {property.summary}<br>
                     <strong>Shares</strong><br>
                     {property.shares.left} Left, {property.shares.total - property.shares.left} Sold<br>
-                    <strong>Price</strong><br>
+                    <strong>Share Price</strong><br>
                     {formatMoney(property.data.share)} <br>
-                    <strong>Agent</strong><br>
-                    {property.agent.name} {property.agent.contact.phone} <br>
+                    <strong>Contact</strong><br>
+                    {property.contact.name} {property.contact.phone} <br>
                 </p>
             </div>
         </div>
@@ -47,11 +49,3 @@
 </section>
 
 <PropertyCalculator property={property} />
-
-<!--<section class="px">-->
-
-<!--    <pre>{stringify(property)}</pre>-->
-<!--    <pre>{stringify($page)}</pre>-->
-<!--    <pre>{stringify($session)}</pre>-->
-<!--</section>-->
-

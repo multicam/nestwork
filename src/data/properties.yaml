@@ -24,10 +24,9 @@
 
     costs: [ 95000, 50000, 52000, 54000, 56000, 58000, 60000 ]
 
-  agent:
-    name: Agent Name
-    contact:
-      phone: +614 555 123 456
+  contact:
+    name: Contact Name
+    phone: +614 555 123 456
 -
   slug: clareville-beach
   shares:

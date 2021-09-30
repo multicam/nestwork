@@ -1,61 +1,55 @@
 <script>
-    export let property
+  export let property
 
-    import {dev} from '$app/env'
-    import {calculateLoan, calculateTaxes, compound} from "$lib/financials";
-    import {formatMoney} from "$lib/utils";
+  import {dev} from '$app/env'
+  import {calculateLoan, calculateTaxes, compound} from "$lib/financials";
+  import {formatMoney} from "$lib/utils";
 
-    const {log} = console, {stringify} = JSON
+  const {log} = console, {stringify} = JSON
 
-    import MoneyInput from './calculator/money-input.svelte'
-    import LvrInput from './calculator/lvr-input.svelte'
+  import MoneyInput from './calculator/money-input.svelte'
+  import LvrInput from './calculator/lvr-input.svelte'
+  import Graph from './calculator/graph.svelte'
 
-    let exitYears = 7
+  let exitYears = 7
 
-    let yearlyIncome = 150000
-    $: taxPosition = calculateTaxes(yearlyIncome)
+  let yearlyIncome = 150000
+  $: taxPosition = calculateTaxes(yearlyIncome)
 
-    let selectedLvr = .4
-    $: loanAmount = property.data.sharePrice * selectedLvr
-    $: equityAmount = property.data.sharePrice - loanAmount
+  let selectedLvr = .4
+  $: loanAmount = property.data.sharePrice * selectedLvr
+  $: equityAmount = property.data.sharePrice - loanAmount
 
-    $: loanParams = { durationYears: 30, rate: .065 }
-    $: loanPaymentYearly = calculateLoan(loanAmount,loanParams)
-    $: loanPaymentMonthly = loanPaymentYearly / 12
+  $: loanParams = {durationYears: 30, rate: .065}
+  $: loanPaymentYearly = calculateLoan(loanAmount, loanParams)
+  $: loanPaymentMonthly = loanPaymentYearly / 12
 
+  $: exitSale = compound(exitYears, property.data.purchasePrice, property.stats.average_10y_annual).pop()
+  $: exitGrowth = exitSale - property.data.sharePrice * property.data.numberShares
+  $: equityGrowth = exitGrowth / property.data.numberShares * (1 - selectedLvr)
 
-    $: exitSale = compound(exitYears,property.data.purchasePrice,property.stats.average_10y_annual).pop()
-    $: exitGrowth = exitSale - property.data.sharePrice * property.data.numberShares
-    $: equityGrowth = exitGrowth /  property.data.numberShares * (1-selectedLvr)
+  $: labelYears = new Array(exitYears).fill(new Date().getFullYear()).map((i, n) => i + n)
 
-    $: labelYears = new Array(exitYears).fill(new Date().getFullYear()).map((i, n) => i + n)
+  $: costsIndividual = property.data.costs.map(i => i / property.data.numberShares)
+  $: costsIndividualInclLoan = costsIndividual.map(i => i + loanPaymentYearly)
 
-    $: costsIndividual = property.data.costs.map( i => i / property.data.numberShares )
-    $: costsIndividualInclLoan = costsIndividual.map(i => i + loanPaymentYearly)
+  $: adjustedIncome = costsIndividual.map(i => yearlyIncome - i - loanPaymentYearly)
+  $: adjustedTaxPosition = costsIndividual.map(i => calculateTaxes(yearlyIncome - i - loanPaymentYearly)?.amount)
+  $: taxBenefits = adjustedTaxPosition.map(i => taxPosition.amount - i)
+  $: taxBenefitTotal = taxBenefits.reduce((r, i) => r + i, 0)
 
-    $: adjustedIncome = costsIndividual.map(i => yearlyIncome - i - loanPaymentYearly)
-    $: adjustedTaxPosition = costsIndividual.map(i => calculateTaxes(yearlyIncome - i - loanPaymentYearly)?.amount)
-    $: taxBenefits = adjustedTaxPosition.map(i => taxPosition.amount - i )
-    $: taxBenefitTotal = taxBenefits.reduce((r,i) => r+i, 0)
+  $: costsIndividualTotal = costsIndividual.map(i => i + loanPaymentYearly).reduce((r, i) => r + i, 0)
+  $: adjustedGrowth = exitGrowth / property.data.numberShares * (1 - selectedLvr) - costsIndividualTotal + taxBenefitTotal
 
-    $: costsIndividualTotal = costsIndividual.map(i => i + loanPaymentYearly).reduce((r,i) => r + i,0)
-    $: adjustedGrowth = exitGrowth/property.data.numberShares * (1-selectedLvr) - costsIndividualTotal + taxBenefitTotal
+  $: costBase = costsIndividualInclLoan
 
-    $: costBase = costsIndividualInclLoan
+  $: equity10y =
+    compound(exitYears, property.data.purchasePrice, property.stats.average_10y_annual)
+      .map(i => (i / property.shares.total - property.data.sharePrice) * (1 - selectedLvr))
 
-    $: equity10y =
-        compound(exitYears,property.data.purchasePrice,property.stats.average_10y_annual)
-            .map( i => (i / property.shares.total - property.data.sharePrice) * (1 - selectedLvr))
-    $: equity3y =
-        compound(exitYears,property.data.purchasePrice,property.stats.average_3y_annual)
-            .map( i => (i / property.shares.total - property.data.sharePrice) * (1 - selectedLvr))
-
-    // $: dev && (
-    //     log('pty_10', equity10y),
-    //     log('pty_3', equity3y),
-    //     log('costs', costsIndividualInclLoan),
-    //     log('tb', taxBenefits)
-    // )
+  $: equity3y =
+    compound(exitYears, property.data.purchasePrice, property.stats.average_3y_annual)
+      .map(i => (i / property.shares.total - property.data.sharePrice) * (1 - selectedLvr))
 
 </script>
 
@@ -75,26 +69,27 @@
 
                 <h3 class="mb1">Investor</h3>
                 <h4 class="mt1 mb1">Yearly Income</h4>
-                <MoneyInput bind:value={yearlyIncome} />
+                <MoneyInput bind:value={yearlyIncome}/>
 
-<!--                <h4 class="mt2 mb1">Tax Position per Year</h4>-->
-<!--                <div class="money">{formatMoney(taxPosition.amount)}</div>-->
+                <!--                <h4 class="mt2 mb1">Tax Position per Year</h4>-->
+                <!--                <div class="money">{formatMoney(taxPosition.amount)}</div>-->
 
-<!--                <h4 class="mt2 mb1">Growth</h4>-->
+                <!--                <h4 class="mt2 mb1">Growth</h4>-->
 
-<!--                <h5 class="mt1 mb1">Equity Growth</h5>-->
-<!--                <div class="money">{formatMoney(equityGrowth)}</div>-->
+                <!--                <h5 class="mt1 mb1">Equity Growth</h5>-->
+                <!--                <div class="money">{formatMoney(equityGrowth)}</div>-->
 
-<!--                <h5 class="mt1 mb1">Tax Benefits</h5>-->
-<!--                <div class="money">{formatMoney(taxBenefitTotal)}</div>-->
+                <!--                <h5 class="mt1 mb1">Tax Benefits</h5>-->
+                <!--                <div class="money">{formatMoney(taxBenefitTotal)}</div>-->
 
-<!--                <h5 class="mt1 mb1">Total Costs</h5>-->
-<!--                <div class="money">{formatMoney(costsIndividualTotal)}</div>-->
+                <!--                <h5 class="mt1 mb1">Total Costs</h5>-->
+                <!--                <div class="money">{formatMoney(costsIndividualTotal)}</div>-->
 
-<!--                <h5 class="mt1 mb1">Adjusted Growth</h5>-->
-<!--                <div class="money">{formatMoney(adjustedGrowth)}</div>-->
+                <!--                <h5 class="mt1 mb1">Adjusted Growth</h5>-->
+                <!--                <div class="money">{formatMoney(adjustedGrowth)}</div>-->
             </div>
         </div>
+
         <div class="col-4 off-1 pt9 mo-pt7 ">
             <div class="font-1_25vw mo-mb2">
                 <h3 class="mb1">Investment</h3>
@@ -102,25 +97,33 @@
                 <h4 class="mt1 mb1">Share Price</h4>
                 <div class="money">{formatMoney(property.data.sharePrice)}</div>
 
-<!--                <h4 class="mt2 mb1">Loan & Equity</h4>-->
+                <!--                <h4 class="mt2 mb1">Loan & Equity</h4>-->
 
                 <h5 class="mt1 mb1">LVR</h5>
-                <LvrInput bind:selectedLvr />
+                <LvrInput bind:selectedLvr/>
 
-<!--                <h5 class="mt1 mb1">Loan Amount</h5>-->
-<!--                <div class="money">{formatMoney(loanAmount)}</div>-->
+                <!--                <h5 class="mt1 mb1">Loan Amount</h5>-->
+                <!--                <div class="money">{formatMoney(loanAmount)}</div>-->
 
-<!--                <h5 class="mt1 mb1">Equity</h5>-->
-<!--                <div class="money">{formatMoney(equityAmount)}</div>-->
+                <!--                <h5 class="mt1 mb1">Equity</h5>-->
+                <!--                <div class="money">{formatMoney(equityAmount)}</div>-->
 
-<!--                <h4 class="mt2 mb1">Growth after {exitYears} years</h4>-->
+                <!--                <h4 class="mt2 mb1">Growth after {exitYears} years</h4>-->
 
-<!--                <h5 class="mt1 mb1">Property Value</h5>-->
-<!--                <div class="money">{formatMoney(exitSale)}</div>-->
+                <!--                <h5 class="mt1 mb1">Property Value</h5>-->
+                <!--                <div class="money">{formatMoney(exitSale)}</div>-->
 
             </div>
         </div>
 
+    </div>
+    <div class="row  px mt4">
+        <Graph data={{
+          labelYears,
+          costBase,
+          equity10y,
+          equity3y
+        }} />
     </div>
     <div class="row px mt4 mo-hidden">
         <div class="col-12">
@@ -220,10 +223,12 @@
     table {
         width: 100%;
     }
+
     td {
         padding: 0;
         line-height: 2vw;
     }
+
     .money {
         color: #8a082d;
         font-weight: 500;
