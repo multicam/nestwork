@@ -3,7 +3,7 @@
 
   import {dev} from '$app/env'
   import {calculateLoan, calculateTaxes, compound} from "$lib/financials";
-  import {formatMoney} from "$lib/utils";
+  import {formatMoney, formatPercent} from "$lib/utils";
 
   const {log} = console, {stringify} = JSON
 
@@ -13,12 +13,14 @@
 
   import RangeSlider from '$lib/components/range-slider.svelte'
 
-  let exitYears = 7, taxPosition, loanAmount, equityAmount, loanParams, loanPaymentYearly, loanPaymentMonthly, exitSale, exitGrowth, equityGrowth, labelYears, costsIndividual, costsIndividualInclLoan, adjustedIncome, adjustedTaxPosition, taxBenefits, taxBenefitTotal, costsIndividualTotal, adjustedGrowth, costBase, equity10y, equity3y
+  let exitYears = 7
+  let selectedLvr, taxPosition, loanAmount, equityAmount, loanParams, loanPaymentYearly, loanPaymentMonthly, exitSale, exitGrowth, equityGrowth, labelYears, costsIndividual, costsIndividualInclLoan, adjustedIncome, adjustedTaxPosition, taxBenefits, taxBenefitTotal, costsIndividualTotal, adjustedGrowth, costBase, equity10y, equity3y
 
   let yearlyIncome = 150000
   $: taxPosition = calculateTaxes(yearlyIncome)
 
-  let selectedLvr = .4
+  let selectedRangeLvr = 30
+  $: selectedLvr = selectedRangeLvr / 100.
   $: loanAmount = property.data.sharePrice * selectedLvr
   $: equityAmount = property.data.sharePrice - loanAmount
 
@@ -53,6 +55,8 @@
     compound(exitYears, property.data.purchasePrice, property.stats.average_3y_annual)
       .map(i => (i / property.shares.total - property.data.sharePrice) * (1 - selectedLvr))
 
+
+  let testRange
 </script>
 
 <section>
@@ -84,10 +88,10 @@
                 <div class="money">{formatMoney(property.data.sharePrice)}</div>
 
                 <h5 class="mt1 mb1">LVR</h5>
-                <LvrInput bind:selectedLvr/>
 
+                <RangeSlider bind:values={selectedRangeLvr} />
 
-
+                <pre>{formatPercent(selectedLvr)}</pre>
             </div>
         </div>
 
