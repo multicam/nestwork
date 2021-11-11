@@ -2,6 +2,7 @@
 import image from "svelte-image";
 import preprocess from 'svelte-preprocess'
 import vercel from '@sveltejs/adapter-vercel'
+import {resolve} from "path";
 
 const config = {
   preprocess: [

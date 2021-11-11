@@ -1,9 +1,9 @@
 <script context="module">
     export const prerender = true;
-    import Hero from '../components/hero.svelte'
-    import Forms from '../components/forms.svelte'
-    import AspectRatio from "../components/carbon/AspectRatio.svelte";
-    import LinkArrow from "../components/bits/LinkArrow.svelte";
+    import Hero from '$lib/components/hero.svelte'
+    import Forms from '$lib/components/forms.svelte'
+    import AspectRatio from "$lib/components/carbon/AspectRatio.svelte";
+    import LinkArrow from "$lib/components/bits/LinkArrow.svelte";
 </script>
 
 <!--head-->

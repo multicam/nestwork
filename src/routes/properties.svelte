@@ -1,11 +1,11 @@
 <script context="module">
   export const prerender = true;
-  import Hero from '../components/hero.svelte'
-  import Forms from '../components/forms.svelte'
-  import AspectRatio from "../components/carbon/AspectRatio.svelte";
-  import IconBeds from '../components/icons/beds.svelte'
-  import IconPool from '../components/icons/pool.svelte'
-  import IconWharf from '../components/icons/wharf.svelte'
+  import Hero from '$lib/components/hero.svelte'
+  import Forms from '$lib/components/forms.svelte'
+  import AspectRatio from "$lib/components/carbon/AspectRatio.svelte";
+  import IconBeds from '$lib/components/icons/beds.svelte'
+  import IconPool from '$lib/components/icons/pool.svelte'
+  import IconWharf from '$lib/components/icons/wharf.svelte'
 
   const {log} = console, {stringify} = JSON
 

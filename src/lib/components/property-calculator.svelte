@@ -11,7 +11,9 @@
   import LvrInput from './calculator/lvr-input.svelte'
   import Graph from './calculator/graph.svelte'
 
-  let exitYears = 7
+  import RangeSlider from '$lib/components/range-slider.svelte'
+
+  let exitYears = 7, taxPosition, loanAmount, equityAmount, loanParams, loanPaymentYearly, loanPaymentMonthly, exitSale, exitGrowth, equityGrowth, labelYears, costsIndividual, costsIndividualInclLoan, adjustedIncome, adjustedTaxPosition, taxBenefits, taxBenefitTotal, costsIndividualTotal, adjustedGrowth, costBase, equity10y, equity3y
 
   let yearlyIncome = 150000
   $: taxPosition = calculateTaxes(yearlyIncome)
@@ -71,22 +73,6 @@
                 <h4 class="mt1 mb1">Yearly Income</h4>
                 <MoneyInput bind:value={yearlyIncome}/>
 
-                <!--                <h4 class="mt2 mb1">Tax Position per Year</h4>-->
-                <!--                <div class="money">{formatMoney(taxPosition.amount)}</div>-->
-
-                <!--                <h4 class="mt2 mb1">Growth</h4>-->
-
-                <!--                <h5 class="mt1 mb1">Equity Growth</h5>-->
-                <!--                <div class="money">{formatMoney(equityGrowth)}</div>-->
-
-                <!--                <h5 class="mt1 mb1">Tax Benefits</h5>-->
-                <!--                <div class="money">{formatMoney(taxBenefitTotal)}</div>-->
-
-                <!--                <h5 class="mt1 mb1">Total Costs</h5>-->
-                <!--                <div class="money">{formatMoney(costsIndividualTotal)}</div>-->
-
-                <!--                <h5 class="mt1 mb1">Adjusted Growth</h5>-->
-                <!--                <div class="money">{formatMoney(adjustedGrowth)}</div>-->
             </div>
         </div>
 
@@ -97,21 +83,10 @@
                 <h4 class="mt1 mb1">Share Price</h4>
                 <div class="money">{formatMoney(property.data.sharePrice)}</div>
 
-                <!--                <h4 class="mt2 mb1">Loan & Equity</h4>-->
-
                 <h5 class="mt1 mb1">LVR</h5>
                 <LvrInput bind:selectedLvr/>
 
-                <!--                <h5 class="mt1 mb1">Loan Amount</h5>-->
-                <!--                <div class="money">{formatMoney(loanAmount)}</div>-->
 
-                <!--                <h5 class="mt1 mb1">Equity</h5>-->
-                <!--                <div class="money">{formatMoney(equityAmount)}</div>-->
-
-                <!--                <h4 class="mt2 mb1">Growth after {exitYears} years</h4>-->
-
-                <!--                <h5 class="mt1 mb1">Property Value</h5>-->
-                <!--                <div class="money">{formatMoney(exitSale)}</div>-->
 
             </div>
         </div>

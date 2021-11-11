@@ -35,6 +35,7 @@
     "svelte-headroom": "^2.2.1",
     "svelte-image": "^0.2.9",
     "svelte-preprocess": "^4.7.4",
+    "svelte-range-slider-pips": "^2.0.0",
     "yootils": "^0.3.1"
   }
 }

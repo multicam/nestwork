@@ -1,8 +1,8 @@
 <script>
     import { page } from '$app/stores';
-    import ListingGallery from '../../components/listing-gallery.svelte'
-    import PropertyCalculator from '../../components/property-calculator.svelte'
-    import LinkArrow from "../../components/bits/LinkArrow.svelte";
+    import ListingGallery from '$lib/components/listing-gallery.svelte'
+    import PropertyCalculator from '$lib/components/property-calculator.svelte'
+    import LinkArrow from "$lib/components/bits/LinkArrow.svelte";
 
     import properties from "../../data/properties.json";
     import {formatMoney} from "$lib/utils";

@@ -23,7 +23,7 @@
 </script>
 
 <script>
-  import ListingGallery from '../../components/listing-gallery.svelte'
+  import ListingGallery from '$lib/components/listing-gallery.svelte'
 </script>
 
 <div class="page__container js-listing-page" data-listing-price="2300000000">
