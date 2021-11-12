@@ -6,15 +6,15 @@
   const links = [
     {
       label: 'Own',
-      url: '/#'
+      url: '/about#co-ownership'
     },
     {
       label: 'Relax',
-      url: '/#'
+      url: '/about#nestlovers'
     },
     {
-      label: 'Holiday',
-      url: '/#'
+      label: 'Case Study',
+      url: '/case-study'
     },
     {
       label: 'Properties',
@@ -22,11 +22,11 @@
     },
     {
       label: 'FAQs',
-      url: '/#'
+      url: '/faqs'
     },
     {
       label: 'About Us',
-      url: '/#'
+      url: '/about'
     },
   ]
   const pin = e => {

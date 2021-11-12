@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "yarn data && svelte-kit dev",
+    "dev:share": "yarn data && svelte-kit dev --host 0.0.0.0",
     "build": "svelte-kit build",
     "data": "sh src/data/y2j.sh",
     "thumbnails": "zx scripts/thumbnails.mjs",

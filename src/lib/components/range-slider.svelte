@@ -3,7 +3,6 @@
   export let values
 </script>
 <RangeSlider
-        pips
     bind:values
     springValues={{ stiffness: 0.12, damping: 0.7 }}
 />
@@ -21,6 +20,9 @@
         --range-float-text: white; /* text color on floating label */
     }
 
+    :global(.rangeSlider) {
+        margin: 0;
+    }
     :global(.rangeHandle:focus) {
         outline: none;
     }
