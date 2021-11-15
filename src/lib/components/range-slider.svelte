@@ -7,6 +7,7 @@
     springValues={{ stiffness: 0.12, damping: 0.7 }}
 />
 <style>
+
     :root {
         --range-slider: #d7dada; /* slider main background color */
         --range-handle-inactive: #ad652c; /* inactive handle color */
@@ -23,7 +24,9 @@
     :global(.rangeSlider) {
         margin: 0;
     }
+
     :global(.rangeHandle:focus) {
         outline: none;
     }
+
 </style>

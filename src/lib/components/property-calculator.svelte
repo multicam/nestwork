@@ -84,15 +84,38 @@
             <div class="font-1_25vw mo-mb2">
                 <h3 class="mb1">Investment</h3>
 
-                <h4 class="mt1 mb1">Share Price</h4>
-                <div class="money">{formatMoney(property.data.sharePrice)}</div>
+                <div class="flex between middle my1">
+                    <h4 class="">Share Price</h4>
+                    <div class="money">{formatMoney(property.data.sharePrice)}</div>
+                </div>
 
-                <h5 class="mt1 mb1">LVR</h5>
 
-                <RangeSlider bind:values={selectedRangeLvr} />
+                <div class="flex middle mt1">
+                    <h5 class="mr2">LVR</h5>
+                    <div class="f1">
+                        <RangeSlider bind:values={selectedRangeLvr} />
+                    </div>
 
-                <pre>{formatPercent(selectedLvr)}</pre>
+                </div>
+
+
+                <div class="flex between middle my1">
+                    <h4 class=""></h4>
+                    <div class="money">{formatPercent(selectedLvr)}</div>
+                </div>
+
+                <div class="flex between middle my1">
+                    <h4 class="">Equity</h4>
+                    <div class="money">{formatMoney(equityAmount)}</div>
+                </div>
+
+                <div class="flex between middle my1">
+                    <h4 class="">Loan</h4>
+                    <div class="money">{formatMoney(loanAmount)}</div>
+                </div>
+
             </div>
+
         </div>
 
     </div>
