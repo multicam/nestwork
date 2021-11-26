@@ -135,7 +135,20 @@
     </div>
 </footer>
 
-<style>
+<style lang="scss">
+    footer {
+        background-color: var(--bg-color);
+        color: snow;
+
+        a {
+          font-weight: 500;
+          text-decoration: none;
+          color: rgba(255, 250, 250, 0.8);
+          &:hover {
+            color: rgba(159, 59, 46, 0.9) !important;
+          }
+        }
+    }
     .social svg {
         height: 2vw
     }

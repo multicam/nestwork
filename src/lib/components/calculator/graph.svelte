@@ -1,18 +1,20 @@
 <script>
-    import {scaleTime} from "d3-scale";
+  import {scaleTime} from "d3-scale";
 
-    export let data
-    const {log} = console, {stringify} = JSON
-    import Chart from '../d3/line-chart.svelte'
+  export let data
+  const {log} = console, {stringify} = JSON, {keys} = Object
+  import Chart from '../d3/line-chart.svelte'
 
-    let years = data.labelYears.map(i => `${i}-01-01`)
+  let years = data.labelYears.map(i => `${i}-01-01`)
 
-    $: charData = data.labelYears.map(i => `${i}-01-01`).map((i,n) => ({
-      date: i,
-      value: data.costBase[n]
-    }))
-
-    $: log(charData)
+  $: charData =
+    keys(data).filter(i => i !== 'labelYears').reduce((r, i) => {
+      r[i] = years.map((j, n) => ({
+        date: j,
+        value: data[i][n]
+      }))
+      return r
+    }, {})
 
 </script>
-<Chart data={charData} />
+<Chart data={charData}/>

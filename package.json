@@ -38,5 +38,8 @@
     "svelte-preprocess": "^4.7.4",
     "svelte-range-slider-pips": "^2.0.0",
     "yootils": "^0.3.1"
+  },
+  "dependencies": {
+    "svelte-slidy": "^2.7.1"
   }
 }
