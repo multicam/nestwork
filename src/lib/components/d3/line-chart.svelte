@@ -8,23 +8,24 @@
 
   export let data;
   let height = 600;
-  let margin = 40;
+  let margin = 80;
   let width;
 
-  $: xScale = data =>
+  $: log(data)
+  $: xScale =
     scaleTime()
-      .domain(extent(data, d => new Date(d.date)))
+      .domain(extent(data.equity3y, d => d[0]))
       .range([margin, width - margin]);
 
-  $: yScale = data =>
+  $: yScale =
     scaleLinear()
-      .domain([0, max(data, d => +d.value)])
+      .domain([0, max(data.equity3y, d => +d[1])])
       .range([height - margin, margin]);
 
   $: lineGenerator =
     line()
-      .x(d => xScale(new Date(d.date)))
-      .y(d => yScale(+d.value));
+      .x(d => xScale(d[0]))
+      .y(d => yScale(+d[1]));
 
   // const reveal =
   //   (node, {duration}) => {
@@ -38,10 +39,7 @@
   //   }
 
   $: dataPrint = keys(data).map(k => {
-    return data[k].map(i => [
-      new Date(i.date),
-      i.value
-    ])
+    return data[k].map(i => [ xScale(i[0]), yScale(i[1]) ])
   })
 
   const colors = [
@@ -50,18 +48,14 @@
     'green'
   ]
 </script>
-<!--{#each keys(data) as k}-->
-<!--&lt;!&ndash;    <pre>{stringify(data[k])}</pre>&ndash;&gt;-->
-<!--    <div>{lineGenerator(data[k])}</div>-->
-<!--{/each}-->
 
 {#if data}
     <div class='line-chart' style="width:100%" bind:clientWidth={width}>
         {#if width && height }
             <svg width={width} height={height}>
 
-                <Axis {width} {height} {margin} scale={xScale(data.costBase)} position='bottom'/>
-                <Axis {width} {height} {margin} scale={yScale(data.equity3y)} position='left'/>
+                <Axis {width} {height} {margin} scale={xScale} position='bottom'/>
+                <Axis {width} {height} {margin} scale={yScale} position='left'/>
 
                 {#each dataPrint as d, i}
                     <path

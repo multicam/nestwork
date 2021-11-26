@@ -15,8 +15,8 @@
 
 <header>
     <nav bind:this={navElement} class:dropdown-opened={open}>
-        <a class="logo" href="/" on:click={() => open && clickMenu()}>
-            <img src="https://placekitten.com/g/100/50" alt="Logo cat"/>
+        <a class="logo mt1" href="/" on:click={() => open && clickMenu()}>
+            <Logo/>
         </a>
         <div class="dropdown-link-container" bind:this={dropdownEl}>
             {#each links as link}
