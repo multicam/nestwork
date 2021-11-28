@@ -1,5 +1,4 @@
 <script>
-  import Headroom from 'svelte-headroom'
   import Logo from "../icons/logo.svelte"
   import links from './links'
 
@@ -16,16 +15,16 @@
 <header>
     <nav bind:this={navElement} class:dropdown-opened={open}>
         <a class="logo mt1" href="/" on:click={() => open && clickMenu()}>
-            <Logo/>
+            <Logo color={open?'snow':'black'}/>
         </a>
         <div class="dropdown-link-container" bind:this={dropdownEl}>
             {#each links as link}
                 <a href={link.url} on:click={clickMenu}>{link.label}</a>
             {/each}
         </div>
-        <button class="mobile-dropdown-toggle" aria-hidden="true" on:click={clickMenu}>
+        <div class="mobile-dropdown-toggle" aria-hidden="true" on:click={clickMenu}>
             Menu
-        </button>
+        </div>
     </nav>
 </header>
 <style lang="scss">
@@ -49,18 +48,32 @@
     margin-right: auto;
   }
 
-  .dropdown-link-container > a {
-    margin-left: 20px;
-  }
-
   .mobile-dropdown-toggle {
     display: none;
+  }
+
+
+  .dropdown-link-container > a {
+    margin-left: 20px;
+    font-size: clamp(12px, 1.5vw, 3vw);
+
+    @media (max-width: 768px) {
+      color: snow;
+      text-decoration: none !important;
+      font-size: clamp(16px, 5.2vw, 32px);
+      padding: 2vw 0;
+      display: block;
+    }
   }
 
   @media (max-width: 768px) {
     .logo,
     .mobile-dropdown-toggle {
       z-index: 1;
+    }
+
+    .logo {
+      padding: 2vw
     }
 
     .mobile-dropdown-toggle {
@@ -88,12 +101,13 @@
       padding-left: 7vw;
       padding-right: 7vw;
 
-      background: lightblue;
+      background-color: var(--bg-color);
       z-index: 0;
 
       opacity: 0;
       transform: translateY(-100%);
-      transition: transform 0.2s, opacity 0.2s;
+      transition: transform 0.3s, opacity 0.3s;
+
     }
 
     nav.dropdown-opened > .dropdown-link-container {

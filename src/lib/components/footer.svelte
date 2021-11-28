@@ -101,7 +101,7 @@
     ]
 </script>
 <footer id="footer">
-    <div class=" row px blue pt8 ">
+    <div class=" row px blue pt8 mo-wrap">
         <h3 class="col-12 font-3_3vw mb4 mo-font-3_12vw mo-mb4">NestLove Makes Dreams… Become Home.</h3>
         {#each sitemap as cat }
             <div class="col-4 flex-col mb4 mo-mb4">

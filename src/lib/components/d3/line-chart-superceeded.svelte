@@ -36,6 +36,9 @@
         css: (t, u) => `stroke-dashoffset: ${u * length}`
       };
     }
+  let xScale;
+  let yScale;
+  let lineGenerator;
 
 
 </script>
