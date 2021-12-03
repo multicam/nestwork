@@ -1,4 +1,6 @@
 import { cubicOut } from 'svelte/easing'
+const {min} = Math
+
 export function hslide(node, {
   delay = 0,
   duration = 120,
@@ -20,7 +22,7 @@ export function hslide(node, {
     easing,
     css: t =>
       `overflow: hidden;` +
-      `opacity: ${Math.min(t * 20, 1) * opacity};` +
+      `opacity: ${min(t * 20, 1) * opacity};` +
       `width: ${t * width}px;` +
       `padding-left: ${t * padding_left}px;` +
       `padding-right: ${t * padding_right}px;` +

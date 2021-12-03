@@ -67,9 +67,8 @@
   }
 
   @media (max-width: 768px) {
-    .logo,
-    .mobile-dropdown-toggle {
-      z-index: 1;
+    .logo, .mobile-dropdown-toggle {
+      z-index: 100;
     }
 
     .logo {
@@ -107,7 +106,6 @@
       opacity: 0;
       transform: translateY(-100%);
       transition: transform 0.3s, opacity 0.3s;
-
     }
 
     nav.dropdown-opened > .dropdown-link-container {
