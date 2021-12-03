@@ -26,21 +26,21 @@
     </div>
     <div class="row  px mo-flex-col">
         <div class="col-4 off-1 pt9 pb9 mo-pt7 mo-pb7">
-            <h5 class="book uc mo-font-0_77vw mo-normal">
+            <h5 class="book uc mo-font-1_11vw mo-normal">
                 Dream
             </h5>
             <h3 class="mo-mt2 mo-mb2 mt2 mb2">
                 <strong>Nestlove</strong> is the home to your dreams
             </h3>
             <LinkArrow
-                    class="font-0_77vw hover-blue decoration-none semibold text-black"
+                    class="font-1_11vw red decoration-none semibold text-black"
                     url="/properties"
                     label="Find your dream holiday house"
             />
         </div>
         <div class="col-4 off-1 pt9 pb9  mo-pt7 mo-pb7">
             <div class="font-1_25vw mo-mb2">
-                <p>
+                <p class="mt4">
                     Nestlove is the home to your dreams. We buy luxury properties in aspirational destinations
                     throughout Australia and then create specific purpose Trusts for co-ownership for 5 to 8 investors.
                     In doing so we utilize our skills for property acquisition, management and styling while owners get
@@ -57,7 +57,7 @@
     <div class="row  px mo-flex-col">
         <div class="col-4 off-1 pt9 pb9  mo-pt7 mo-pb7">
             <div class="font-1_25vw mo-mb2">
-                <p>
+                <p class="mt4">
                     Our target areas for property acquisition are prestige holiday locations around Australia. We create
                     specific purpose Trusts for each home with 5 or 6 shares. We then vet and fund our co-owners
                     (NestLovers) into each shareholding. NestLovers have the advantage of diversifying their property
@@ -77,14 +77,14 @@
             </div>
         </div>
         <div class="col-4 off-1 pt9 pb9 mo-pt7 mo-pb7">
-            <h5 class="book uc mo-font-0_77vw mo-normal">
+            <h5 class="book uc mo-font-1_11vw mo-normal">
                 Own
             </h5>
             <h3 class="mo-mt2 mo-mb2 mt2 mb2">
                 Exclusive <strong>Investment Co-ownership.</strong>
             </h3>
             <LinkArrow
-                    class="font-0_77vw hover-blue decoration-none semibold text-black"
+                    class="font-1_11vw red decoration-none semibold text-black"
                     url="/about#co-ownership"
                     label="Is Co-ownership for you, find out more"
             />
@@ -96,21 +96,21 @@
 <section>
     <div class="row  px mo-flex-col">
         <div class="col-4 off-1 pt9 pb9 mo-pt7 mo-pb7">
-            <h5 class="book uc mo-font-0_77vw mo-normal">
+            <h5 class="book uc mo-font-1_11vw mo-normal">
                 Relax
             </h5>
             <h3 class="mo-mt2 mo-mb2 mt2 mb2">
                 Show Up & Relax. <strong>We Take Care of You.</strong>
             </h3>
             <LinkArrow
-                    class="font-0_77vw hover-blue decoration-none semibold text-black"
+                    class="font-1_11vw red decoration-none semibold text-black"
                     label="How NestLove takes care of NestLovers"
                     url="/about#nestlovers"
             />
         </div>
         <div class="col-4 off-1 pt9 pb9  mo-pt7 mo-pb7">
             <div class="font-1_25vw mo-mb2">
-                <p>
+                <p class="mt4">
                     Nestlove properties are located in prestigious locations around Australia. Homes are prepared the
                     Nestlove way so you know what to expect where ever you go. We take care of the typical holiday home
                     ownership hassles such as renovation, interior design, repairs, utilities and property management.
@@ -130,11 +130,33 @@
     </div>
 </section>
 
+<!--call to action-->
+<section>
+    <div class="mb8 px row bg-black white py4">
+        <div class="col-10 off-1">
+            <p class="center font-1_77vw mb0 mt1">
+                Have you dreamed about <strong>owning an investment property</strong> in some of Australia’s most prestigious areas?
+            </p>
+            <p class="center font-1_77vw mb0 mt1">
+                Are you sick of paying huge amounts for <strong>holiday rentals</strong> during peak times?
+            </p>
+            <p class="center font-1_77vw mb0 mt1">
+                Is a <strong>tax effective</strong> investment into some of Australia’s premium suburbs appealing?
+
+            </p>
+            <p class="center font-1_77vw mb0 mt1">
+                <strong>NestLove might be the perfect solution for you.</strong>
+            </p>
+        </div>
+
+
+    </div>
+</section>
 <!--property-->
 <section>
     <div class="mt4 mb4 px row">
         <h2 class="col-12 normal mb0 text-center font-7_29vw">
-            Property to NestLove
+            NestLove Properties
         </h2>
     </div>
     <div class="row px div mo-fw mo-between mb6">
@@ -152,21 +174,21 @@
 <section>
     <div class="row  px mo-flex-col">
         <div class="col-4 off-1 pt9 pb9 mo-pt7 mo-pb7">
-            <h5 class="book uc mo-font-0_77vw mo-normal">
+            <h5 class="book uc mo-font-1_11vw mo-normal">
                 Enjoy
             </h5>
             <h3 class="mo-mt2 mo-mb2 mt2 mb2">
                 Holidays made easy. <strong>Investment Maximised.</strong>
             </h3>
             <LinkArrow
-                    class="font-0_77vw hover-blue decoration-none semibold text-black"
+                    class="font-1_11vw red decoration-none semibold text-black"
                     label="Holidaying in your own NestLove"
                     url="/#/holidaying"
             />
         </div>
         <div class="col-4 off-1 pt9 pb9  mo-pt7 mo-pb7">
             <div class="font-1_25vw mo-mb2">
-                <p>
+                <p class="mt4">
                     Through our world class booking platform and app co-owners can ensure that they can access their
                     property in peak times throughout the year. <strong>No more paying for expensive holidays in the
                     most sought after locations. You own it.</strong> NestLove also provides an annual expense statement
@@ -181,37 +203,66 @@
     </div>
 </section>
 
-<!--in action-->
+<!--invest-->
 <section>
-    <div class="row grey10 px">
-        <div class="col-6 grey30 tail-left">
-            <AspectRatio ratio="16x9" crop center relative pointer grey30>
-                <div class=" absolute w100 h100" style="bottom:0;left:0;height:20%">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="text-white h100 px1 py1 ">
-                        <path fill="currentColor"
-                              d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"
-                              class=""></path>
-                    </svg>
-                </div>
-            </AspectRatio>
-        </div>
-        <div class="col-1 grey30 mo-display-none"></div>
-        <div class="col-4 off-1 pt9 pb8 mo-pt7 mo-pb7">
-            <h3 class=" mb2 mo-mt2 mo-mb2">
-                NestLove in Action
-            </h3>
-            <div class="font-1_25vw book mo-mb2">
-                <p>Get a better grip on what NestLove is and how it can work for you, learn how to use the calculator
-                    too!</p>
-                <LinkArrow
-                        class="font-0_77vw hover-blue decoration-none semibold text-black"
-                        label="I'm ready to use the calculator"
-                        url="/#/calculator"
-                />
+    <div class="row  px mo-flex-col">
+        <div class="col-4 off-1 pt9 pb9  mo-pt7 mo-pb7">
+            <div class="font-1_25vw mo-mb2">
+                <p class="mt4">
+                    At Nestlove we provide a model where you invest through a property specific Trust, you own and you use. Co-Owners pay a minimal nightly rate for staying in their property to ensure it is income producing to capture the benefits of negative gearing. Use the NestLove expense calculator to estimate the tax benefits of each property shareholding.
+                </p>
+                <p>
+                    The Nestlove dream starts with buying a property in a aspirational location. We then take care of styling and refurbishing the property to achieve the Nestlove look. Co-owners know that if they buy in Byron Bay or Portsea, their investment is to the same quality presentation.
+                </p>
             </div>
+        </div>
+        <div class="col-4 off-1 pt9 pb9 mo-pt7 mo-pb7">
+            <h5 class="book uc mo-font-1_11vw mo-normal">
+                Invest
+            </h5>
+            <h3 class="mo-mt2 mo-mb2 mt2 mb2">
+                <strong>Tax Effective</strong> Investment
+            </h3>
+            <LinkArrow
+                    class="font-1_11vw red decoration-none semibold text-black"
+                    label="Run your own simulation with our properties"
+                    url="/#/calculator"
+            />
         </div>
     </div>
 </section>
+
+<!--in action-->
+<!--<section>-->
+<!--    <div class="row grey10 px">-->
+<!--        <div class="col-6 grey30 tail-left">-->
+<!--            <AspectRatio ratio="16x9" crop center relative pointer grey30>-->
+<!--                <div class=" absolute w100 h100" style="bottom:0;left:0;height:20%">-->
+<!--                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="text-white h100 px1 py1 ">-->
+<!--                        <path fill="currentColor"-->
+<!--                              d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"-->
+<!--                              class=""></path>-->
+<!--                    </svg>-->
+<!--                </div>-->
+<!--            </AspectRatio>-->
+<!--        </div>-->
+<!--        <div class="col-1 grey30 mo-display-none"></div>-->
+<!--        <div class="col-4 off-1 pt9 pb8 mo-pt7 mo-pb7">-->
+<!--            <h3 class=" mb2 mo-mt2 mo-mb2">-->
+<!--                NestLove in Action-->
+<!--            </h3>-->
+<!--            <div class="font-1_25vw book mo-mb2">-->
+<!--                <p>Get a better grip on what NestLove is and how it can work for you, learn how to use the calculator-->
+<!--                    too!</p>-->
+<!--                <LinkArrow-->
+<!--                        class="font-1_11vw red decoration-none semibold text-black"-->
+<!--                        label="I'm ready to use the calculator"-->
+<!--                        url="/#/calculator"-->
+<!--                />-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 <!--reviews-->
 <section>
@@ -235,13 +286,13 @@
 <!--faqs-->
 <section>
     <div class="row grey20 px pt6 pb7 mt4 mo-pt7 mo-pb7">
-        <div class="col-5 off-1"><h5 class="book uc mb2 mo-font-0_77vw mo-normal">Faqs</h5>
+        <div class="col-4 off-1"><h5 class="book uc mb2 mo-font-1_11vw mo-normal">Faqs</h5>
             <h3 class="normal mb2 mo-mt2 mo-mb3 font-3_3vw mo-font-3_12vw">
                 NestLove’s most
                 <strong>frequently loved questions.</strong>
             </h3></div>
-        <div class="off-1 col-4">
-            <div>
+        <div class="off-1 col-5">
+            <div class="mt4">
                 {#each [
                     {
                         q: 'Can we only buy one share in a property?',
@@ -286,7 +337,7 @@
 <section>
     <div class="row px mt4 mb4 mo-mt8 mo-mb4">
         <div class="col-6 off-3 center"><h3 class="font-3_3vw mo-font-3_12vw">Nestlovers on the <a
-                class="text-black decoration-none hover-blue" href="https://www.instagram.com/thegraphicdesignschool/"
+                class="text-black decoration-none red" href="https://www.instagram.com/thegraphicdesignschool/"
                 target="_blank" rel="noopener">Gram</a></h3>
             <p class="font-1_25vw">Be the first to know when a new property is released.<br>Share the love with other
                 NestLovers. @nestloveproperties</p>
@@ -304,4 +355,6 @@
 </section>
 
 <!--forms-->
-<Forms/>
+<!--<Forms/>-->
+
+

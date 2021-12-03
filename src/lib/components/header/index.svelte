@@ -55,7 +55,15 @@
 
   .dropdown-link-container > a {
     margin-left: 20px;
-    font-size: clamp(12px, 1.5vw, 3vw);
+    font-size: clamp(12px, 1.25vw, 3vw);
+    font-weight: bold;
+    color: var(--black);
+    text-decoration: none;
+
+
+    &:hover {
+      color: red;
+    }
 
     @media (max-width: 768px) {
       color: snow;

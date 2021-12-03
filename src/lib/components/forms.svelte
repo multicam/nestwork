@@ -1,4 +1,4 @@
-<div class="px pt6 pb5 blue mo-pt6 mo-pb0">
+<div class="px pt6 pb5 red mo-pt6 mo-pb0">
     <div class="row pb1">
         <div class="col-4 off-1 flex-col pst-1 mo-mb2">
             <h3 class="text-white mb3 mo-mb3 mo-font-3_12vw">Ready to Invest</h3>

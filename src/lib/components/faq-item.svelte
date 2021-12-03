@@ -5,5 +5,5 @@
      style="cursor:pointer" show><h5 class="mb0">{q}</h5><h5 class="mb0">
     +</h5></div>
 <div class="smooth-reveal">
-    <div><p class="pt1">{a}</p></div>
+    <div><p class="pt1 ">{a}</p></div>
 </div>

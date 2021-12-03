@@ -21,10 +21,10 @@
                 {property.location}
             </h5>
             <h3 class="mo-mt2 mo-mb2 mt2 mb2">
-                We are loving this view over both <br><strong>Bungan & Newport</strong>
+                We are loving this view over <br><strong>Newport Beach</strong>
             </h3>
             <LinkArrow
-                    class="font-0_77vw hover-blue decoration-none semibold text-black"
+                    class="font-0_77vw red decoration-none semibold text-black"
                     url="#/request-more-info"
                     label="Request More Info"
             />

@@ -1,6 +1,6 @@
 <script>
   import AspectRatio from "./carbon/AspectRatio.svelte";
-  import {hslide} from './hslide.js';
+  import {hslide} from './hslide2.js';
   import {onMount} from "svelte";
 
   const {min,max} = Math
@@ -18,7 +18,7 @@
   ]
   let currentSlide = 0
   const transitionArgs = {
-    duration: 400,
+    duration: 4000,
   }
 
   const clamp = (num, mini, maxi) => min(max(num, mini), maxi);
@@ -55,7 +55,7 @@
                         in:hslide={transitionArgs}
                         out:hslide={transitionArgs}
                 >
-                    <div class="prefix font-1_77vw bold">We love</div>
+                    <div class="slide-prefix font-1_77vw bold">We love</div>
                     <div class="title font-7_29vw semibold">{slides[currentSlide].title}</div>
                 </div>
             {/if}
@@ -80,7 +80,7 @@
 
     .slide {
         padding: 5vw;
-        text-align: right;
+        text-align: left;
 
         position: absolute;
         bottom: 0;

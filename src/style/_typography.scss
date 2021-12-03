@@ -259,6 +259,18 @@ figcaption {
   }
 }
 
+.hover-red {
+  transition: all .3s ease;
+  &:hover {
+    color: var(--blue);
+  }
+}
+
+.red {
+  transition: all .3s ease;
+  color: var(--red);
+}
+
 .hover-blue {
   transition: all .3s ease;
   &:hover {
@@ -341,4 +353,13 @@ figcaption {
   @media (max-width: 1028px) {
     text-align: center;
   }
+}
+
+.decoration-none {
+  text-decoration: none;
+}
+
+.bg-black {
+  background: var(--black);
+  color: var(--white);
 }

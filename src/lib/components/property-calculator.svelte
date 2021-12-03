@@ -74,7 +74,7 @@
             <div class="font-1_25vw mo-mb2">
 
                 <h3 class="mb1">Investor</h3>
-                <h4 class="mt1 mb1">Yearly Income</h4>
+                <h4 class="mt1 mb1">Taxable Income p.a.</h4>
                 <MoneyInput bind:value={yearlyIncome}/>
 
             </div>
