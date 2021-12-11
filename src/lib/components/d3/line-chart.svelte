@@ -7,20 +7,25 @@
   const {log} = console, {keys, values} = Object, {stringify} = JSON
 
   export let data;
+  export let setScaleY
+
   let height = 600;
   let margin = 80;
   let width;
 
-  $: log(data)
   $: xScale =
     scaleTime()
       .domain(extent(data.equity3y, d => d[0]))
       .range([margin, width - margin]);
 
   $: yScale =
-    scaleLinear()
-      .domain([0, max(data.equity3y, d => +d[1])])
-      .range([height - margin, margin]);
+    setScaleY ?
+      scaleLinear()
+        .domain([0, setScaleY])
+        .range([height - margin, margin]) :
+      scaleLinear()
+        .domain([0, max(data.equity3y, d => +d[1])])
+        .range([height - margin, margin])
 
   $: lineGenerator =
     line()
@@ -39,7 +44,7 @@
   //   }
 
   $: dataPrint = keys(data).map(k => {
-    return data[k].map(i => [ xScale(i[0]), yScale(i[1]) ])
+    return data[k].map(i => [xScale(i[0]), yScale(i[1])])
   })
 
   const colors = [

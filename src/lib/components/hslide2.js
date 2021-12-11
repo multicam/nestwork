@@ -1,5 +1,5 @@
 import { cubicOut } from 'svelte/easing'
-const {min} = Math
+const {min} = Math, {log} = console
 
 export function hslide(node, {
   delay = 0,
@@ -15,6 +15,8 @@ export function hslide(node, {
   const margin_right = parseFloat(style.marginRight);
   const border_left_width = parseFloat(style.borderLeftWidth);
   const border_right_width = parseFloat(style.borderRightWidth);
+
+  log(width,padding_left,padding_right)
 
   return {
     delay,

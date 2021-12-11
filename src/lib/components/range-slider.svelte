@@ -1,6 +1,6 @@
 <script>
   import RangeSlider from "svelte-range-slider-pips";
-  export let values
+  export let values = []
 </script>
 <RangeSlider
     bind:values

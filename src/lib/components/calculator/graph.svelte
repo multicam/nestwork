@@ -15,4 +15,4 @@
     }, {})
 
 </script>
-<Chart data={charData}/>
+<Chart data={charData} setScaleY={500000}/>
