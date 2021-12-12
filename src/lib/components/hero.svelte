@@ -1,40 +1,40 @@
 <script>
-  import AspectRatio from "./carbon/AspectRatio.svelte";
-  import {hslide} from './hslide2.js';
-  import {onMount} from "svelte";
+    import AspectRatio from "./carbon/AspectRatio.svelte";
+    import {fade} from 'svelte/transition'
+    import {hslide} from './hslide2.js';
+    import {onMount} from "svelte";
 
-  const {min,max} = Math
+    const {min, max} = Math
 
-  const slides = [
-    {
-      title: 'Property'
-    },
-    {
-      title: 'Prestige Locations'
-    },
-    {
-      title: 'Stunning Holiday Destinations'
+    const slides = [
+        {
+            title: 'Property'
+        },
+        {
+            title: 'Prestige Locations'
+        },
+        {
+            title: 'Stunning Holiday Destinations'
+        }
+    ]
+
+    let currentSlide = 0
+    const transitionIn = { duration: 2000 }, transitionOut = { duration: 500 }
+
+
+    function prev(e) {
+        currentSlide = (--currentSlide) % slides.length
     }
-  ]
-  let currentSlide = 0
-  const transitionArgs = {
-    duration: 4000,
-  }
 
-  const clamp = (num, mini, maxi) => min(max(num, mini), maxi);
+    function next(e) {
+        currentSlide = (++currentSlide) % slides.length
+    }
 
-  function prev(e) {
-    currentSlide = --currentSlide%slides.length
-  }
+    onMount(() => {
+        let interval = setInterval(() => next(), transitionIn.duration)
+        return () => clearInterval(interval)
+    })
 
-  function next(e) {
-    currentSlide = (++currentSlide)%slides.length
-  }
-
-  onMount(() => {
-    let interval = setInterval(() => next(), 4000)
-    return () => clearInterval(interval)
-  })
 </script>
 
 <div class="container">
@@ -48,54 +48,62 @@
         ></video>
     </AspectRatio>
     <div class="slides">
-        {#each slides as slide, id}
-            {#if id === currentSlide}
-                <div
-                        class="slide"
-                        in:hslide={transitionArgs}
-                        out:hslide={transitionArgs}
-                >
-                    <div class="slide-prefix font-1_77vw bold">We love</div>
-                    <div class="title font-7_29vw semibold">{slides[currentSlide].title}</div>
-                </div>
-            {/if}
-        {/each}
-
+        <div class="slides-inner">
+            <div class="slide-prefix font-1_77vw bold">We love</div>
+            {#each slides as slide, id}
+                {#if id === currentSlide}
+                    <div
+                            class="slide"
+                            in:hslide={transitionIn}
+                            out:hslide={transitionOut}
+                    >
+                        <div class="title font-7_29vw semibold">{slides[currentSlide].title}</div>
+                    </div>
+                {/if}
+            {/each}
+        </div>
     </div>
 </div>
 <style lang="scss">
 
-    .container {
-        overflow: hidden;
-        position: relative;
-    }
+  .container {
+    overflow: hidden;
+    position: relative;
+  }
 
-    .slides {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-    }
+  .slides {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
-    .slide {
-        padding: 5vw;
-        text-align: left;
+  .slides-inner {
+    top: 10vw;
+    position: relative;
+    max-width: 1200px;
+    margin: auto;
+  }
 
-        position: absolute;
-        bottom: 0;
-        right: 0;
-    }
+  .slide {
+    padding: 5vw 0;
+    text-align: left;
 
-    .prefix, .title {
-        white-space: nowrap;
-        color: snow;
-        line-height: 1;
-        text-shadow: 0 0 2vw rgba(0, 0, 0, .2);
-    }
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-    video {
-        width: calc(100%);
-    }
+  .prefix, .title {
+    white-space: nowrap;
+    color: snow;
+    line-height: 1;
+    text-shadow: 0 0 2vw rgba(0, 0, 0, .2);
+  }
+
+  video {
+    width: calc(100%);
+  }
 
 </style>

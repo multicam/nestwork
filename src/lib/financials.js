@@ -9,6 +9,11 @@ export const compound = (length, initial, rate) => {
   return res
 }
 
+export const aggregate = arr => arr.map((i,n) => {
+  let t=0
+  for(let k=0; k<=n; ++k) t += arr[k]
+  return t
+})
 // TAX POSITION CALCULATOR
 
 const taxBracket = [

@@ -2,7 +2,7 @@
   export let property
 
   import {dev} from '$app/env'
-  import {calculateLoan, calculateTaxes, compound} from "$lib/financials";
+  import {aggregate, calculateLoan, calculateTaxes, compound} from "$lib/financials";
   import {formatMoney, formatPercent} from "$lib/utils";
 
   const {log} = console, {stringify} = JSON
@@ -46,6 +46,7 @@
   $: adjustedGrowth = exitGrowth / property.data.numberShares * (1 - selectedLvr) - costsIndividualTotal + taxBenefitTotal
 
   $: costBase = costsIndividualInclLoan
+  $: costsAggregated = aggregate((costsIndividualInclLoan))
 
   $: equity10y =
     compound(exitYears, property.data.purchasePrice, property.stats.average_10y_annual)
@@ -119,13 +120,15 @@
         </div>
 
     </div>
-    <div class="row  px mt4">
-        <Graph data={{
-          labelYears,
-          costBase,
-          equity10y,
-          equity3y
-        }} />
+    <div class="row  mt4">
+        <div class="col-10 off-1 px">
+            <Graph data={{
+              labelYears,
+              costsAggregated,
+              equity10y,
+              equity3y
+            }} />
+        </div>
     </div>
     <div class="row px mt4 mo-hidden">
         <div class="col-12">
@@ -155,6 +158,14 @@
                         <strong>Incl. Loan</strong>
                     </td>
                     {#each costsIndividualInclLoan as val }
+                        <td class="text-mono text-right italic" style="color: orangered">{formatMoney(val)}</td>
+                    {/each}
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Aggregated</strong>
+                    </td>
+                    {#each costsAggregated as val }
                         <td class="text-mono text-right italic" style="color: orangered">{formatMoney(val)}</td>
                     {/each}
                 </tr>
