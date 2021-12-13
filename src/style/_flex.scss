@@ -6,18 +6,6 @@
   display: flex;
   flex-direction: column;
 }
-.mo-flex-col {
-  @media (max-width: 1028px) {
-    display: flex;
-    flex-direction: column!important;
-  }
-}
-.mo-flex-row {
-  @media (max-width: 1028px) {
-    display: flex;
-    flex-direction: row;
-  }
-}
 
 .flex-end {
   justify-items: flex-end;
@@ -52,10 +40,6 @@
 .flex-1 { flex:1;}
 .flex-2 { flex:2;}
 .flex-3 { flex:3;}
-
-.mo-flex-1 {@media (max-width: 1028px) { flex:1; } }
-.mo-flex-2 {@media (max-width: 1028px) { flex:2; } }
-.mo-flex-3 {@media (max-width: 1028px) { flex:3; } }
 
 .vert-center {
   display: flex;

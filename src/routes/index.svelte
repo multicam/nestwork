@@ -159,7 +159,7 @@
             NestLove Properties
         </h2>
     </div>
-    <div class="row px div mo-fw mo-between mb6">
+    <div class="row px div mo-wrap mo-between mb6">
         {#each ['image9', 'pexels-amanda-klamrowski-1464793', 'dusk_35_elaine'] as house, n}
             <div class="col-4 mb1 mo-mb0">
                 <AspectRatio ratio="1x1" crop center>

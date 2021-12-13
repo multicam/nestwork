@@ -8,7 +8,6 @@
   const {log} = console, {stringify} = JSON
 
   import MoneyInput from './calculator/money-input.svelte'
-  import LvrInput from './calculator/lvr-input.svelte'
   import Graph from './calculator/graph.svelte'
 
   import RangeSlider from '$lib/components/range-slider.svelte'
