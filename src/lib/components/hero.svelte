@@ -80,14 +80,14 @@
   }
 
   .slides-inner {
-    top: 10vw;
+    top: 18vw;
     position: relative;
     max-width: 1200px;
     margin: auto;
   }
 
   .slide {
-    padding: 5vw 0;
+    padding: 3vw 0;
     text-align: left;
 
     position: absolute;
@@ -95,9 +95,10 @@
     left: 0;
   }
 
-  .prefix, .title {
+  .slide-prefix, .title {
     white-space: nowrap;
-    color: snow;
+    color: snow!important;
+    font-weight: 400;
     line-height: 1;
     text-shadow: 0 0 2vw rgba(0, 0, 0, .2);
   }

@@ -1,20 +1,20 @@
 <script>
-  import Logo from "../icons/logo.svelte"
-  import links from './links'
+    import Logo from "../icons/logo.svelte"
+    import links from './links'
 
-  const {log} = console
+    const {log} = console
 
-  let navElement, dropdownEl, open = false
+    let navElement, dropdownEl, open = false
 
-  const clickMenu = () => {
-    open = !open
-  }
+    const clickMenu = () => {
+        open = !open
+    }
 
 </script>
 
 <header>
     <nav bind:this={navElement} class:dropdown-opened={open}>
-        <a class="logo mt1" href="/" on:click={() => open && clickMenu()}>
+        <a class="logo mt1 mo-ml2" href="/" on:click={() => open && clickMenu()}>
             <Logo color={open?'snow':'black'}/>
         </a>
         <div class="dropdown-link-container" bind:this={dropdownEl}>
@@ -22,8 +22,12 @@
                 <a href={link.url} on:click={clickMenu}>{link.label}</a>
             {/each}
         </div>
-        <div class="mobile-dropdown-toggle" aria-hidden="true" on:click={clickMenu}>
-            Menu
+        <div class="mobile-dropdown-toggle mo-mr4" aria-hidden="true" on:click={clickMenu}>
+            {#if open}
+                Close
+            {:else}
+                Menu
+            {/if}
         </div>
     </nav>
 </header>
@@ -50,6 +54,10 @@
 
   .mobile-dropdown-toggle {
     display: none;
+    background: black;
+    color: snow;
+    padding: 1vw 2vw;
+    border-radius: 1vw;
   }
 
 
@@ -65,7 +73,7 @@
       color: red;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1028px) {
       color: snow;
       text-decoration: none !important;
       font-size: clamp(16px, 5.2vw, 32px);
@@ -74,7 +82,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1028px) {
     .logo, .mobile-dropdown-toggle {
       z-index: 100;
     }
