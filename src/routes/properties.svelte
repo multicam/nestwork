@@ -15,10 +15,10 @@
   a {
     text-decoration: none;
     color: #123;
+  }
 
-    &:hover {
-      color: #DEF;
-    }
+  a:hover {
+    color: #DEF;
   }
 </style>
 <!--head-->
@@ -45,27 +45,27 @@
                     <AspectRatio ratio="1x1" crop center>
                         <img class="cabs" src="/property/{p.thumb}.png" alt="house {n}">
                     </AspectRatio>
-                    <figcaption class="flex" style="height:2vw; margin: 1vw 0">
-                        <div style="width:2vw; height: 2vw; margin-right: .5vw">
-                            <IconBeds beds={p.beds}/>
-                        </div>
-                        {#if p.pool }
-                            <div style="width:2vw; height: 2vw; margin-right: .5vw">
-                                <IconPool/>
-                            </div>
-                        {/if}
-                        {#if p.wharf }
-                            <div style="width:2vw; height: 2vw; margin-right: .5vw">
-                                <IconWharf/>
-                            </div>
-                        {/if}
-                        <div class="flex-col"
-                             style="font-size:.9em; line-height: 1vw;">
-                            <div>{p.summary}</div>
-                            <div><strong>{p.address}</strong></div>
-                        </div>
-                    </figcaption>
                 </a>
+                <figcaption class="flex" style="height:2vw; margin: 1vw 0">
+                    <div style="width:2vw; height: 2vw; margin-right: .5vw">
+                        <IconBeds beds={p.beds}/>
+                    </div>
+                    {#if p.pool }
+                        <div style="width:2vw; height: 2vw; margin-right: .5vw">
+                            <IconPool/>
+                        </div>
+                    {/if}
+                    {#if p.wharf }
+                        <div style="width:2vw; height: 2vw; margin-right: .5vw">
+                            <IconWharf/>
+                        </div>
+                    {/if}
+                    <div class="flex-col"
+                         style="font-size:.9em; line-height: 1vw;">
+                        <div>{p.summary}</div>
+                        <div><strong>{p.address}</strong></div>
+                    </div>
+                </figcaption>
             </figure>
         {/each}
     </div>
