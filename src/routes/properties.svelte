@@ -11,16 +11,6 @@
 
   import properties from '../data/properties.json'
 </script>
-<style lang="scss">
-  a {
-    text-decoration: none;
-    color: #123;
-  }
-
-  a:hover {
-    color: #DEF;
-  }
-</style>
 <!--head-->
 <svelte:head>
     <title>NestLove | Properties</title>
@@ -38,9 +28,9 @@
             Current Nests to Love
         </h2>
     </div>
-    <div class="row px div mo-wrap mo-between mb6">
+    <div class="px div mo-wrap mo-between mb6">
         {#each properties as p, n}
-            <figure class="col-4 mb1 mo-mb0">
+            <figure class="col-4 mb1">
                 <a href="/property/{p.slug}">
                     <AspectRatio ratio="1x1" crop center>
                         <img class="cabs" src="/property/{p.thumb}.png" alt="house {n}">
@@ -74,3 +64,18 @@
 
 <!--forms-->
 <Forms/>
+
+<style lang="scss">
+  @media (min-width: 1028px) {
+  }
+
+  a {
+      text-decoration: none;
+      color: #123;
+
+    &:hover {
+      color: #DEF;
+    }
+  }
+
+</style>

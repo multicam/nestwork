@@ -1,4 +1,4 @@
-@media (max-width: 1028px) {
+@media (var(--mobile-size)) {
 
   .mo-flex-col {
     display: flex;
@@ -10,11 +10,15 @@
     flex-direction: row;
   }
 
+  .mo-block {
+    @media (min-width: 1028px) { display: block!important }
+  }
+
 
   .mo-flex-1 { flex:1; }
   .mo-flex-2 { flex:2; }
   .mo-flex-3 { flex:3; }
 
   .mo-wrap { flex-wrap: wrap }
-  .mo-between { justify-content: space-between }
+  .mo-between {@media (var(--mobile-size)) {justify-content: space-between }}
 }

@@ -1,0 +1,6 @@
+.mo-col-12 {
+  @media (var(--mobile-size)) {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}

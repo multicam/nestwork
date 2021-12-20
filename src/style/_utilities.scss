@@ -16,7 +16,7 @@
 }
 
 
-@media (max-width: 1028px) {
+@media (var(--mobile-size)) {
   .mo-hidden {
     display: none!important;
   }

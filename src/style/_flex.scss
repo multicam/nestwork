@@ -16,7 +16,7 @@
 }
 
 .fw {flex-wrap: wrap;}
-.mo-fw {@media (max-width: 1028px) {flex-wrap: wrap;}}
+.mo-fw {@media (var(--mobile-size)) {flex-wrap: wrap;}}
 
 .f1 { flex: 1 1 0% }
 .flex-auto { flex: 1 1 auto }
@@ -29,7 +29,6 @@
 
 .around { justify-content: space-around }
 .between { justify-content: space-between }
-.mo-between {@media (max-width: 1028px) {justify-content: space-between }}
 
 .jc-end { justify-content: flex-end }
 .ji-end { justify-items: flex-end }

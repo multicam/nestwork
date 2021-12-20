@@ -288,24 +288,21 @@
   text-align: center;
 }
 
-.mo-left { @media (max-width: 768px) { text-align: left;} }
-.mo-right { @media (max-width: 768px) { text-align: right; } }
+.mo-left { @media (min-width: 1028px) { text-align: left;} }
+.mo-right { @media (min-width: 1028px) { text-align: right; } }
 
 .mo-center {
-  @media (max-width: 768px) {
+  @media (min-width: 1028px) {
     align-items: center;
     text-align: center;
   }
 }
-.end {
-  justify-content: flex-end;
-  text-align: end;
-}
 
 
-.mo-start { @media (max-width: 768px) { align-items: start; } }
+.mo-start { @media (min-width: 1028px) { align-items: start; } }
 
-.mo-end { @media (max-width: 768px) { align-items: end; } }
+.mo-end { @media (min-width: 1028px) { align-items: end; } }
+
 .end {
   justify-content: flex-end;
   text-align: end;
@@ -341,7 +338,7 @@
 
 
 .tail-left, .tail-right {
-  @media (min-width: 768px) {
+  @media (min-width: 1028px) {
     position: relative;
     &:after {
       content: '';
@@ -369,7 +366,7 @@
   }
 }
 .mo-tail-left, .mo-tail-right {
-  @media (max-width: 768px) {
+  @media (min-width: 1028px) {
     position: relative;
     &:after {
       content: '';
@@ -382,7 +379,7 @@
   }
 }
 .mo-tail-both {
-  @media (max-width: 768px) {
+  @media (min-width: 1028px) {
     position: relative;
     &:after, &:before {
       content: '';
@@ -402,14 +399,14 @@
 }
 
 .mo-tail-left {
-  @media (max-width: 768px) {
+  @media (min-width: 1028px) {
     &:after {
       right: 100%;
     }
   }
 }
 .mo-tail-right {
-  @media (max-width: 768px) {
+  @media (min-width: 1028px) {
     &:after {
       left: 100%;
     }

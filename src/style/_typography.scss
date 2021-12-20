@@ -112,7 +112,7 @@ figcaption {
   font-weight: 300;
 }
 .mo-book {
-  @media (max-width: 1028px) {
+  @media (var(--mobile-size)) {
     font-weight: 300;
   }
 }
@@ -120,7 +120,7 @@ figcaption {
   font-weight: 400;
 }
 .mo-normal {
-  @media (max-width: 1028px) {
+  @media (var(--mobile-size)) {
     font-weight: 400!important;
   }
 }
@@ -319,17 +319,17 @@ figcaption {
   vertical-align: baseline;
 }
 .mo-font-0_66vw {
-  @media (max-width: 1028px) {
+  @media (var(--mobile-size)) {
     font-size: Fs_alt(0.66vw, 12px);
   }
 }
 .mo-font-0_77vw {
-  @media (max-width: 1028px) {
+  @media (var(--mobile-size)) {
     font-size: Fs_alt(.77vw, 14px);
   }
 }
 .mo-font-2_5vw {
-  @media (max-width: 1028px) {
+  @media (var(--mobile-size)) {
     font-size: Fs_alt(2.5vw, 28px);
     p {
       font-size: Fs_alt(2.25vw, 28px) !important;
@@ -337,7 +337,7 @@ figcaption {
   }
 }
 .mo-font-3_12vw {
-  @media (max-width: 1028px) {
+  @media (var(--mobile-size)) {
     font-size: Fs_alt(3.125vw, 32px) !important;
     p {
       font-size: Fs_alt(3.125vw, 32px) !important;
@@ -345,12 +345,12 @@ figcaption {
   }
 }
 .mo-text-left {
-  @media (max-width: 1028px) {
+  @media (var(--mobile-size)) {
     text-align: left
   }
 }
 .mo-text-center {
-  @media (max-width: 1028px) {
+  @media (var(--mobile-size)) {
     text-align: center;
   }
 }
