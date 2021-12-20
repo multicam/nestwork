@@ -14,7 +14,7 @@
             title: 'Prestige Locations'
         },
         {
-            title: 'Stunning Holiday Destinations'
+            title: 'Stunning&nbsp;Holiday Destinations'
         }
     ]
 
@@ -47,8 +47,8 @@
                 loop
         ></video>
     </AspectRatio>
-    <div class="slides">
-        <div class="slides-inner">
+    <div class="slides row">
+        <div class="slides-inner col-8 off-1">
             <div class="slide-prefix font-1_77vw bold">We love</div>
             {#each slides as slide, id}
                 {#if id === currentSlide}
@@ -57,7 +57,7 @@
                             in:hslide={transitionIn}
                             out:hslide={transitionOut}
                     >
-                        <div class="title font-7_29vw semibold">{slides[currentSlide].title}</div>
+                        <div class="title font-7_29vw semibold">{@html slides[currentSlide].title}</div>
                     </div>
                 {/if}
             {/each}
@@ -83,24 +83,26 @@
     top: 18vw;
     position: relative;
     max-width: 1200px;
-    margin: auto;
+    padding: 4vw;
   }
 
   .slide {
-    padding: 3vw 0;
     text-align: left;
-
     position: absolute;
-    top: 0;
-    left: 0;
+
   }
 
   .slide-prefix, .title {
     white-space: nowrap;
     color: snow!important;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1;
     text-shadow: 0 0 2vw rgba(0, 0, 0, .2);
+  }
+
+  .title {
+    word-break: normal;
+    white-space: normal;
   }
 
   video {

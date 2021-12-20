@@ -14,7 +14,7 @@
 
 <header>
     <nav bind:this={navElement} class:dropdown-opened={open}>
-        <a class="logo mt1 mo-ml2" href="/" on:click={() => open && clickMenu()}>
+        <a class="logo mt1 " href="/" on:click={() => open && clickMenu()}>
             <Logo color={open?'snow':'black'}/>
         </a>
         <div class="dropdown-link-container" bind:this={dropdownEl}>
@@ -39,6 +39,7 @@
     left: 0;
     right: 0;
     z-index: 100;
+    padding: 0 4vw;
   }
 
   nav {
@@ -46,10 +47,10 @@
     display: flex;
     align-items: center;
     margin: auto;
-  }
-
-  .logo {
-    margin-right: auto;
+    justify-content: space-between;
+    > * {
+      display:block;
+    }
   }
 
   .mobile-dropdown-toggle {
@@ -59,7 +60,6 @@
     padding: 1vw 2vw;
     border-radius: 1vw;
   }
-
 
   .dropdown-link-container > a {
     margin-left: 20px;
@@ -82,13 +82,18 @@
     }
   }
 
+  .logo {
+    height: 12vw;
+  }
+
   @media (max-width: 1028px) {
     .logo, .mobile-dropdown-toggle {
       z-index: 100;
     }
 
     .logo {
-      padding: 2vw
+      padding: 2vw;
+      height: 8vw;
     }
 
     .mobile-dropdown-toggle {
@@ -96,7 +101,7 @@
     }
 
     .dropdown-link-container {
-      /* first, make our dropdown cover the screen */
+
       position: fixed;
       top: 0;
       left: 0;
