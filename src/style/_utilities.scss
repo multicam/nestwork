@@ -16,7 +16,7 @@
 }
 
 
-@media (var(--mobile-size)) {
+@media (min-width: var(--mobile-size)) {
   .mo-hidden {
     display: none!important;
   }

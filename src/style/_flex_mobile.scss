@@ -1,4 +1,4 @@
-@media (var(--mobile-size)) {
+@media (min-width: var(--mobile-size)) {
 
   .mo-flex-col {
     display: flex;
@@ -20,5 +20,5 @@
   .mo-flex-3 { flex:3; }
 
   .mo-wrap { flex-wrap: wrap }
-  .mo-between {@media (var(--mobile-size)) {justify-content: space-between }}
+  .mo-between {@media (min-width: var(--mobile-size)) {justify-content: space-between }}
 }

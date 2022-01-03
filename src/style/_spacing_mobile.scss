@@ -1,4 +1,4 @@
-@media (var(--mobile-size)) {
+@media (min-width: var(--mobile-size)) {
 
   .mo-w-full { width: 100% }
 
@@ -6,14 +6,14 @@
   .mo-pt2 { padding-top: 2vw }
   .mo-pt7 { padding-top: 7vw }
 
-  .mo-pb0 { padding-bottom: 0vw }
+  .mo-pb0 { padding-bottom: 0 }
   .mo-pb1 { padding-bottom: 1vw }
   .mo-pb7 { padding-bottom: 7vw }
 
-  .mo-pr0 { padding-right: 0vw }
+  .mo-pr0 { padding-right: 0 }
   .mo-pr2 { padding-right: 2vw }
 
-  .mo-mt0 { margin-top: 0vw }
+  .mo-mt0 { margin-top: 0 }
   .mo-mt1 { margin-top: 1vw }
 
   .mo-mb1 { margin-bottom: 1vw }

@@ -2,10 +2,6 @@
   @return clamp( 16px, #{$si}, #{$si})
 }
 
-:root {
-  --mo-breakpoint: 768px;
-}
-
 // -- design spacers -- width reference 1920
 
 // xl: 160px -> 8.33

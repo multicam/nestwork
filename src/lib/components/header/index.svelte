@@ -83,7 +83,7 @@
   }
 
   .logo {
-    height: 12vw;
+    height: 4vw;
   }
 
   @media (max-width: 1028px) {
