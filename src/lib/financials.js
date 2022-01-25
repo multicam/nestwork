@@ -1,5 +1,5 @@
 // FUNCTIONS
-
+export const sum = arr => arr.reduce((r,i) => r+i, 0)
 export const compound = (length, initial, rate) => {
   let acc = initial / (1 + rate), res = []
   while (length--) {
@@ -81,4 +81,3 @@ export const calculateLoan = (amount,params) => {
   const months = params.durationYears, rate = params.rate
   return amount*(rate * Math.pow((1 + rate), months))/(Math.pow((1 + rate), months) - 1);
 }
-

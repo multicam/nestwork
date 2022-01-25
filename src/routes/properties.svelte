@@ -28,7 +28,7 @@
             Current Nests to Love
         </h2>
     </div>
-    <div class="px div mo-wrap mo-between mb6">
+    <div class="px row div mo-wrap mb6">
         {#each properties as p, n}
             <figure class="col-4 mb1">
                 <a href="/property/{p.slug}">

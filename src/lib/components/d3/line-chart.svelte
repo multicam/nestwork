@@ -10,7 +10,7 @@
   export let setScaleY
 
   let height = 600;
-  let margin = 80;
+  let margin = 10;
   let width;
 
   $: xScale =
@@ -32,25 +32,14 @@
       .x(d => xScale(d[0]))
       .y(d => yScale(+d[1]));
 
-  // const reveal =
-  //   (node, {duration}) => {
-  //     if (!xScale || !yScale) return;
-  //     const length = node.getTotalLength();
-  //     node.style.strokeDasharray = length;
-  //     return {
-  //       duration,
-  //       css: (t, u) => `stroke-dashoffset: ${u * length}`
-  //     };
-  //   }
-
   $: dataPrint = keys(data).map(k => {
     return data[k].map(i => [xScale(i[0]), yScale(i[1])])
   })
 
   const colors = [
-    'blue',
+    '#253d98',
     'orangered',
-    'green'
+    'red'
   ]
 </script>
 
@@ -64,15 +53,17 @@
 
                 {#each dataPrint as d, i}
                     <path
-                            d={line()(d)}
-                            stroke={colors[i]}
-                            stroke-width={2}
-                            stroke-linecap='round'
-                            fill='none'
+                        d={line()(d)}
+                        stroke={colors[i]}
+                        stroke-width={3}
+                        stroke-linecap='round'
+                        fill='none'
                     />
+                    <pre>{stringify(d)}</pre>
                 {/each}
 
             </svg>
         {/if}
     </div>
+
 {/if}

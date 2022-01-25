@@ -1,11 +1,11 @@
 <script>
   export let property
 
-  import {dev} from '$app/env'
-  import {aggregate, calculateLoan, calculateTaxes, compound} from "$lib/financials";
-  import {formatMoney, formatPercent} from "$lib/utils";
-
   const {log} = console, {stringify} = JSON
+
+  import {dev} from '$app/env'
+  import {aggregate, calculateLoan, calculateTaxes, compound, sum} from "$lib/financials";
+  import {formatMoney, formatPercent} from "$lib/utils";
 
   import MoneyInput from './calculator/money-input.svelte'
   import Graph from './calculator/graph.svelte'
@@ -15,15 +15,18 @@
   let exitYears = 7
   let selectedLvr, taxPosition, loanAmount, equityAmount, loanParams, loanPaymentYearly, loanPaymentMonthly, exitSale, exitGrowth, equityGrowth, labelYears, costsIndividual, costsIndividualInclLoan, adjustedIncome, adjustedTaxPosition, taxBenefits, taxBenefitTotal, costsIndividualTotal, adjustedGrowth, costBase, equity10y, equity3y
 
-  let yearlyIncome = 150000
+  let yearlyIncome = 120000
   $: taxPosition = calculateTaxes(yearlyIncome)
+
+  let selectedRangeRate = 45
+  $: selectedRate = selectedRangeRate / 1000.
 
   let selectedRangeLvr = 30
   $: selectedLvr = selectedRangeLvr / 100.
   $: loanAmount = property.data.sharePrice * selectedLvr
   $: equityAmount = property.data.sharePrice - loanAmount
 
-  $: loanParams = {durationYears: 30, rate: .065}
+  $: loanParams = {durationYears: 30, rate: selectedRate}
   $: loanPaymentYearly = calculateLoan(loanAmount, loanParams)
   $: loanPaymentMonthly = loanPaymentYearly / 12
 
@@ -39,7 +42,8 @@
   $: adjustedIncome = costsIndividual.map(i => yearlyIncome - i - loanPaymentYearly)
   $: adjustedTaxPosition = costsIndividual.map(i => calculateTaxes(yearlyIncome - i - loanPaymentYearly)?.amount)
   $: taxBenefits = adjustedTaxPosition.map(i => taxPosition.amount - i)
-  $: taxBenefitTotal = taxBenefits.reduce((r, i) => r + i, 0)
+  $: taxBenefitTotal = taxBenefits.reduce((r,i) => r+i, 0)
+  $: taxPositionTotal = taxPosition.amount * taxBenefits.length
 
   $: costsIndividualTotal = costsIndividual.map(i => i + loanPaymentYearly).reduce((r, i) => r + i, 0)
   $: adjustedGrowth = exitGrowth / property.data.numberShares * (1 - selectedLvr) - costsIndividualTotal + taxBenefitTotal
@@ -77,6 +81,26 @@
                 <h4 class="mt1 mb1">Taxable Income p.a.</h4>
                 <MoneyInput bind:value={yearlyIncome}/>
 
+                <div class="flex between middle my1">
+                    <h4 class="">Tax Position Total</h4>
+                    <div class="money">{formatMoney(taxPositionTotal)}</div>
+                </div>
+
+                <div class="flex between middle my1">
+                    <h4 class="">Tax Benefits Total</h4>
+                    <div class="money">{formatMoney(taxBenefitTotal)}</div>
+                </div>
+
+                <div class="flex between middle my1">
+                    <h4 class="">Growth Estimate 3y</h4>
+                    <div class="money">{formatMoney(sum(equity3y) - sum(costsIndividualInclLoan))}</div>
+                </div>
+
+                <div class="flex between middle my1 italic">
+                    <h4 class="">Growth Estimate 10y</h4>
+                    <div class="money">{formatMoney(sum(equity10y) - sum(costsIndividualInclLoan))}</div>
+                </div>
+
             </div>
         </div>
 
@@ -95,9 +119,7 @@
                     <div class="f1">
                         <RangeSlider bind:values={selectedRangeLvr} />
                     </div>
-
                 </div>
-
 
                 <div class="flex between middle my1">
                     <h4 class=""></h4>
@@ -114,6 +136,17 @@
                     <div class="money">{formatMoney(loanAmount)}</div>
                 </div>
 
+                <div class="flex middle mt1">
+                    <h5 class="mr2">Loan Rate</h5>
+                    <div class="f1">
+                        <RangeSlider bind:values={selectedRangeRate} />
+                    </div>
+                </div>
+
+                <div class="flex between middle my1">
+                    <h4 class=""></h4>
+                    <div class="money">{formatPercent(selectedRate)} p/a</div>
+                </div>
             </div>
 
         </div>
