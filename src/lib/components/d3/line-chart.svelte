@@ -55,7 +55,7 @@
                     <path
                         d={line()(d)}
                         stroke={colors[i]}
-                        stroke-width={3}
+                        stroke-width={4}
                         stroke-linecap='round'
                         fill='none'
                     />

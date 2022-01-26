@@ -77,26 +77,30 @@
         <div class="col-4 off-1 pt9 mo-pt7 ">
             <div class="font-1_25vw mo-mb2">
 
-                <h3 class="mb1">Investor</h3>
-                <h4 class="mt1 mb1">Taxable Income p.a.</h4>
-                <MoneyInput bind:value={yearlyIncome}/>
+                <h3 class="mb1 mo-mb2">Investor</h3>
 
-                <div class="flex between middle my1">
+                <div class="mo-mb2">
+                    <h4 class="mt1 mb1">Taxable Income p.a.</h4>
+                    <MoneyInput bind:value={yearlyIncome}/>
+                </div>
+
+
+                <div class="flex between middle my1 mo-mb2">
                     <h4 class="">Tax Position Total</h4>
                     <div class="money">{formatMoney(taxPositionTotal)}</div>
                 </div>
 
-                <div class="flex between middle my1">
+                <div class="flex between middle my1 mo-mb2">
                     <h4 class="">Tax Benefits Total</h4>
                     <div class="money">{formatMoney(taxBenefitTotal)}</div>
                 </div>
 
-                <div class="flex between middle my1">
+                <div class="flex between middle my1 mo-mb2">
                     <h4 class="">Growth Estimate 3y</h4>
                     <div class="money">{formatMoney(sum(equity3y) - sum(costsIndividualInclLoan))}</div>
                 </div>
 
-                <div class="flex between middle my1 italic">
+                <div class="flex between middle my1 mo-mb2 italic">
                     <h4 class="">Growth Estimate 10y</h4>
                     <div class="money">{formatMoney(sum(equity10y) - sum(costsIndividualInclLoan))}</div>
                 </div>
@@ -106,7 +110,7 @@
 
         <div class="col-4 off-1 pt9 mo-pt7 ">
             <div class="font-1_25vw mo-mb2">
-                <h3 class="mb1">Investment</h3>
+                <h3 class="mb1 mo-mb4">Investment</h3>
 
                 <div class="flex between middle my1">
                     <h4 class="">Share Price</h4>
@@ -274,9 +278,12 @@
         line-height: 2vw;
     }
 
-    .money {
-        color: #8a082d;
+    .line, .money {
         font-weight: 500;
         font-size: clamp(16px, 1.65vw, 1.65vw);
+    }
+
+    .money {
+        color: #8a082d;
     }
 </style>
