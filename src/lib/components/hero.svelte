@@ -21,7 +21,6 @@
     let currentSlide = 0
     const transitionIn = { duration: 2000 }, transitionOut = { duration: 500 }
 
-
     function prev(e) {
         currentSlide = (--currentSlide) % slides.length
     }
@@ -40,22 +39,22 @@
 <div class="container">
     <AspectRatio ratio="16x9">
         <video
-                src="/video/newport_video.mp4"
-                autoplay
-                muted
-                playsinline
-                loop
+            src="/video/newport_video.mp4"
+            autoplay
+            muted
+            playsinline
+            loop
         ></video>
     </AspectRatio>
     <div class="slides row">
         <div class="slides-inner col-8 off-1">
-            <div class="slide-prefix font-1_77vw bold">We love</div>
+            <div class="slide-prefix font-4_2vw bold">We love</div>
             {#each slides as slide, id}
                 {#if id === currentSlide}
                     <div
-                            class="slide"
-                            in:hslide={transitionIn}
-                            out:hslide={transitionOut}
+                        class="slide"
+                        in:hslide={transitionIn}
+                        out:hslide={transitionOut}
                     >
                         <div class="title font-7_29vw semibold">{@html slides[currentSlide].title}</div>
                     </div>
@@ -64,7 +63,7 @@
         </div>
     </div>
 </div>
-<style lang="scss">
+<style>
 
   .container {
     overflow: hidden;
@@ -89,16 +88,16 @@
   .slide {
     text-align: left;
     position: absolute;
-
   }
 
   .slide-prefix, .title {
     white-space: nowrap;
     color: snow!important;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
     text-shadow: 0 0 2vw rgba(0, 0, 0, .2);
   }
+
 
   .title {
     word-break: normal;

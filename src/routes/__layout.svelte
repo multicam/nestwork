@@ -14,3 +14,11 @@
 <Header />
 
 <Footer/>
+
+<style>
+	@media screen and (max-width: 1024px) {
+		main {
+			padding-top: 10vw
+		}
+	}
+</style>

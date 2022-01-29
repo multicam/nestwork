@@ -143,6 +143,7 @@
             <table>
                 <tr>
                     <td colspan="3" class="bold">Albie</td>
+                    <td colspan="2"></td>
                     <td colspan="3" class="bold">Georgie</td>
                 </tr>
                 <tr>

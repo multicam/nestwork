@@ -59,8 +59,6 @@
     compound(exitYears, property.data.purchasePrice, property.stats.average_3y_annual)
       .map(i => (i / property.shares.total - property.data.sharePrice) * (1 - selectedLvr))
 
-
-  let testRange
 </script>
 
 <section>
@@ -68,6 +66,9 @@
         <h2 class="col-12 normal px mb0 text-center font-6vw mo-text-left">
             Ready to Invest
         </h2>
+        <p class="col-12 px text-center mo-text-left">
+            Disclaimer: The numbers below reflect historic growth rates and current interest rates and simulation scenarios and not to be taken as financial advice.
+        </p>
         <p class="col-12 px text-center mo-text-left">
             If you are ready to take the next step to becoming a NestLover. <br>
             Let’s get you started….
@@ -84,7 +85,6 @@
                     <MoneyInput bind:value={yearlyIncome}/>
                 </div>
 
-
                 <div class="flex between middle my1 mo-mb2">
                     <h4 class="">Tax Position Total</h4>
                     <div class="money">{formatMoney(taxPositionTotal)}</div>
@@ -96,12 +96,12 @@
                 </div>
 
                 <div class="flex between middle my1 mo-mb2">
-                    <h4 class="">Growth Estimate 3y</h4>
+                    <h4 class="">Historical 3y Growth</h4>
                     <div class="money">{formatMoney(sum(equity3y) - sum(costsIndividualInclLoan))}</div>
                 </div>
 
                 <div class="flex between middle my1 mo-mb2 italic">
-                    <h4 class="">Growth Estimate 10y</h4>
+                    <h4 class="">Historical 10y Growth</h4>
                     <div class="money">{formatMoney(sum(equity10y) - sum(costsIndividualInclLoan))}</div>
                 </div>
 
@@ -116,7 +116,6 @@
                     <h4 class="">Share Price</h4>
                     <div class="money">{formatMoney(property.data.sharePrice)}</div>
                 </div>
-
 
                 <div class="flex middle mt1">
                     <h5 class="mr2">LVR</h5>
@@ -199,7 +198,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <strong>Aggregated</strong>
+                        <strong>Aggregated Costs</strong>
                     </td>
                     {#each costsAggregated as val }
                         <td class="text-mono text-right italic" style="color: orangered">{formatMoney(val)}</td>
@@ -262,6 +261,13 @@
 
         </div>
     </div>
+    <div class="mt4 mb4 px row">
+
+        <p class="col-12 px text-center mo-text-left">
+            Please refer to our Terms & Conditions for an explanation of data used and methodology.
+        </p>
+    </div>
+
     <div class="row px mt4">
 
     </div>

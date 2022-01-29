@@ -1,7 +1,6 @@
 <script context="module">
     export const prerender = true;
     import Hero from '$lib/components/hero.svelte'
-    import Forms from '$lib/components/forms.svelte'
     import AspectRatio from "$lib/components/carbon/AspectRatio.svelte";
     import LinkArrow from "$lib/components/bits/LinkArrow.svelte";
     import FaqItem from '$lib/components/faq-item.svelte'
@@ -33,7 +32,7 @@
                 <strong>Nestlove</strong> is the home to your dreams
             </h3>
             <LinkArrow
-                    class="font-1_11vw red decoration-none semibold text-black"
+                    class="font-1_25vw red decoration-none semibold text-black"
                     url="/properties"
                     label="Find your dream holiday house"
             />
@@ -84,7 +83,7 @@
                 Exclusive <strong>Investment Co-ownership.</strong>
             </h3>
             <LinkArrow
-                    class="font-1_11vw red decoration-none semibold text-black"
+                    class="font-1_25vw red decoration-none semibold text-black"
                     url="/about#co-ownership"
                     label="Is Co-ownership for you, find out more"
             />
@@ -103,7 +102,7 @@
                 Show Up & Relax. <strong>We Take Care of You.</strong>
             </h3>
             <LinkArrow
-                    class="font-1_11vw red decoration-none semibold text-black"
+                    class="font-1_25vw red decoration-none semibold text-black"
                     label="How NestLove takes care of NestLovers"
                     url="/about#nestlovers"
             />
@@ -181,7 +180,7 @@
                 Holidays made easy. <strong>Investment Maximised.</strong>
             </h3>
             <LinkArrow
-                    class="font-1_11vw red decoration-none semibold text-black"
+                    class="font-1_25vw red decoration-none semibold text-black"
                     label="Holidaying in your own NestLove"
                     url="/#/holidaying"
             />
@@ -224,45 +223,13 @@
                 <strong>Tax Effective</strong> Investment
             </h3>
             <LinkArrow
-                    class="font-1_11vw red decoration-none semibold text-black"
+                    class="font-1_25vw red decoration-none semibold text-black"
                     label="Run your own simulation with our properties"
                     url="/#/calculator"
             />
         </div>
     </div>
 </section>
-
-<!--in action-->
-<!--<section>-->
-<!--    <div class="row grey10 px">-->
-<!--        <div class="col-6 grey30 tail-left">-->
-<!--            <AspectRatio ratio="16x9" crop center relative pointer grey30>-->
-<!--                <div class=" absolute w100 h100" style="bottom:0;left:0;height:20%">-->
-<!--                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="text-white h100 px1 py1 ">-->
-<!--                        <path fill="currentColor"-->
-<!--                              d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"-->
-<!--                              class=""></path>-->
-<!--                    </svg>-->
-<!--                </div>-->
-<!--            </AspectRatio>-->
-<!--        </div>-->
-<!--        <div class="col-1 grey30 mo-display-none"></div>-->
-<!--        <div class="col-4 off-1 pt9 pb8 mo-pt7 mo-pb7">-->
-<!--            <h3 class=" mb2 mo-mt2 mo-mb2">-->
-<!--                NestLove in Action-->
-<!--            </h3>-->
-<!--            <div class="font-1_25vw book mo-mb2">-->
-<!--                <p>Get a better grip on what NestLove is and how it can work for you, learn how to use the calculator-->
-<!--                    too!</p>-->
-<!--                <LinkArrow-->
-<!--                        class="font-1_11vw red decoration-none semibold text-black"-->
-<!--                        label="I'm ready to use the calculator"-->
-<!--                        url="/#/calculator"-->
-<!--                />-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</section>-->
 
 <!--reviews-->
 <section>
